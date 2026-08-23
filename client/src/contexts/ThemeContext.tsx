@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
+import { normalizeThemePreference } from "@/lib/themePreference";
 
 type Theme = "light" | "dark";
 
@@ -22,9 +23,11 @@ export function ThemeProvider({
   switchable = false,
 }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(() => {
+    const previewTheme = typeof window !== "undefined" ? new URLSearchParams(window.location.search).get("previewTheme") : null;
+    if (previewTheme === "dark") return "dark";
     if (switchable) {
       const stored = localStorage.getItem("theme");
-      return (stored as Theme) || defaultTheme;
+      return normalizeThemePreference(stored || defaultTheme);
     }
     return defaultTheme;
   });

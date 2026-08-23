@@ -108,3 +108,9 @@ The chat attachment experience becomes a compact **file slip** before send. It s
 Notification settings follow a **quiet operations sheet**: three alert categories, one delivery control per category, a single save action, and a succinct confirmation state. Shareable portfolio views preserve their discipline and sort state in the query string, while a small copy-link control keeps the focused view easy to share.
 
 The AI skill assistant sits beside the evidence index rather than presenting itself as a detached chat tool. It is explicitly grounded in the visible portfolio titles, disciplines, and summaries, returns a compact editable tag set, and avoids suggesting credentials, ratings, client identities, or unsupported expertise.
+
+## Freelancer Workbench & Night Ledger
+
+The portfolio manager becomes a **workbench**, not an opaque uploader: a tactile drop zone, an ordered evidence stack, local thumbnail previews, and unambiguous remove/reorder actions. The freelancer dashboard follows a **performance sheet** format, with clear operational counters, proposal and project ledgers, and a single slim earnings chart rather than a generic analytics wall.
+
+Dark mode becomes **Night Ledger**. It trades the mineral paper for charcoal ink, soft graphite cards, muted blue-gray structure, and controlled brass highlights. It retains the same typographic hierarchy and makes the theme preference persistent—never simply inverting light-mode colors.

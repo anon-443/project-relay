@@ -49,3 +49,12 @@
 - [x] Capture and review the AI skill assistant loading state at mobile size.
 - [x] Verify suggested tags can be added to the main skill list and removed from the suggestion list at desktop and mobile sizes.
 - [x] Capture the accepted-tag state after the profile interaction transition at desktop and mobile sizes.
+- [x] Add a drag-and-drop portfolio manager with add, reorder, remove, and local preview interactions.
+- [x] Add a freelancer analytics dashboard for proposal activity, ongoing work, earnings, and visual performance charts.
+- [x] Add a persistent light/dark theme toggle with a professional dark palette across the marketplace.
+- [x] Add and run targeted unit tests for portfolio ordering, dashboard metrics, and persisted theme preferences.
+- [x] Verify the manager, analytics dashboard, and dark mode at desktop and mobile sizes.
+- [x] Make the dark-mode toggle reachable on the freelancer dossier and notification settings routes, then re-verify those views.
+- [x] Correct dark-mode notification selector contrast and re-check the settings sheet at phone size.
+- [x] Save the workbench, freelancer analytics, and Night Ledger enhancement checkpoint.
+- [x] Extract dashboard metric calculations and add targeted unit tests for proposal, project, and earnings summaries.

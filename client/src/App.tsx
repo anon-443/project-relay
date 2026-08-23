@@ -4,10 +4,13 @@
  */
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Route, Switch, useLocation } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { useTheme } from "./contexts/ThemeContext";
+import FreelancerDashboard from "./pages/FreelancerDashboard";
 import FreelancerProfile from "./pages/FreelancerProfile";
 import Home from "./pages/Home";
 import NotificationSettings from "./pages/NotificationSettings";
@@ -18,6 +21,8 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/freelancer/mira-nori" component={FreelancerProfile} />
+      <Route path="/freelancer/mira-nori/manage" component={PortfolioManager} />
+      <Route path="/dashboard/freelancer" component={FreelancerDashboard} />
       <Route path="/settings/notifications" component={NotificationSettings} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
@@ -25,14 +30,20 @@ function Router() {
   );
 }
 
+import PortfolioManager from "./pages/PortfolioManager";
+
+function AppContent() {
+  const { theme } = useTheme();
+  const [location] = useLocation();
+  const needsThemeDock = location === "/freelancer/mira-nori" || location === "/settings/notifications";
+  return <TooltipProvider><Toaster theme={theme} position="bottom-right" />{needsThemeDock && <div className="route-theme-dock"><ThemeToggle /></div>}<Router /></TooltipProvider>;
+}
+
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider defaultTheme="light">
-        <TooltipProvider>
-          <Toaster theme="light" position="bottom-right" />
-          <Router />
-        </TooltipProvider>
+      <ThemeProvider defaultTheme="light" switchable>
+        <AppContent />
       </ThemeProvider>
     </ErrorBoundary>
   );
