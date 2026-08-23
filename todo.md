@@ -65,9 +65,9 @@
 - [x] Create a custom-domain DNS handoff guide that can be completed once the user supplies the domain and registrar.
 - [x] Verify the authentication flows.
 - [x] Correct the administrator account confirmation action so it does not point to the freelancer workspace.
-- [ ] Map the purchased domain using exact DNS records after the user provides the domain and registrar.
+- [x] Defer managed custom-domain mapping because the user chose the published GitHub Pages URL and has not claimed a separate domain.
 - [x] Confirm the current GitHub Student Developer Pack domain offer and claim path.
-- [ ] Help select an available Student Pack domain and provide its exact managed-host DNS mapping steps.
+- [x] Defer Student Pack domain selection and DNS mapping because the user chose GitHub Pages as the public URL.
 - [x] Document why the current full-stack marketplace cannot run unchanged on GitHub Pages and outline supported public URL options.
 - [x] Complete the GitHub repository export and public-link handoff guidance for the selected deployment path.
 - [x] Refine the Project Relay README into a concise professional portfolio repository document.
@@ -106,6 +106,6 @@
 - [x] Build a GitHub Pages-safe Project Relay portfolio demo with a link to the full hosted app for server-backed functionality.
 - [x] Revalidate the static build and deployment artifact after the Vite configuration recovery.
 - [x] Publish and verify the GitHub Pages URL `https://anon-443.github.io/project-relay/`.
-- [ ] Save and synchronize the GitHub Pages release.
+- [x] Save and synchronize the GitHub Pages release.
 - [x] Restore the managed development preview after the GitHub Pages build configuration changed Vite’s default export shape.
 - [x] Correct the GitHub Pages workflow’s pnpm version conflict and rerun the static deployment.
