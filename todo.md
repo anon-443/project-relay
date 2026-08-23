@@ -128,3 +128,8 @@
 - [x] Densify the conversation panel, move its content left, and remove the redundant communication helper sentence.
 - [x] Verify desktop and mobile density; type checks, 31 tests, managed build, and GitHub Pages build passed.
 - [x] Save and synchronize the density-and-alignment release.
+- [x] Map the footer statement and featured-talent evidence arrangement to active homepage selectors.
+- [x] Move featured-talent work-sample evidence into the left column and remove the unused gap on desktop.
+- [x] Keep the footer statement on one line at desktop size with a safe mobile wrap.
+- [x] Verify the desktop and mobile alignment; type checks, 31 tests, managed build, and GitHub Pages build passed.
+- [ ] Save and synchronize the featured-talent alignment release.
