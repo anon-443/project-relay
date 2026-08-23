@@ -122,3 +122,9 @@
 - [x] Reorganize featured-talent card details toward the left and raise small-text contrast across the homepage.
 - [x] Verify desktop and mobile clarity; type checks, 31 tests, managed build, and GitHub Pages build passed.
 - [x] Save and synchronize the hierarchy-clarity release.
+- [x] Map the reported project-card, workboard, project-status, conversation, and communication-helper issues to active homepage styles and markup.
+- [x] Use the available project-card width efficiently by keeping titles and descriptions on fuller lines and aligning facts to the left.
+- [x] Increase the workboard and project-status text/icon scale while reducing inactive whitespace.
+- [x] Densify the conversation panel, move its content left, and remove the redundant communication helper sentence.
+- [x] Verify desktop and mobile density; type checks, 31 tests, managed build, and GitHub Pages build passed.
+- [ ] Save and synchronize the density-and-alignment release.
