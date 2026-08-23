@@ -8,7 +8,7 @@ const assets = {
   talent: githubPagesAsset("project-relay-talent-collage_d0fc082c.jpg"),
 };
 
-const disciplines = ["Product design", "Web development", "Brand & identity", "Copywriting", "Digital marketing"];
+const disciplines = ["Product design", "Web development", "Brand & identity", "Copywriting", "Digital marketing", "UX research"];
 const briefs = [
   ["Design a mobile checkout that does less, better", "Tide & Form", "$2.4k–$3.2k", "Product design"],
   ["Build a launch narrative for a climate data platform", "Morrow Grid", "$1.6k–$2.1k", "Copywriting"],

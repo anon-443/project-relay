@@ -115,3 +115,10 @@
 - [x] Finish the compact-copy punctuation cleanup across all remaining public homepage headings and short support lines, then mirror it in the GitHub Pages demo where applicable.
 - [x] Re-run desktop and mobile verification after the final public-copy cleanup; retain the completed type, test, and build evidence.
 - [x] Save and synchronize the layout-cleanup release.
+- [x] Map the six reported hierarchy and clarity issues to homepage components and final stylesheet rules.
+- [x] Increase header and compact interface text prominence and remove italic styling from the hero headline.
+- [x] Add a sixth discipline card and present the six cards as two desktop rows of three with clearer spacing.
+- [x] Remove the open-project search helper text and reorganize project brief facts toward the left for clearer reading.
+- [x] Reorganize featured-talent card details toward the left and raise small-text contrast across the homepage.
+- [x] Verify desktop and mobile clarity; type checks, 31 tests, managed build, and GitHub Pages build passed.
+- [ ] Save and synchronize the hierarchy-clarity release.

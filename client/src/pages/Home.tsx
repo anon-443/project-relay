@@ -59,6 +59,7 @@ const projects: Project[] = [
   { id: 3, title: "Create an identity kit for a local food publisher", company: "Common Table", category: "Brand & identity", budget: "$3,500–$4,500", budgetValue: 4500, deadline: "Apply by 25 Jun", description: "Build an expressive, practical visual system for a new editorial platform covering independent food culture.", skills: ["Identity", "Art direction", "Editorial"], format: "Hybrid / 4 weeks", accent: "ink", scope: "Explore naming applications, logo use, color, type, social templates, and lightweight editorial guidelines for a small publication team." },
   { id: 4, title: "Prototype a frictionless creator onboarding flow", company: "Ripple Studio", category: "Web development", budget: "$2,800–$3,800", budgetValue: 3800, deadline: "Apply by 27 Jun", description: "Design and build a browser onboarding sequence that converts a complex creator setup into a confident first session.", skills: ["React", "UX", "Animation"], format: "Remote / 3 weeks", accent: "blue", scope: "Define the interaction model, prototype core screens, and deliver a responsive front-end sequence with accessible validation states." },
   { id: 5, title: "Plan a short-form campaign for an independent hotel", company: "Field Notes Hotel", category: "Digital marketing", budget: "$1,200–$1,800", budgetValue: 1800, deadline: "Apply by 29 Jun", description: "Create a focused campaign plan for a quiet, design-led hotel opening in a coastal town.", skills: ["Strategy", "Social", "Content"], format: "On-site / 2 weeks", accent: "orange", scope: "Shape channel strategy, messaging, a content calendar, and production direction around a three-week opening campaign." },
+  { id: 6, title: "Run discovery interviews for a member onboarding service", company: "Harbour & Co", category: "UX research", budget: "$2,000–$2,700", budgetValue: 2700, deadline: "Apply by 02 Jul", description: "Plan and run a focused research sprint that turns member interviews into clear onboarding decisions.", skills: ["Interviews", "Synthesis", "Journey maps"], format: "Remote / 2 weeks", accent: "ink", scope: "Recruit interview participants, facilitate six sessions, synthesize themes, and deliver an evidence-backed onboarding opportunity map." },
 ];
 
 const freelancers: Freelancer[] = [
@@ -69,7 +70,7 @@ const freelancers: Freelancer[] = [
 ];
 
 const categories = [
-  { label: "Product design", count: 42, icon: "✦", tone: "blue" }, { label: "Web development", count: 38, icon: "⌘", tone: "ink" }, { label: "Brand & identity", count: 27, icon: "◒", tone: "orange" }, { label: "Copywriting", count: 21, icon: "Aa", tone: "cream" }, { label: "Digital marketing", count: 18, icon: "↗", tone: "blue" },
+  { label: "Product design", count: 42, icon: "✦", tone: "blue" }, { label: "Web development", count: 38, icon: "⌘", tone: "ink" }, { label: "Brand & identity", count: 27, icon: "◒", tone: "orange" }, { label: "Copywriting", count: 21, icon: "Aa", tone: "cream" }, { label: "Digital marketing", count: 18, icon: "↗", tone: "blue" }, { label: "UX research", count: 16, icon: "◌", tone: "cream" },
 ];
 
 const emptyPost: PostForm = { title: "", category: "", budget: "", deadline: "", goal: "", skills: "", tone: "Clear and professional", description: "", deliverables: [] };
