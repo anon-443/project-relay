@@ -152,3 +152,10 @@
 - [x] Compact and align featured-talent content rows and workboard empty-state panels without weakening the Atelier Ledger hierarchy.
 - [x] Verify desktop and mobile changes; type checks, 33 tests, managed build, and GitHub Pages build passed.
 - [x] Save and synchronize the alignment-and-data-correction release.
+- [x] Map the remaining featured-talent card whitespace to the active desktop grid and row alignment rules.
+- [x] Rebuild specialist cards into compact content-led desktop rows while retaining responsive fallbacks.
+- [x] Verify desktop and mobile card density; the combined text-removal validation suite passed.
+- [x] Map the requested category-card count line and profile-card copy to active homepage markup and layout styles.
+- [x] Remove the category-card count line and requested profile copy, then reduce the profile/workboard card to its content height.
+- [x] Verify desktop and mobile presentation; type checks, 31 tests, managed build, and GitHub Pages build passed.
+- [x] Save and synchronize the combined compact specialist-card and text-removal release.
