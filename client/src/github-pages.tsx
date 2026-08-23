@@ -43,7 +43,7 @@ function PagesDemo() {
 
         <section className="static-disciplines static-shell" aria-labelledby="disciplines-title">
           <p className="static-kicker">01 / EXPLORE BY CRAFT</p><h2 id="disciplines-title">A good brief starts with the right <em>discipline</em></h2>
-          <div className="static-discipline-grid">{disciplines.map((discipline, index) => <article key={discipline}><span>0{index + 1} / LEDGER</span><b>{discipline}</b><small>Focused briefs →</small></article>)}</div>
+          <div className="static-discipline-grid">{disciplines.map((discipline) => <article key={discipline}><b>{discipline}</b><small>Focused briefs →</small></article>)}</div>
         </section>
 
         <section id="method" className="static-method"><div className="static-shell static-method-grid"><img src={assets.board} alt="Creative project brief planning board" /><div><p className="static-kicker">THE RELAY METHOD</p><h2>A brief with a <em>point of view</em></h2><p>Every demonstration brief carries the context, constraints, and practical next move a specialist needs to decide with confidence</p><ol><li><b>01</b> Scope before surface</li><li><b>02</b> Skills with context</li><li><b>03</b> A proposal in one focused thread</li></ol></div></div></section>

@@ -147,3 +147,8 @@
 - [x] Increase operational type and symbol prominence while maintaining the Atelier Ledger hierarchy and responsive fit.
 - [x] Verify the typography-prominence update at desktop and phone breakpoints; type checks, 31 tests, managed build, and GitHub Pages build passed.
 - [x] Save and synchronize the typography-prominence release.
+- [x] Map the attachment chip, discipline-card label/count data, featured-talent alignment, and workboard-panel alignment to active source and styles.
+- [x] Remove the visible attachment chip and correct the discipline cards to remove Ledger labels and show the actual one-brief-per-discipline state.
+- [x] Compact and align featured-talent content rows and workboard empty-state panels without weakening the Atelier Ledger hierarchy.
+- [x] Verify desktop and mobile changes; type checks, 33 tests, managed build, and GitHub Pages build passed.
+- [x] Save and synchronize the alignment-and-data-correction release.

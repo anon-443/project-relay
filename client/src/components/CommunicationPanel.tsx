@@ -6,20 +6,19 @@ import { canSendMessage, createFilePreview, createOutgoingMessage, FilePreview, 
 type ConversationMessage = { id: number; sender: string; initials: string; body: string; time: string; mine?: boolean; attachment?: string; status?: "Delivered" | "Read" };
 const starterMessages: ConversationMessage[] = [
   { id: 1, sender: "Mira Nori", initials: "MN", body: "I have mapped the friction points in the mobile flow and added two questions to the project files.", time: "10:14" },
-  { id: 2, sender: "Tide & Form", initials: "TF", body: "Thank you. I have also attached the current checkout screen recording for context.", time: "10:17", attachment: "checkout-flow.mov" },
+  { id: 2, sender: "Tide & Form", initials: "TF", body: "Thank you. I have added the current checkout details to the project context.", time: "10:17" },
   { id: 3, sender: "Mira Nori", initials: "MN", body: "Perfect. I will share the first prototype direction by Thursday.", time: "10:19" },
 ];
 
 export function CommunicationPanel({ onIncomingMessage }: { onIncomingMessage?: () => void }) {
   const [messages, setMessages] = useState(starterMessages);
   const [draft, setDraft] = useState("");
-  const [attachment, setAttachment] = useState<FilePreview | null>(() => new URLSearchParams(window.location.search).get("previewAttachment") === "1" ? { name: "checkout-flow.pdf", typeLabel: "PDF", sizeLabel: "1.4 MB", isImage: false } : null);
+  const [attachment, setAttachment] = useState<FilePreview | null>(null);
   const [attachmentUrl, setAttachmentUrl] = useState<string | null>(null);
   const [typing, setTyping] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   useEffect(() => () => { if (attachmentUrl) URL.revokeObjectURL(attachmentUrl); }, [attachmentUrl]);
-  useEffect(() => { if (new URLSearchParams(window.location.search).get("previewAttachment") === "1") document.getElementById("communication")?.scrollIntoView({ block: "start" }); }, []);
 
   function clearAttachment() { if (attachmentUrl) URL.revokeObjectURL(attachmentUrl); setAttachment(null); setAttachmentUrl(null); if (fileInputRef.current) fileInputRef.current.value = ""; }
   function selectAttachment(event: ChangeEvent<HTMLInputElement>) { const file = event.target.files?.[0]; if (!file) return; if (attachmentUrl) URL.revokeObjectURL(attachmentUrl); const preview = createFilePreview(file); setAttachment(preview); setAttachmentUrl(preview.isImage ? URL.createObjectURL(file) : null); }
