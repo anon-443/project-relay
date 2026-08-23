@@ -89,4 +89,8 @@
 - [x] Remove the excessive blank space between the desktop header and Project Relay hero content.
 - [x] Review the tightened 1919×576 desktop first screen: the hero begins directly below the header with no oversized inactive band, and the visual card remains aligned with the heading.
 - [x] Save the desktop-spacing-fix checkpoint.
-- [ ] Save the GitHub-publication handoff documentation checkpoint.
+- [x] Save the GitHub-publication handoff documentation checkpoint.
+- [x] Verify the target repository `github.com/anon-443/project-relay` and publish the current Project Relay source when authorized.
+- [x] Validate the connected GitHub export path and confirm the published repository contents.
+- [x] Create the public `anon-443/project-relay` repository and publish the verified Project Relay source.
+- [ ] Save and sync the publication record checkpoint to GitHub.
