@@ -86,3 +86,6 @@
 - [x] Add direct tRPC tests for role selection and role-protected workspace procedures.
 - [x] Verify login/logout procedure behavior, role selection procedures, unauthorized access, and browser-visible role-gated routes.
 - [x] Add direct auth-state verification for signed-out and authenticated account entry before final checkpoint.
+- [x] Remove the excessive blank space between the desktop header and Project Relay hero content.
+- [x] Review the tightened 1919×576 desktop first screen: the hero begins directly below the header with no oversized inactive band, and the visual card remains aligned with the heading.
+- [ ] Save the desktop-spacing-fix checkpoint.
