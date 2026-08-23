@@ -1,78 +1,70 @@
-# Orbitfolio Design Direction
+# Project Relay Marketplace Design Direction
 
 ## Three initial approaches
 
 | Theme Name | Very Brief Intro | Probability |
 | --- | --- | --- |
-| Signal Room | A graphite-and-lime editorial portfolio that feels like an independent product journal. It signals precision, experimentation, and comfort with complex systems. | 0.07 |
-| Material Library | A warm, print-inspired portfolio built from paper textures, archival captions, and ink-blue type. It would position the work as considered craft rather than software spectacle. | 0.03 |
-| Blue Hour Studio | A calm, atmospheric portfolio using deep cobalt, muted sand, and photographic gradients. It would feel thoughtful, human, and quietly technical. | 0.09 |
+| The Workroom | An editorial marketplace that feels like a well-run creative studio: paper-white surfaces, cobalt structure, and vibrant orange moments of action. It makes finding work feel focused, capable, and human. | 0.08 |
+| Open Ledger | A quiet, transparent marketplace with stone paper, charcoal typography, and ledger-style data tables. It would emphasize trust, clarity, and well-documented decisions. | 0.04 |
+| Night Shift | A high-contrast after-hours job board using ink, chrome, and a small electric-blue signal. It would feel energetic and technical, aimed at product and engineering talent. | 0.06 |
 
-## Chosen approach — Signal Room
+## Chosen approach — The Workroom
 
 ### Design Movement
 
-The site follows **contemporary editorial brutalism softened by premium product-design detailing**. It borrows the decisive typography, visual hierarchy, and modular storytelling of a design annual, then layers in refined transitions, restrained translucency, and interface-led project artifacts.
+**Swiss editorial systems meets contemporary creative-studio tooling.** The design uses confident type, strong rules, emphatic color blocks, and meticulous information hierarchy so a marketplace with many choices still feels composed and easy to scan.
 
 ### Core Principles
 
-1. **Work leads; decoration supports.** Every strong visual element clarifies a project decision, capability, or outcome.
-2. **Editorial asymmetry.** The layout uses offset columns, measured overlap, and large typographic intervals instead of a predictable centered-card grid.
-3. **System visibility.** Interface fragments, capability labels, and structured project metadata make the underlying product thinking tangible.
-4. **Deliberate contrast.** Charcoal space, paper-white type, and one incisive acid-green signal color create an instantly recognisable hierarchy.
+1. **Make opportunity legible.** Budget, deadline, skills, and client intent are visible before a visitor needs to work for them.
+2. **Human work has texture.** The interface uses portrait-like editorial imagery, tactile surfaces, and conversational language to avoid a cold job-board feel.
+3. **Color marks a decision.** Cobalt anchors structure; orange marks momentum and the key next action.
+4. **Information is staged.** Listings, profiles, filters, proposal forms, and dashboard context appear in a deliberately paced sequence rather than a wall of cards.
 
 ### Color Philosophy
 
-Near-black graphite provides the calm, serious stage necessary for portfolio work to feel premium and legible. Warm paper-white softens the contrast for long reading, while **Signal Lime** is reserved for navigation state, interactive indicators, and emphasis. The lime is not decoration: it reads as a marker of momentum, opportunity, and shipped product energy.
+Warm paper white and near-black ink establish a professional reading surface. **Cobalt Blue** creates trust and directional structure; **Workshop Orange** is deliberately reserved for important actions, live availability, and status changes. Together the colors create a marketplace that is fresh, optimistic, and credible without leaning on generic tech gradients.
 
 ### Layout Paradigm
 
-The page is arranged as a **scrolling field journal**. A thin utility rail establishes navigation and identity; sections unfold as editorial spreads. Project storytelling uses a two-column case-study composition where narrative sits beside a dimensional, interface-like project preview—not a symmetrical gallery.
+The site behaves like a **digital studio bulletin board**. A generous hero combines a large editorial statement with a working visual scene. The discovery section is organized as a pinned search rail and an offset results canvas. The dashboard is a compressed workboard of active projects, proposals, and availability—not a generic admin table.
 
 ### Signature Elements
 
-1. A recurring **orbital index mark**: a split circle and path line used in the favicon, heading markers, and active states.
-2. **Coordinate captions**: compact uppercase labels such as “01 / SELECTED WORK” that frame every section like a documented experiment.
-3. **Signal panels**: lime-tinted borders and micro-status dots that light up only around active or interactive content.
+1. **Pinned index tabs**: cobalt number blocks that label sections and states.
+2. **Workshop stamps**: small circular “open”, “shortlist”, and “match” markers applied to active system areas.
+3. **Split sheets**: project and profile cards use strong vertical dividers to separate opportunity information from next actions.
 
 ### Interaction Philosophy
 
-Interactions should reward attention, not compete for it. Navigation uses smooth anchor travel; project cards reveal detail through a small, crisp lift and a directional arrow; controls depress physically on click. The work reads instantly before motion is noticed.
+Search and filters should feel instant and forgiving. Every result update is visible, while proposal actions open a focused sheet rather than navigating away. Buttons use a compact press response; cards shift only enough to clarify that they are interactive.
 
 ### Animation
 
-Elements use brief, staggered entrances of opacity and vertical translation when they enter the viewport. Interface preview details drift minimally along their own axis, suggesting active products without feeling decorative. Hover and press states use 120–220ms custom ease-out transitions. Every nonessential motion must respect reduced-motion preferences.
+Sections lift into view with short opacity and 14px translation transitions. A subtle dot-field moves in the hero while static layout stays calm. Filter updates cross-fade results; dialog sheets enter from the right with a 250ms custom ease-out. All nonessential motion respects reduced-motion settings.
 
 ### Typography System
 
-**Space Grotesk** carries display headings and product labels, using wide tracking at small sizes and tight, confident tracking for large headlines. **DM Mono** is used sparingly for coordinates, metadata, and system labels. **Manrope** supports body copy with clear, friendly readability. The hierarchy alternates oversized display statements with compact technical captions.
+**Archivo** is the confident, compact display and interface face. **Fraunces** is used for one expressive italic phrase in major headings, giving the marketplace a cultivated editorial character. **DM Mono** handles budgets, dates, filter labels, and operational metadata. Hierarchy favors big compact headlines paired with quiet, precise supporting detail.
 
 ### Brand Essence
 
-**Orbitfolio is a product-minded frontend portfolio for turning complex marketplace workflows into clear, usable digital experiences.**
+**Project Relay is a freelance marketplace that turns scattered creative work into clear, confident matches.**
 
-Personality: **precise, ambitious, curious**.
+Personality: **resourceful, direct, optimistic**.
 
 ### Brand Voice
 
-Headlines are direct, technically literate, and outcome-oriented. CTAs use active verbs and say what the visitor will see next. Avoid vague, generic professional claims.
+Headlines are active and specific. Interface microcopy is helpful, operational, and never exaggerated.
 
-> “Two marketplace systems. Designed for the complicated part.”
+> “Good work finds its way.”
 
-> “Open the build notes.”
+> “Show me what needs making.”
 
 ### Wordmark & Logo
 
-The wordmark uses a compact uppercase “ORBITFOLIO” with a custom split-orbit symbol: a solid dot travels on a broken circular path, representing ideas moving from concept to working product. The standalone mark is bold enough for the header and favicon without depending on text.
+The Project Relay mark is a cobalt square that contains an offset orange relay baton: two rounded line segments that almost meet, representing a brief passing cleanly between a client and a specialist. The standalone mark reads at small favicon size and works as a section stamp.
 
 ### Signature Brand Color
 
-**Signal Lime — #C8FF2E.**
-
-## Style Decisions
-
-The portfolio will showcase **Task 2: Freelancing Marketplace** and **Task 3: Multi-Vendor Marketplace**. Together they demonstrate broader and more senior-feeling product capability than the food delivery or portfolio brief alone: two-sided user roles, discovery/filtering, seller or freelancer profiles, dynamic cart or proposal flows, and dashboard-style information architecture. The site itself also acts as the requested personal portfolio vehicle, so it directly supports LinkedIn presentation and future project expansion.
-
-### Review refinements
-
-Every public-facing line must read as shipped portfolio copy rather than a template or setup guide. The hero’s orbital identity must be paired with visible marketplace-system evidence such as role markers, workflow paths, and interface states. Signal Lime remains a precision color for action, status, numerals, active edges, and small critical markers; it should never become a broad decorative field. Project visuals should expose structured case-study proof alongside the polished product render.
+**Relay Cobalt — #1F4BFF.**

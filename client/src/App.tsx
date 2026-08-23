@@ -1,6 +1,6 @@
 /**
- * Signal Room design reminder: This app frames work as an editorial product journal.
- * Keep the experience dark, tactile, asymmetrical, and precise; Signal Lime is reserved for purposeful emphasis.
+ * The Workroom design reminder: Project Relay should feel like a well-run creative studio.
+ * Keep paper surfaces, cobalt structure, and orange action signals purposeful and information-led.
  */
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -23,9 +23,9 @@ function Router() {
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider defaultTheme="dark">
+      <ThemeProvider defaultTheme="light">
         <TooltipProvider>
-          <Toaster theme="dark" position="bottom-right" />
+          <Toaster theme="light" position="bottom-right" />
           <Router />
         </TooltipProvider>
       </ThemeProvider>
