@@ -108,3 +108,4 @@
 - [ ] Publish and verify the GitHub Pages URL `https://anon-443.github.io/project-relay/`.
 - [ ] Save and synchronize the GitHub Pages release.
 - [x] Restore the managed development preview after the GitHub Pages build configuration changed Vite’s default export shape.
+- [ ] Correct the GitHub Pages workflow’s pnpm version conflict and rerun the static deployment.
