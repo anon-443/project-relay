@@ -12,6 +12,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { useTheme } from "./contexts/ThemeContext";
 import FreelancerDashboard from "./pages/FreelancerDashboard";
+import FreelancerWorkspace from "./pages/FreelancerWorkspace";
 import AccountRole from "./pages/AccountRole";
 import ClientWorkspace from "./pages/ClientWorkspace";
 import FreelancerProfile from "./pages/FreelancerProfile";
@@ -29,6 +30,7 @@ function Router() {
       <Route path="/account/role" component={AccountRole} />
       <Route path="/freelancer/mira-nori/manage">{() => <RoleGate role="freelancer"><PortfolioManager /></RoleGate>}</Route>
       <Route path="/dashboard/freelancer">{() => <RoleGate role="freelancer"><FreelancerDashboard /></RoleGate>}</Route>
+      <Route path="/workspace/freelancer">{() => <RoleGate role="freelancer"><FreelancerWorkspace /></RoleGate>}</Route>
       <Route path="/workspace/client">{() => <RoleGate role="client"><ClientWorkspace /></RoleGate>}</Route>
       <Route path="/settings/notifications" component={NotificationSettings} />
       <Route path="/404" component={NotFound} />

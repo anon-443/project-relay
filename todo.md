@@ -159,3 +159,8 @@
 - [x] Remove the category-card count line and requested profile copy, then reduce the profile/workboard card to its content height.
 - [x] Verify desktop and mobile presentation; type checks, 31 tests, managed build, and GitHub Pages build passed.
 - [x] Save and synchronize the combined compact specialist-card and text-removal release.
+- [x] Inspect existing client/freelancer role controls and the current database model for projects, proposals, and reviews.
+- [x] Design schema and permissions for persisted projects, proposals, and verified review submissions without fabricated review data.
+- [x] Implement authenticated, role-aware project posting, proposals, and verified review workflows backed by the database.
+- [x] Verify persistence, authorization, protected-route presentation, and the updated 34-test suite before saving and synchronizing the release.
+- [x] Save and synchronize the persistent-marketplace release.

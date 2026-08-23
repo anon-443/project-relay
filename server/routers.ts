@@ -4,7 +4,8 @@ import { getSessionCookieOptions } from "./_core/cookies";
 import { invokeLLM, listLLMModels } from "./_core/llm";
 import { systemRouter } from "./_core/systemRouter";
 import { protectedProcedure, publicProcedure, router } from "./_core/trpc";
-import { setMarketplaceRole } from "./db";
+import { createMarketplaceProject, createMarketplaceProposal, createMarketplaceReview, getMarketplaceProject, getMarketplaceProposal, getMarketplaceReviewForProposal, listClientMarketplaceProjects, listClientMarketplaceProposals, listFreelancerMarketplaceProposals, listFreelancerMarketplaceReviews, listOpenMarketplaceProjects, setMarketplaceProjectStatus, setMarketplaceProposalStatus, setMarketplaceRole } from "./db";
+import { requireCompletedEngagement, requireOwnedProject, requireProposalTarget } from "./marketplaceAccess";
 import { buildProjectDescriptionPrompt, parseGeneratedProjectDescription } from "./projectDescription";
 import { marketplaceRoleSchema, requireMarketplaceRole } from "./roleAccess";
 import { buildSkillTagPrompt, parseGeneratedSkillTags } from "./skillTags";
@@ -99,6 +100,73 @@ export const appRouter = router({
         if (typeof content !== "string") throw new Error("The AI assistant did not return usable skill tags. Please try again.");
         return parseGeneratedSkillTags(content);
       }),
+  }),
+
+  marketplace: router({
+    listOpenProjects: publicProcedure.query(() => listOpenMarketplaceProjects()),
+    listClientProjects: protectedProcedure.query(({ ctx }) => {
+      requireMarketplaceRole(ctx.user.role, "client");
+      return listClientMarketplaceProjects(ctx.user.id);
+    }),
+    createProject: protectedProcedure.input(z.object({
+      title: z.string().trim().min(5).max(160), category: z.string().trim().min(2).max(80), budget: z.string().trim().min(2).max(80), deadline: z.string().trim().min(2).max(80), description: z.string().trim().min(30).max(5000), skills: z.array(z.string().trim().min(2).max(40)).min(1).max(12),
+    })).mutation(({ ctx, input }) => {
+      requireMarketplaceRole(ctx.user.role, "client");
+      return createMarketplaceProject({ ...input, clientId: ctx.user.id, clientName: ctx.user.name || ctx.user.email || "Client" });
+    }),
+    listClientProposals: protectedProcedure.query(({ ctx }) => {
+      requireMarketplaceRole(ctx.user.role, "client");
+      return listClientMarketplaceProposals(ctx.user.id);
+    }),
+    submitProposal: protectedProcedure.input(z.object({ projectId: z.number().int().positive(), contact: z.string().trim().email().max(320), expectedBudget: z.string().trim().min(2).max(80), coverLetter: z.string().trim().min(30).max(5000) })).mutation(async ({ ctx, input }) => {
+      requireMarketplaceRole(ctx.user.role, "freelancer");
+      const project = await getMarketplaceProject(input.projectId);
+      if (!project) throw new Error("This project is no longer available.");
+      requireProposalTarget(project.clientId, ctx.user.id, ctx.user.id, project.status);
+      return createMarketplaceProposal({ ...input, freelancerId: ctx.user.id, freelancerName: ctx.user.name || ctx.user.email || "Freelancer" });
+    }),
+    listFreelancerProposals: protectedProcedure.query(({ ctx }) => {
+      requireMarketplaceRole(ctx.user.role, "freelancer");
+      return listFreelancerMarketplaceProposals(ctx.user.id);
+    }),
+    acceptProposal: protectedProcedure.input(z.object({ proposalId: z.number().int().positive() })).mutation(async ({ ctx, input }) => {
+      requireMarketplaceRole(ctx.user.role, "client");
+      const proposal = await getMarketplaceProposal(input.proposalId);
+      if (!proposal) throw new Error("Proposal not found.");
+      const project = await getMarketplaceProject(proposal.projectId);
+      if (!project) throw new Error("Project not found.");
+      requireOwnedProject(project.clientId, ctx.user.id);
+      await setMarketplaceProposalStatus(proposal.id, "accepted");
+      await setMarketplaceProjectStatus(project.id, "closed");
+      return { success: true };
+    }),
+    completeProposal: protectedProcedure.input(z.object({ proposalId: z.number().int().positive() })).mutation(async ({ ctx, input }) => {
+      requireMarketplaceRole(ctx.user.role, "client");
+      const proposal = await getMarketplaceProposal(input.proposalId);
+      if (!proposal) throw new Error("Proposal not found.");
+      const project = await getMarketplaceProject(proposal.projectId);
+      if (!project) throw new Error("Project not found.");
+      requireOwnedProject(project.clientId, ctx.user.id);
+      if (proposal.status !== "accepted") throw new Error("Only accepted proposals can be marked complete.");
+      await setMarketplaceProposalStatus(proposal.id, "completed");
+      await setMarketplaceProjectStatus(project.id, "completed");
+      return { success: true };
+    }),
+    submitVerifiedReview: protectedProcedure.input(z.object({ proposalId: z.number().int().positive(), rating: z.number().int().min(1).max(5), feedback: z.string().trim().min(20).max(2000) })).mutation(async ({ ctx, input }) => {
+      requireMarketplaceRole(ctx.user.role, "client");
+      const proposal = await getMarketplaceProposal(input.proposalId);
+      if (!proposal) throw new Error("Proposal not found.");
+      const project = await getMarketplaceProject(proposal.projectId);
+      if (!project) throw new Error("Project not found.");
+      requireOwnedProject(project.clientId, ctx.user.id);
+      requireCompletedEngagement(proposal.status);
+      if (await getMarketplaceReviewForProposal(proposal.id)) throw new Error("A verified review has already been submitted for this engagement.");
+      return createMarketplaceReview({ projectId: project.id, proposalId: proposal.id, clientId: ctx.user.id, freelancerId: proposal.freelancerId, rating: input.rating, feedback: input.feedback });
+    }),
+    listMyFreelancerReviews: protectedProcedure.query(({ ctx }) => {
+      requireMarketplaceRole(ctx.user.role, "freelancer");
+      return listFreelancerMarketplaceReviews(ctx.user.id);
+    }),
   }),
 
   // TODO: add feature routers here, e.g.
