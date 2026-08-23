@@ -6,7 +6,7 @@
 | --- | --- | --- |
 | Public GitHub repository | Complete | [github.com/anon-443/project-rely](https://github.com/anon-443/project-rely) |
 | Repository name and description | Complete | GitHub repository header and About panel |
-| GitHub Pages static demo | Complete after the current workflow finishes | [anon-443.github.io/project-rely](https://anon-443.github.io/project-rely/) |
+| GitHub Pages static demo | Complete | [anon-443.github.io/project-rely](https://anon-443.github.io/project-rely/) |
 | Managed full-stack application | Complete | [orbitfolio-fbbkuhat.manus.space](https://orbitfolio-fbbkuhat.manus.space) |
 | MySQL-backed marketplace records | Complete | Client and freelancer protected workspaces |
 | Client/freelancer role access | Complete | Account role selection and protected workspace routes |

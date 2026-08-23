@@ -16,6 +16,8 @@ Project Rely is a portfolio-grade marketplace application inspired by real freel
 
 The product uses the **Atelier Ledger / Night Ledger** visual system: editorial typography, clear operational states, responsive layouts, and restrained interaction design.
 
+![Project Rely marketplace preview](https://orbitfolio-fbbkuhat.manus.space/manus-storage/project-rely-marketplace-preview_a5f8b99a.png)
+
 ## Completed features
 
 | Area | Implemented capability |
@@ -75,6 +77,17 @@ pnpm github-pages:build
 
 Do not commit `.env` files, database URLs, OAuth secrets, API keys, session cookies, or personal access tokens.
 
+### Database setup
+
+The managed deployment already provides the required database and OAuth configuration. For a local full-stack run, add your own environment values outside version control, then generate and apply the schema migration:
+
+```bash
+pnpm drizzle-kit generate
+pnpm db:push
+```
+
+The marketplace schema includes user roles plus persistent `marketplace_projects`, `marketplace_proposals`, and `marketplace_reviews` records.
+
 ## Deployment
 
 ### GitHub Pages demo
@@ -98,6 +111,10 @@ See the repository’s [final deployment checklist](docs/FINAL_DEPLOYMENT_CHECKL
 | Client | Post persistent briefs, review proposals, accept work, complete engagements, submit verified reviews |
 | Freelancer | Browse live briefs, submit proposals, track submissions, manage portfolio evidence, view verified reviews |
 | Administrator | Separate protected administration state; not implicitly granted client or freelancer actions |
+
+## Portfolio review guide
+
+Start with the **GitHub Pages demo** to evaluate visual design and responsiveness. Then open the **full application** to assess OAuth, role-aware client/freelancer workspaces, and database-backed marketplace workflows. The source code is organized so reviewers can trace the persistent model through `drizzle/schema.ts`, `server/db.ts`, `server/routers.ts`, and the protected workspace pages.
 
 ## Project structure
 
