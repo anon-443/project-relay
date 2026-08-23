@@ -164,3 +164,7 @@
 - [x] Implement authenticated, role-aware project posting, proposals, and verified review workflows backed by the database.
 - [x] Verify persistence, authorization, protected-route presentation, and the updated 34-test suite before saving and synchronizing the release.
 - [x] Save and synchronize the persistent-marketplace release.
+- [x] Inspect the current repository metadata, GitHub Pages configuration, README, and public link references.
+- [x] Rename the public repository and GitHub Pages base from project-relay to project-rely, then update application and workflow references.
+- [x] Refresh the public repository description and README to document the completed persistent marketplace features and deployment paths.
+- [x] Verify source configuration and GitHub Pages artifact under project-rely, then save and synchronize the final repository-presentation release.

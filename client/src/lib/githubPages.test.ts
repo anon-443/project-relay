@@ -3,7 +3,7 @@ import { githubPagesAsset, githubPagesConfig } from "./githubPages";
 
 describe("GitHub Pages static-demo configuration", () => {
   it("uses the expected public GitHub Pages path", () => {
-    expect(githubPagesConfig.pagesUrl).toBe("https://anon-443.github.io/project-relay/");
+    expect(githubPagesConfig.pagesUrl).toBe("https://anon-443.github.io/project-rely/");
   });
 
   it("resolves portfolio artwork through the hosted application", () => {

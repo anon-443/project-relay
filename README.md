@@ -1,138 +1,114 @@
-# Project Relay
+# Project Rely
 
-> **A full-stack freelance marketplace concept for thoughtful teams and independent specialists.**
+> **A full-stack freelancing marketplace for clear briefs, capable specialists, and accountable collaboration.**
 
-Project Relay is a portfolio-grade web application that turns freelance discovery into a structured, credible workflow. Clients can publish detailed briefs, manage proposal activity, and communicate with specialists. Freelancers can curate portfolio evidence, receive AI-assisted skill suggestions, track work performance, and manage their professional presence through an editorial interface.
+## Live links
 
-## Why this project
+| Destination | Link | Purpose |
+| --- | --- | --- |
+| Public source repository | [github.com/anon-443/project-rely](https://github.com/anon-443/project-rely) | Source code, documentation, and GitHub Actions history |
+| GitHub Pages portfolio demo | [anon-443.github.io/project-rely](https://anon-443.github.io/project-rely/) | Public static showcase of the visual product experience |
+| Full application | [orbitfolio-fbbkuhat.manus.space](https://orbitfolio-fbbkuhat.manus.space) | Server-backed marketplace with OAuth, database, and role-aware workspaces |
 
-Most freelance marketplaces prioritize volume over decision quality. Project Relay explores a more deliberate product model: briefs carry clear scope and constraints, proposals live beside context, and freelancer evidence is structured as a dossier rather than a generic profile card.
+## Overview
 
-The application was designed and built to demonstrate product thinking, responsive frontend engineering, server-side AI integration, role-aware access control, and a considered visual system.
+Project Rely is a portfolio-grade marketplace application inspired by real freelance workflows. It helps clients post detailed work opportunities and manage incoming proposals, while freelancers can discover live briefs, submit thoughtful proposals, maintain portfolio evidence, and earn verified feedback only after completed engagements.
 
-## Highlights
+The product uses the **Atelier Ledger / Night Ledger** visual system: editorial typography, clear operational states, responsive layouts, and restrained interaction design.
 
-| Product area | Included capability |
+## Completed features
+
+| Area | Implemented capability |
 | --- | --- |
-| Marketplace discovery | Searchable project briefs, specialist profiles, portfolio filtering, sorting, saved briefs, and shareable dossier URLs. |
-| Client workflow | Multi-step project posting with validation, AI-assisted brief writing, preview, and submission feedback. |
-| Freelancer workflow | Drag-and-drop portfolio workbench, local file previews, AI skill suggestions, performance metrics, proposals, and active-project ledgers. |
-| Communication | Attachment previews, typing feedback, read receipts, message notifications, and notification preferences. |
-| Account security | OAuth sessions, first-login role selection, server-enforced client/freelancer workspaces, protected procedures, and denied-role states. |
-| Design system | Responsive **Atelier Ledger** interface, persistent **Night Ledger** dark mode, accessible controls, and reduced-motion support. |
+| Marketplace discovery | Searchable project briefs, category and budget filters, specialist skill and experience filtering, saved briefs, and responsive discovery views |
+| Client workflow | Multi-step posting with validation, AI-assisted brief writing, database-backed project publishing, incoming proposal review, acceptance, completion, and verified-review submission |
+| Freelancer workflow | Protected freelancer workspace, live open-project discovery, persistent proposal submission/history, portfolio workbench, AI skill suggestions, and verified-review visibility |
+| Trust model | Reviews cannot be seeded or fabricated; a client can submit one verified review only after completing an accepted marketplace engagement |
+| Communication | Conversation mockup, typing state, read receipts, attachment preview for selected files, notifications, and preference controls |
+| Roles and security | OAuth authentication, first-login client/freelancer role choice, protected routes, server-enforced procedures, and denied-role states |
+| Preferences | Persistent dark mode, saved briefs, notification preferences, and dashboard sidebar state through browser storage |
+| Responsive design | Purposeful desktop, tablet, and mobile layouts verified across marketplace and protected workspace routes |
 
 ## Technology
 
 | Layer | Tools |
 | --- | --- |
 | Frontend | React 19, TypeScript, Vite, Wouter, Framer Motion, Recharts |
-| UI foundation | Tailwind CSS, shadcn/ui, Lucide icons, custom responsive CSS |
-| Backend | Express, tRPC, Zod, server-side built-in LLM integration |
-| Data and auth | Drizzle ORM, MySQL/TiDB, OAuth sessions, role-aware procedures |
-| Quality | Vitest, TypeScript checking, production build validation |
+| UI | Tailwind CSS 4, shadcn/ui, Lucide icons, custom responsive CSS |
+| Backend | Express, tRPC, Zod, server-side AI helpers |
+| Data and auth | Drizzle ORM, MySQL/TiDB, OAuth sessions, protected role-aware procedures |
+| Quality | Vitest, TypeScript checks, managed production build, GitHub Pages build |
 
-## Architecture
+## Persistent marketplace model
 
 ```mermaid
 flowchart LR
-  Browser[React client] -->|typed calls| TRPC[tRPC router]
-  TRPC --> Auth[OAuth session context]
-  TRPC --> Roles[Server-side role checks]
-  TRPC --> DB[(MySQL / TiDB)]
-  TRPC --> AI[Server-side AI helpers]
-  Browser --> UI[Atelier Ledger + Night Ledger UI]
+  Client[Authenticated client] -->|posts| Project[(Marketplace project)]
+  Freelancer[Authenticated freelancer] -->|submits| Proposal[(Proposal)]
+  Project --> Proposal
+  Client -->|accepts and completes| Proposal
+  Proposal -->|eligible after completion| Review[(Verified review)]
+  Review --> Freelancer
 ```
 
-## Key technical decisions
+Client accounts can manage only their own projects and proposals. Freelancer accounts can propose only to open projects they do not own. A verified review requires the project owner, an accepted proposal, and a completed engagement.
 
-**Server-side role enforcement.** A new authenticated account begins as an unassigned user and is directed to choose either a client or freelancer role. Role-sensitive workspaces use protected server procedures; the browser only reflects permission decisions made on the server.
-
-**AI without browser secrets.** AI-assisted project descriptions and skill tags are generated through server-side procedures, which keeps provider credentials out of the client bundle.
-
-**Shareable portfolio evidence.** Portfolio filter and sort settings are encoded in the URL, allowing a client to share a specific curated view of a freelancer dossier.
-
-**Honest feedback design.** The profile supports a verified-review framework but contains no fabricated reviews, ratings, or testimonials.
-
-## Local development
+## Run locally
 
 ### Prerequisites
 
 - Node.js 22+
 - pnpm 10+
-- A MySQL-compatible database for persistence
-- OAuth and server-side AI environment configuration from your chosen hosting platform
+- A MySQL-compatible database
+- OAuth and server-side environment configuration for the full application
 
-### Run locally
+### Commands
 
 ```bash
 pnpm install
 pnpm dev
+pnpm check
+pnpm test
+pnpm build
+pnpm github-pages:build
 ```
 
-### Quality checks
+Do not commit `.env` files, database URLs, OAuth secrets, API keys, session cookies, or personal access tokens.
 
-```bash
-pnpm check     # TypeScript validation
-pnpm test      # Unit tests
-pnpm build     # Production client and server build
-```
+## Deployment
 
-> Do not commit `.env` files, database URLs, OAuth secrets, API keys, session cookies, or personal access tokens. Configure secrets in your deployment platform or GitHub repository settings instead.
+### GitHub Pages demo
+
+1. Open [https://anon-443.github.io/project-rely/](https://anon-443.github.io/project-rely/).
+2. If the link was just updated, wait briefly for the **Deploy GitHub Pages** workflow on the repository’s **Actions** tab to finish.
+3. Use this link for LinkedIn, portfolio sharing, and reviewers who need a public visual demo.
+
+GitHub Pages hosts the static portfolio presentation. It cannot run OAuth, server AI, or the MySQL-backed project/proposal/review flows.
+
+### Full application
+
+Use [the managed full application](https://orbitfolio-fbbkuhat.manus.space) for role-based login, persistent marketplace records, and verified reviews. **Vercel is not required** for this project: the managed deployment already hosts the Node server and database-connected functionality.
+
+See the repository’s [final deployment checklist](docs/FINAL_DEPLOYMENT_CHECKLIST.md) for the handoff steps.
+
+## Account roles
+
+| Role | Access |
+| --- | --- |
+| Client | Post persistent briefs, review proposals, accept work, complete engagements, submit verified reviews |
+| Freelancer | Browse live briefs, submit proposals, track submissions, manage portfolio evidence, view verified reviews |
+| Administrator | Separate protected administration state; not implicitly granted client or freelancer actions |
 
 ## Project structure
 
 ```text
-client/
-  src/pages/         Product routes: marketplace, dossier, workbench, dashboard, settings
-  src/components/    Shared controls: notifications, chat, theme, account access
-  src/lib/           Tested client-side state and formatting helpers
-server/
-  routers.ts         Typed tRPC contracts and protected role procedures
-  db.ts              Database helpers
-  *_*.ts             AI helpers and role access logic
-drizzle/             Schema definitions and migrations
-docs/                Domain and GitHub handoff notes
+client/src/         React pages, components, responsive UI, and browser preferences
+server/             tRPC procedures, authorization rules, and database helpers
+drizzle/             MySQL schema and migrations
+docs/                deployment, design, and validation documentation
+.github/workflows/  GitHub Pages deployment workflow
 ```
-
-## Account roles
-
-| Role | Protected access |
-| --- | --- |
-| Client | Client workspace, project posting, proposal review |
-| Freelancer | Portfolio workbench, freelancer dashboard, opportunity workflow |
-| Administrator | Separate protected administrative state; no client or freelancer workspace is assumed |
-
-## Deployment notes
-
-This repository is a **full-stack** application. It needs hosting that supports a Node server, OAuth callbacks, database connectivity, and server-side AI requests. A static host such as GitHub Pages can present a static showcase, but it cannot run the complete application unchanged.
-
-For a branded production URL, bind a custom domain through the hosting provider’s domain panel after registering the domain. See [the custom domain and GitHub handoff guide](docs/CUSTOM_DOMAIN_AND_GITHUB.md) for the DNS checklist.
-
-## Exporting to GitHub
-
-1. In the project management area, open **Settings → GitHub**.
-2. Select your GitHub account or organization, then enter a repository name such as `project-relay-marketplace`.
-3. Export the repository and set it to **Public** if it is intended for portfolio review.
-4. In GitHub, add this repository description:
-
-   > Full-stack freelance marketplace with AI-assisted briefs, secure role-aware onboarding, and responsive freelancer tooling.
-
-5. Add topics such as `react`, `typescript`, `trpc`, `marketplace`, `freelance`, `ai`, `oauth`, and `portfolio`.
-6. Add two to four screenshots: marketplace discovery, project posting, freelancer dossier/workbench, and Night Ledger dashboard.
-
-## Portfolio talking points
-
-When presenting the project, lead with the product problem and then the engineering decisions:
-
-- I designed a focused freelance marketplace that prioritizes brief clarity and portfolio evidence.
-- I implemented protected client and freelancer role flows with server-side authorization checks.
-- I integrated server-side AI assistance for project briefs and skill-tag suggestions.
-- I built responsive discovery, communication, analytics, portfolio-management, and dark-mode experiences.
-
-## Documentation
-
-- [Custom domain and GitHub handoff](docs/CUSTOM_DOMAIN_AND_GITHUB.md)
 
 ---
 
-Built as a portfolio project to demonstrate end-to-end product design and full-stack TypeScript development.
+Built as a portfolio project demonstrating product design, responsive frontend engineering, secure role-aware full-stack development, and practical marketplace workflows.

@@ -1,6 +1,6 @@
 # GitHub Pages Static Demo
 
-The repository includes a dedicated static portfolio build for GitHub Pages at `https://anon-443.github.io/project-relay/`. It demonstrates the Project Relay marketplace’s visual system, representative briefs, talent directory, and product positioning without attempting to replicate server-backed behavior in a static host.
+The repository includes a dedicated static portfolio build for GitHub Pages at `https://anon-443.github.io/project-rely/`. It demonstrates the Project Rely marketplace’s visual system, representative briefs, talent directory, and product positioning without attempting to replicate server-backed behavior in a static host.
 
 | Capability | GitHub Pages demo | Managed full application |
 | --- | --- | --- |
@@ -13,8 +13,8 @@ The `deploy-github-pages.yml` workflow builds the separate `github-pages.html` e
 
 ## Local Artifact Verification
 
-The static build was checked at the intended `/project-relay/` subpath before publication. The root `index.html` entry, repository-relative JavaScript and CSS paths, hosted editorial imagery, navigation anchors, source link, and full-application handoff all loaded successfully in a browser preview.
+The static build is configured for the intended `/project-rely/` subpath. The root `index.html` entry, repository-relative JavaScript and CSS paths, hosted editorial imagery, navigation anchors, source link, and full-application handoff are validated in the GitHub Pages build.
 
 ## Public Deployment Verification
 
-The GitHub Actions deployment completed successfully and the public static demo was verified at `https://anon-443.github.io/project-relay/`. The deployed page rendered the Project Relay hero, discipline ledger, project briefs, specialist directory, editorial imagery, repository source link, and full hosted-application handoff.
+After the renamed repository workflow completes, the public static demo is available at `https://anon-443.github.io/project-rely/`. The deployed page renders the Project Rely hero, discipline ledger, project briefs, specialist directory, editorial imagery, repository source link, and full hosted-application handoff.
