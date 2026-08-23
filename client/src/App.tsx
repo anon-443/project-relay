@@ -5,7 +5,6 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { AccountAccess } from "@/components/AccountAccess";
 import { RoleGate } from "@/components/RoleGate";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch, useLocation } from "wouter";
@@ -46,7 +45,7 @@ function AppContent() {
   const { user, loading } = useAuth();
   useEffect(() => { if (!loading && user?.role === "user" && location !== "/account/role") setLocation("/account/role"); }, [loading, location, setLocation, user?.role]);
   const needsThemeDock = location === "/freelancer/mira-nori" || location === "/settings/notifications";
-  return <TooltipProvider><Toaster theme={theme} position="bottom-right" />{needsThemeDock && <div className="route-theme-dock"><ThemeToggle /></div>}<div className="account-access-dock"><AccountAccess /></div><Router /></TooltipProvider>;
+  return <TooltipProvider><Toaster theme={theme} position="bottom-right" />{needsThemeDock && <div className="route-theme-dock"><ThemeToggle /></div>}<Router /></TooltipProvider>;
 }
 
 function App() {

@@ -72,7 +72,14 @@
 - [x] Complete the GitHub repository export and public-link handoff guidance for the selected deployment path.
 - [x] Refine the Project Relay README into a concise professional portfolio repository document.
 - [x] Verify repository files and source-export readiness before the GitHub handoff.
-- [x] Provide exact source export and new public GitHub repository publishing steps.
+- [ ] Provide exact source export and new public GitHub repository publishing steps.
+- [x] Correct the desktop header overlap and establish resilient navigation spacing.
+- [x] Increase small text sizes and improve text contrast across the homepage for professional readability.
+- [x] Refine hero copy, visual balance, and overlay placement while retaining the Atelier Ledger aesthetic.
+- [x] Verify the updated homepage at desktop and mobile breakpoints.
+- [x] Strengthen Night Ledger contrast on the pale closing sheet and raise compact header metadata to a comfortable professional reading size.
+- [x] Raise mobile hero microcopy and visual-overlay label sizes to prevent the first screen from feeling overly small.
+- [x] Save the visual-polish checkpoint.
 - [x] Save the custom-domain, access-control, and repository-readiness checkpoint.
 - [x] Automatically direct authenticated but unassigned accounts to role selection before role-specific workspaces are accessible.
 - [x] Gate client and freelancer workspaces with role-aware route protection and clear denied-role states.
