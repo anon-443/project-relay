@@ -114,4 +114,4 @@
 - [x] Keep the desktop discipline heading and craft labels on one line where space allows, with responsive fallbacks for small screens.
 - [x] Finish the compact-copy punctuation cleanup across all remaining public homepage headings and short support lines, then mirror it in the GitHub Pages demo where applicable.
 - [x] Re-run desktop and mobile verification after the final public-copy cleanup; retain the completed type, test, and build evidence.
-- [ ] Save and synchronize the layout-cleanup release.
+- [x] Save and synchronize the layout-cleanup release.
