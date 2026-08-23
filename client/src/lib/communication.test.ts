@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { canSendMessage, createOutgoingMessage, markOutgoingMessagesRead } from "./communication";
+import { canSendMessage, createFilePreview, createOutgoingMessage, markOutgoingMessagesRead } from "./communication";
 
 describe("marketplace communication helpers", () => {
   it("creates an attachment-only message with a meaningful fallback body", () => {
@@ -20,5 +20,9 @@ describe("marketplace communication helpers", () => {
     expect(canSendMessage("  ", null)).toBe(false);
     expect(canSendMessage("A project update", null)).toBe(true);
     expect(canSendMessage("", "brief.pdf")).toBe(true);
+  });
+
+  it("creates useful pre-send metadata for an attached image", () => {
+    expect(createFilePreview({ name: "prototype.png", size: 1536, type: "image/png" })).toEqual({ name: "prototype.png", typeLabel: "PNG", sizeLabel: "2 KB", isImage: true });
   });
 });

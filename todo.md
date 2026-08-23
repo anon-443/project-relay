@@ -31,3 +31,10 @@
 - [x] Expose the notification trigger in the mobile header and re-verify the opened alert ledger at phone size.
 - [x] Correct the mobile notification popover anchor to keep the full alert ledger within the viewport.
 - [x] Capture and review the opened mobile navigation with the profile entry before saving the enhancement checkpoint.
+- [x] Add client-friendly portfolio filtering and sorting controls to the freelancer profile.
+- [x] Add notification filtering for unread versus all activity while retaining the mark-all-as-read control.
+- [x] Add a functional pre-send file preview with name, type, size, and removal control in chat.
+- [x] Add and run targeted unit tests for filtering, alert management, and file preview helpers.
+- [x] Verify the enhanced profile, notification, and attachment flows at desktop and mobile sizes.
+- [x] Save the browse, alerts, and attachment-preview enhancement checkpoint.
+- [x] Capture and review the chat file preview at mobile size, including its filename, type, size, and remove action.

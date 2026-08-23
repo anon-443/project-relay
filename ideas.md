@@ -96,3 +96,9 @@ Notifications adopt a compact **ledger alert** treatment. Brass dots and numbere
 ### Profile evidence refinements
 
 The freelancer dossier now requires **credible work artifacts** rather than abstract color swatches: desaturated product interface crops, process sketches, and studio documentation treated like exhibits in a professional file. The Project Relay mark is kept in the restrained charcoal/brass treatment, while circular brass workshop stamps and numbered dossier labels recur across profile status, portfolio entries, and conversation panels. Brass remains the only momentum color.
+
+## Discovery & Attachment Controls
+
+Portfolio browsing uses a slim **evidence index** above the work cards: one compact category selector and one sort control, rather than a heavy filter sidebar. The result count stays visible so clients can understand the scope of the dossier at a glance. Notifications gain an **all / unread** ledger switch while preserving the batch read action only when it has work to do.
+
+The chat attachment experience becomes a compact **file slip** before send. It shows a document or image thumbnail, filename, human-readable size, file type, and a removal action. This confirms what will be shared without implying that an attachment has already been uploaded or stored.

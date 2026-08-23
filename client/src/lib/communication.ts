@@ -10,6 +10,19 @@ export type OutgoingMessage = {
   status: "Delivered" | "Read";
 };
 
+export type FilePreview = { name: string; typeLabel: string; sizeLabel: string; isImage: boolean };
+
+export function formatFileSize(bytes: number): string {
+  if (bytes < 1024) return `${bytes} B`;
+  if (bytes < 1024 * 1024) return `${Math.round(bytes / 1024)} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+}
+
+export function createFilePreview(file: { name: string; size: number; type: string }): FilePreview {
+  const inferredType = file.type || file.name.split(".").pop()?.toUpperCase() || "FILE";
+  return { name: file.name, typeLabel: inferredType.replace("application/", "").replace("image/", "").toUpperCase(), sizeLabel: formatFileSize(file.size), isImage: file.type.startsWith("image/") };
+}
+
 export function createOutgoingMessage(id: number, body: string, attachment: string | null): OutgoingMessage {
   return {
     id,
