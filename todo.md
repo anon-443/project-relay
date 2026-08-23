@@ -101,4 +101,9 @@
 - [x] Conduct and record an independent mobile visual review for the completed precision-sizing pass.
 - [x] Tighten the open-project list scales, rows, tags, and spacing.
 - [x] Run type checks, 29 tests, and the production build for the precision-sizing pass.
-- [ ] Save and synchronize the precision-sizing release.
+- [x] Save and synchronize the precision-sizing release.
+- [x] Define the GitHub Pages static-demo boundary and deployment configuration for `anon-443/project-relay`.
+- [x] Build a GitHub Pages-safe Project Relay portfolio demo with a link to the full hosted app for server-backed functionality.
+- [x] Test the static build and verify the deployment artifact before publication.
+- [ ] Publish and verify the GitHub Pages URL `https://anon-443.github.io/project-relay/`.
+- [ ] Save and synchronize the GitHub Pages release.
