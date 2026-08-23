@@ -93,4 +93,4 @@
 - [x] Verify the target repository `github.com/anon-443/project-relay` and publish the current Project Relay source when authorized.
 - [x] Validate the connected GitHub export path and confirm the published repository contents.
 - [x] Create the public `anon-443/project-relay` repository and publish the verified Project Relay source.
-- [ ] Save and sync the publication record checkpoint to GitHub.
+- [x] Save and sync the publication record checkpoint to GitHub.
