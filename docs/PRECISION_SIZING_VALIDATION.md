@@ -24,3 +24,7 @@ The final focused review reconfirmed the precision pass at **1440 × 1000** and 
 | Visual direction | The review confirms the requested Night Ledger / Atelier Ledger mood, image treatment, restrained brass accent, and serif italic signature remain intact. |
 
 The independent desktop review offered broader brand-system ideas, such as a more ownable mark and additional material differentiation. Those advisory changes were intentionally deferred because this release is limited to the supplied sizing specification and explicitly preserves the current visual direction.
+
+## Independent Mobile Review
+
+An independent visual review was completed after the implementation checkpoint at **390 × 844**. It confirmed that the homepage retains its defined **Atelier Ledger / Night Ledger** expression at the phone breakpoint: the charcoal, brass, slate, editorial headline treatment, numbered ledger rhythm, and restrained imagery remain coherent. The reviewer’s broader proposals around strengthening mineral-paper surfaces and the Project Relay mark are future brand-system enhancements, rather than changes required by this precision-sizing specification. No clipping, collisions, or responsive layout failures were identified in the reviewed phone composition.

@@ -98,7 +98,7 @@
 - [x] Refine hero, discipline-card, and Relay Method sizing while preserving the established visual system.
 - [x] Finish the remaining featured-talent display sizing and intro-image alignment details.
 - [x] Conduct and record a focused desktop visual review for the completed precision-sizing pass.
-- [ ] Conduct and record an independent mobile visual review for the completed precision-sizing pass.
+- [x] Conduct and record an independent mobile visual review for the completed precision-sizing pass.
 - [x] Tighten the open-project list scales, rows, tags, and spacing.
 - [x] Run type checks, 29 tests, and the production build for the precision-sizing pass.
 - [ ] Save and synchronize the precision-sizing release.
