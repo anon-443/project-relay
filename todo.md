@@ -58,3 +58,24 @@
 - [x] Correct dark-mode notification selector contrast and re-check the settings sheet at phone size.
 - [x] Save the workbench, freelancer analytics, and Night Ledger enhancement checkpoint.
 - [x] Extract dashboard metric calculations and add targeted unit tests for proposal, project, and earnings summaries.
+- [x] Extend the authenticated user model with secure client and freelancer roles and a first-login role-selection flow.
+- [x] Add role-aware client and freelancer views with authenticated actions and clear account state.
+- [x] Add role validation and access-control unit tests, then apply the required schema migration safely.
+- [x] Create a portfolio-ready repository README with local setup, feature overview, architecture, and GitHub export steps.
+- [x] Create a custom-domain DNS handoff guide that can be completed once the user supplies the domain and registrar.
+- [x] Verify the authentication flows.
+- [x] Correct the administrator account confirmation action so it does not point to the freelancer workspace.
+- [ ] Map the purchased domain using exact DNS records after the user provides the domain and registrar.
+- [x] Confirm the current GitHub Student Developer Pack domain offer and claim path.
+- [ ] Help select an available Student Pack domain and provide its exact managed-host DNS mapping steps.
+- [x] Document why the current full-stack marketplace cannot run unchanged on GitHub Pages and outline supported public URL options.
+- [x] Complete the GitHub repository export and public-link handoff guidance for the selected deployment path.
+- [x] Refine the Project Relay README into a concise professional portfolio repository document.
+- [x] Verify repository files and source-export readiness before the GitHub handoff.
+- [x] Provide exact source export and new public GitHub repository publishing steps.
+- [x] Save the custom-domain, access-control, and repository-readiness checkpoint.
+- [x] Automatically direct authenticated but unassigned accounts to role selection before role-specific workspaces are accessible.
+- [x] Gate client and freelancer workspaces with role-aware route protection and clear denied-role states.
+- [x] Add direct tRPC tests for role selection and role-protected workspace procedures.
+- [x] Verify login/logout procedure behavior, role selection procedures, unauthorized access, and browser-visible role-gated routes.
+- [x] Add direct auth-state verification for signed-out and authenticated account entry before final checkpoint.

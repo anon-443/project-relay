@@ -1,0 +1,19 @@
+/** Role onboarding uses the existing Manus OAuth session and a protected tRPC mutation—no client-stored permissions. */
+import { ArrowLeft, BriefcaseBusiness, CheckCircle2, ClipboardPlus, ShieldCheck, Sparkles } from "lucide-react";
+import { toast } from "sonner";
+import { useAuth } from "@/_core/hooks/useAuth";
+import { trpc } from "@/lib/trpc";
+import { ThemeToggle } from "@/components/ThemeToggle";
+
+export default function AccountRole() {
+  const { user, loading, isAuthenticated, refresh, logout } = useAuth({ redirectOnUnauthenticated: true });
+  const utils = trpc.useUtils();
+  const selectRole = trpc.account.selectMarketplaceRole.useMutation({ onSuccess: async () => { await utils.auth.me.invalidate(); await refresh(); toast.success("Your marketplace role is ready."); } });
+  const clientWorkspace = trpc.account.clientWorkspace.useQuery(undefined, { enabled: user?.role === "client" });
+  const freelancerWorkspace = trpc.account.freelancerWorkspace.useQuery(undefined, { enabled: user?.role === "freelancer" });
+  if (loading || !isAuthenticated || !user) return <div className="account-page"><div className="account-loading">Preparing your secure account…</div></div>;
+  const isOnboarded = user.role === "client" || user.role === "freelancer" || user.role === "admin";
+  const workspace = user.role === "client" ? clientWorkspace.data : user.role === "freelancer" ? freelancerWorkspace.data : null;
+  const roleAction = user.role === "client" ? { href: "/workspace/client", label: "Open client workspace" } : user.role === "freelancer" ? { href: "/dashboard/freelancer", label: "Open freelancer dashboard" } : { href: "/", label: "Return to marketplace" };
+  return <div className="account-page"><header className="profile-nav"><a href="/" className="relay-brand"><img src="/manus-storage/project-relay-mark_fe132e43.png" alt="Project Relay mark" /><span>PROJECT RELAY</span></a><div className="profile-nav-actions"><ThemeToggle /><button className="profile-back" type="button" onClick={() => logout()}><ArrowLeft size={16} /> Sign out</button></div></header><main className="account-shell"><section className="account-intro"><p className="section-kicker">SECURE ACCOUNT / 09</p><h1>{isOnboarded ? <>Your role is <em>set.</em></> : <>Choose how you will <em>work.</em></>}</h1><p>Signed in as <b>{user.name || user.email || "Project Relay member"}</b>. Your role controls the protected workspace actions available to this account.</p></section>{!isOnboarded ? <section className="role-grid"><button type="button" className="role-card" disabled={selectRole.isPending} onClick={() => selectRole.mutate("client")}><span><ClipboardPlus size={22} /></span><p>CLIENT ROLE</p><h2>Post thoughtful briefs and review specialist proposals.</h2><small>Manage project context, budget, deadlines, and responses.</small></button><button type="button" className="role-card" disabled={selectRole.isPending} onClick={() => selectRole.mutate("freelancer")}><span><BriefcaseBusiness size={22} /></span><p>FREELANCER ROLE</p><h2>Find suitable work and keep your portfolio evidence current.</h2><small>Track proposals, ongoing work, and performance momentum.</small></button></section> : <section className="account-ready-sheet"><span className="account-role-stamp"><ShieldCheck size={22} /></span><p>ROLE CONFIRMED</p><h2>{workspace?.title || "Administrator workspace"}</h2><strong>{workspace?.nextAction || "Administrative access remains protected."}</strong><div><a className="primary-button" href={roleAction.href}>{roleAction.label} <Sparkles size={16} /></a><a className="outline-button" href="/">Back to marketplace</a></div><small><CheckCircle2 size={14} /> Role checked by a protected server procedure</small></section>}</main><footer className="profile-footer">Project Relay · Secure client and freelancer onboarding</footer></div>;
+}

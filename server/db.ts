@@ -89,4 +89,11 @@ export async function getUserByOpenId(openId: string) {
   return result.length > 0 ? result[0] : undefined;
 }
 
+/** Persist an authenticated account's self-selected marketplace role. */
+export async function setMarketplaceRole(userId: number, role: "client" | "freelancer") {
+  const db = await getDb();
+  if (!db) throw new Error("Database is not available. Please try again shortly.");
+  await db.update(users).set({ role }).where(eq(users.id, userId));
+}
+
 // TODO: add feature queries here as your schema grows.

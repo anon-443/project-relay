@@ -1,0 +1,9 @@
+/** The client destination is backed by a protected workspace procedure and is intentionally focused on project posting and proposal review. */
+import { ArrowLeft, ClipboardPlus, MessageSquareText, ShieldCheck } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { trpc } from "@/lib/trpc";
+
+export default function ClientWorkspace() {
+  const workspace = trpc.account.clientWorkspace.useQuery();
+  return <div className="account-page"><header className="profile-nav"><a href="/" className="relay-brand"><img src="/manus-storage/project-relay-mark_fe132e43.png" alt="Project Relay mark" /><span>PROJECT RELAY</span></a><div className="profile-nav-actions"><ThemeToggle /><a className="profile-back" href="/account/role"><ArrowLeft size={16} /> Account</a></div></header><main className="account-shell"><section className="account-intro"><p className="section-kicker">CLIENT WORKSPACE / 10</p><h1>Keep every project decision <em>in view.</em></h1><p>{workspace.data?.nextAction || "Loading your protected client workspace…"}</p></section><section className="role-workspace-grid"><article><ClipboardPlus size={22} /><p>POST A BRIEF</p><h2>Start with scope, budget, and the exact craft you need.</h2><a className="primary-button" href="/?postProject=1">Post a project</a></article><article><MessageSquareText size={22} /><p>REVIEW PROPOSALS</p><h2>Compare replies where the work context and message thread stay together.</h2><a className="outline-button" href="/#dashboard">Open workboard</a></article><article><ShieldCheck size={22} /><p>ROLE CHECK</p><h2>{workspace.data?.title || "Verifying account access"}</h2><span>Available only after the protected client role check succeeds.</span></article></section></main><footer className="profile-footer">Project Relay · Protected client workspace</footer></div>;
+}

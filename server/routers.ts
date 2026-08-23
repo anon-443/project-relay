@@ -3,8 +3,10 @@ import { z } from "zod";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { invokeLLM, listLLMModels } from "./_core/llm";
 import { systemRouter } from "./_core/systemRouter";
-import { publicProcedure, router } from "./_core/trpc";
+import { protectedProcedure, publicProcedure, router } from "./_core/trpc";
+import { setMarketplaceRole } from "./db";
 import { buildProjectDescriptionPrompt, parseGeneratedProjectDescription } from "./projectDescription";
+import { marketplaceRoleSchema, requireMarketplaceRole } from "./roleAccess";
 import { buildSkillTagPrompt, parseGeneratedSkillTags } from "./skillTags";
 
 export const appRouter = router({
@@ -18,6 +20,22 @@ export const appRouter = router({
       return {
         success: true,
       } as const;
+    }),
+  }),
+
+  account: router({
+    selectMarketplaceRole: protectedProcedure.input(marketplaceRoleSchema).mutation(async ({ ctx, input }) => {
+      if (ctx.user.role === "admin") throw new Error("Administrator roles are managed separately and cannot be changed from this screen.");
+      await setMarketplaceRole(ctx.user.id, input);
+      return { role: input };
+    }),
+    clientWorkspace: protectedProcedure.query(({ ctx }) => {
+      requireMarketplaceRole(ctx.user.role, "client");
+      return { role: "client" as const, title: "Client workspace", nextAction: "Post a brief or review incoming proposals." };
+    }),
+    freelancerWorkspace: protectedProcedure.query(({ ctx }) => {
+      requireMarketplaceRole(ctx.user.role, "freelancer");
+      return { role: "freelancer" as const, title: "Freelancer workspace", nextAction: "Review opportunities, proposals, and your performance sheet." };
     }),
   }),
 
