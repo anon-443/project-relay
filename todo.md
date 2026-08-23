@@ -136,3 +136,10 @@
 - [x] Enlarge the featured-talent collage into a stronger landscape image on desktop while preserving mobile behavior.
 - [x] Verify the landscape image composition; type checks, 31 tests, managed build, and GitHub Pages build passed.
 - [x] Save and synchronize the featured-talent landscape-image release.
+- [x] Map the featured-talent specialist-card empty space to active grid and detail selectors.
+- [x] Rebalance work-sample evidence, avatar, profile summary, and skill tags across each specialist-card row.
+- [x] Verify desktop and mobile specialist-card density; type checks, 31 tests, managed build, and GitHub Pages build passed.
+- [x] Save and synchronize the specialist-card density and featured-talent composition release.
+- [x] Map the loose featured-talent left-column composition to active layout rules.
+- [x] Rebalance the featured-talent headline, supporting copy, and enlarged image into a deliberate desktop editorial block.
+- [x] Verify desktop and mobile composition and record the validation result before release synchronization.
