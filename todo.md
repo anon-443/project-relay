@@ -121,4 +121,4 @@
 - [x] Remove the open-project search helper text and reorganize project brief facts toward the left for clearer reading.
 - [x] Reorganize featured-talent card details toward the left and raise small-text contrast across the homepage.
 - [x] Verify desktop and mobile clarity; type checks, 31 tests, managed build, and GitHub Pages build passed.
-- [ ] Save and synchronize the hierarchy-clarity release.
+- [x] Save and synchronize the hierarchy-clarity release.
