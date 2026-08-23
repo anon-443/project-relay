@@ -3,6 +3,8 @@
  * Use mineral surfaces, charcoal structure, slate operational states, and brass only for decisive actions.
  */
 import { trpc } from "@/lib/trpc";
+import { CommunicationPanel } from "@/components/CommunicationPanel";
+import { NotificationCenter, type Notice } from "@/components/NotificationCenter";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowDownRight,
@@ -77,7 +79,7 @@ const starterChat: ChatMessage[] = [
 function scrollTo(id: string) { document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" }); }
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(() => new URLSearchParams(window.location.search).get("previewMenu") === "1");
   const [searchTerm, setSearchTerm] = useState("");
   const [category, setCategory] = useState("All categories");
   const [budget, setBudget] = useState("Any budget");
@@ -96,6 +98,8 @@ export default function Home() {
   const [postedProjects, setPostedProjects] = useState<{ title: string; status: string }[]>([]);
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>(starterChat);
   const [chatDraft, setChatDraft] = useState("");
+  const [notifications, setNotifications] = useState<Notice[]>([]);
+  const notificationPreview = new URLSearchParams(window.location.search).get("previewNotification") === "1";
 
   const descriptionAssistant = trpc.projectAssistant.generateDescription.useMutation({
     onSuccess: (result) => {
@@ -107,6 +111,10 @@ export default function Home() {
   });
 
   useEffect(() => { const persisted = window.localStorage.getItem("relay-saved-projects"); if (persisted) setSaved(JSON.parse(persisted)); }, []);
+  useEffect(() => {
+    if (!notificationPreview) return;
+    setNotifications([{ id: 1, type: "message", title: "New message from Tide & Form", detail: "Mobile checkout redesign", time: "Just now", unread: true }]);
+  }, [notificationPreview]);
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     if (params.get("previewClientPost") !== "1") return;
@@ -147,10 +155,15 @@ export default function Home() {
     setSaved((current) => { const next = current.includes(id) ? current.filter((projectId) => projectId !== id) : [...current, id]; window.localStorage.setItem("relay-saved-projects", JSON.stringify(next)); toast.success(next.includes(id) ? "Project saved to your workboard." : "Project removed from your workboard."); return next; });
   }
 
+  function addNotification(type: Notice["type"], title: string, detail: string) { setNotifications((current) => [{ id: Date.now(), type, title, detail, time: "Just now", unread: true }, ...current]); }
+  function markNotificationRead(id: number) { setNotifications((current) => current.map((notice) => notice.id === id ? { ...notice, unread: false } : notice)); }
+  function markAllNotificationsRead() { setNotifications((current) => current.map((notice) => ({ ...notice, unread: false }))); }
+
   function submitProposal(event: FormEvent<HTMLFormElement>) {
     event.preventDefault(); const form = new FormData(event.currentTarget); const required = ["name", "email", "budget", "message"]; const missing = required.some((field) => !String(form.get(field) || "").trim());
     if (missing) { setFormError("Please add your name, email, expected budget, and a short proposal before sending."); return; }
-    setProposals((current) => [{ title: proposalProject?.title || "Project", status: "Sent for review" }, ...current]); setFormError(""); event.currentTarget.reset(); toast.success("Proposal sent. It now appears in your workboard."); setProposalProject(null);
+    const proposalTitle = proposalProject?.title || "Project";
+    setProposals((current) => [{ title: proposalTitle, status: "Sent for review" }, ...current]); addNotification("proposal", "New proposal activity", proposalTitle); setFormError(""); event.currentTarget.reset(); toast.success("Proposal sent. It now appears in your workboard."); setProposalProject(null);
   }
 
   function updatePost(field: keyof PostForm, value: string) { setPostForm((current) => ({ ...current, [field]: value })); setPostError(""); }
@@ -177,10 +190,10 @@ export default function Home() {
     <div className="relay-app" id="top">
       <header className="relay-header">
         <a href="#top" className="relay-brand" aria-label="Project Relay home"><img src={assets.logo} alt="Project Relay mark" /><span>PROJECT RELAY</span></a>
-        <nav className="relay-nav" aria-label="Primary navigation"><a href="#projects">Find work</a><a href="#talent">Find talent</a><a href="#dashboard">Workboard</a></nav>
-        <div className="header-actions"><button className="header-login" type="button" onClick={() => scrollTo("dashboard")}>My workboard</button><button className="header-cta" type="button" onClick={openPosting}>Post a project <ArrowUpRight size={15} /></button></div>
-        <button className="mobile-menu" type="button" onClick={() => setMenuOpen((open) => !open)} aria-label="Open menu">{menuOpen ? <X size={20} /> : <Menu size={20} />}</button>
-        <AnimatePresence>{menuOpen && <motion.nav className="mobile-nav" initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: .2, ease: easeOut }}><a href="#projects" onClick={() => setMenuOpen(false)}>Find work</a><a href="#talent" onClick={() => setMenuOpen(false)}>Find talent</a><a href="#dashboard" onClick={() => setMenuOpen(false)}>My workboard</a><button onClick={() => { setMenuOpen(false); openPosting(); }}>Post a project <ArrowUpRight size={15} /></button></motion.nav>}</AnimatePresence>
+        <nav className="relay-nav" aria-label="Primary navigation"><a href="#projects">Find work</a><a href="#talent">Find talent</a><a href="/freelancer/mira-nori">Profile</a><a href="#dashboard">Workboard</a></nav>
+        <div className="header-actions"><NotificationCenter onOpenWorkboard={() => scrollTo("dashboard")} notices={notifications} onMarkRead={markNotificationRead} onMarkAllRead={markAllNotificationsRead} defaultOpen={notificationPreview} /><button className="header-login" type="button" onClick={() => scrollTo("dashboard")}>My workboard</button><button className="header-cta" type="button" onClick={openPosting}>Post a project <ArrowUpRight size={15} /></button></div>
+        <div className="mobile-notification"><NotificationCenter onOpenWorkboard={() => scrollTo("dashboard")} notices={notifications} onMarkRead={markNotificationRead} onMarkAllRead={markAllNotificationsRead} defaultOpen={notificationPreview} /></div><button className="mobile-menu" type="button" onClick={() => setMenuOpen((open) => !open)} aria-label="Open menu">{menuOpen ? <X size={20} /> : <Menu size={20} />}</button>
+        <AnimatePresence>{menuOpen && <motion.nav className="mobile-nav" initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: .2, ease: easeOut }}><a href="#projects" onClick={() => setMenuOpen(false)}>Find work</a><a href="#talent" onClick={() => setMenuOpen(false)}>Find talent</a><a href="/freelancer/mira-nori">Profile</a><a href="#dashboard" onClick={() => setMenuOpen(false)}>My workboard</a><button onClick={() => { setMenuOpen(false); openPosting(); }}>Post a project <ArrowUpRight size={15} /></button></motion.nav>}</AnimatePresence>
       </header>
 
       <main>
@@ -196,6 +209,7 @@ export default function Home() {
 
         <section id="dashboard" className="dashboard-section relay-shell" aria-labelledby="dashboard-title"><motion.div className="section-title-row dashboard-heading" {...reveal}><div><p className="section-kicker">04 / YOUR WORKBOARD</p><h2 id="dashboard-title">Keep the next move <em>visible.</em></h2></div><button type="button" className="mini-link" onClick={openPosting}>Post a client brief <ArrowUpRight size={16} /></button></motion.div><motion.div className="dashboard-grid" {...reveal}><article className="dashboard-profile"><div className="profile-avatar">YOU</div><p className="dash-label">YOUR PROFILE</p><h3>Creative specialist</h3><p>Set your availability and keep your strongest work close to the next opportunity.</p><button type="button" onClick={() => toast.message("Profile editing can be connected to your account backend when you are ready.")}>Edit profile <ArrowUpRight size={15} /></button></article><article className="dashboard-card"><div className="dash-title"><span><MessageSquareText size={17} /> PROPOSALS</span><b>{proposals.length}</b></div>{proposals.length ? <div className="dash-items">{proposals.map((proposal, index) => <div key={`${proposal.title}-${index}`}><span>{proposal.title}</span><b>{proposal.status}</b></div>)}</div> : <div className="dash-empty"><Send size={20} /><p>Your sent proposals will appear here.</p></div>}</article><article className="dashboard-card"><div className="dash-title"><span><Heart size={17} /> SAVED BRIEFS</span><b>{saved.length}</b></div>{saved.length ? <div className="dash-items">{projects.filter((project) => saved.includes(project.id)).map((project) => <div key={project.id}><span>{project.title}</span><button type="button" onClick={() => setSelectedProject(project)}>Open</button></div>)}</div> : <div className="dash-empty"><BriefcaseBusiness size={20} /><p>Save briefs to compare them here.</p></div>}</article><article className="dashboard-card status-card"><div className="dash-title"><span><Clock3 size={17} /> PROJECT STATUS</span><span className="status-live"><i /> AVAILABLE</span></div><div className="status-list"><div><span>Profile readiness</span><b><CheckCircle2 size={15} /> Ready</b></div><div><span>Posted projects</span><b>{postedProjects.length ? `${postedProjects.length} active` : "Not started"}</b></div><div><span>Proposal activity</span><b>{proposals.length ? "Active" : "Waiting"}</b></div></div></article><article className="dashboard-chat"><div className="chat-heading"><div><p className="dash-label">CONVERSATION MOCKUP</p><h3><MessageCircle size={17} /> Tide & Form</h3></div><span><i /> Online</span></div><div className="chat-context"><span>Mobile checkout redesign</span><button type="button" onClick={() => setSelectedProject(projects[0])}>Open brief <ArrowUpRight size={13} /></button></div><div className="chat-thread">{chatMessages.map((message) => <div className={`chat-message ${message.mine ? "mine" : ""}`} key={message.id}><span className="chat-avatar">{message.initials}</span><div><p><b>{message.sender}</b><time>{message.time}</time></p><span>{message.body}</span></div></div>)}</div><div className="chat-compose"><input value={chatDraft} onChange={(event) => setChatDraft(event.target.value)} onKeyDown={(event) => { if (event.key === "Enter") sendChat(); }} placeholder="Write a message…" aria-label="Chat message" /><button type="button" onClick={sendChat} aria-label="Send message"><Send size={16} /></button></div></article></motion.div></section>
 
+        <CommunicationPanel onIncomingMessage={() => addNotification("message", "New message from Tide & Form", "Mobile checkout redesign")} />
         <section className="closing-section"><div className="relay-shell closing-wrap"><motion.div {...reveal}><p className="section-kicker">READY WHEN THE BRIEF IS</p><h2>Make the next working relationship a good one.</h2></motion.div><motion.div className="closing-actions" {...reveal} transition={{ ...reveal.transition, delay: .07 }}><button type="button" className="primary-button" onClick={() => scrollTo("projects")}>Find a project <ArrowRight size={18} /></button><button type="button" className="outline-button" onClick={openPosting}>Post a project <Command size={16} /></button></motion.div></div></section>
       </main>
 

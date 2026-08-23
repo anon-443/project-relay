@@ -86,3 +86,13 @@ The new client workflow is treated as a focused studio intake: three steps—pro
 ### Accepted visual-review amendments
 
 Saturated cobalt is retired from all user-interface elements. Slate, charcoal, mineral gray, and restrained brass now form the visible operating palette; the existing mark is deliberately desaturated to integrate with this system. Brass becomes the sole momentum color for primary actions, live availability, workshop stamps, and critical completion states. Numbered ledger labels, small circular brass status marks, and split-sheet card structures are carried through discovery, talent, and the workboard so Project Relay reads as one consistent professional service.
+
+## Profile & Communication Extension
+
+The freelancer profile follows a **dossier** pattern: a disciplined identity header, clearly grouped skills, select portfolio evidence, availability, and a transparent verification area. It avoids generic profile clutter and uses split sheets to distinguish published work from operational information. Because reviews are trust-sensitive user-generated content, the review module is intentionally an empty **verified feedback** framework until authentic reviews are connected; no ratings, review quotes, or testimonials are seeded.
+
+Notifications adopt a compact **ledger alert** treatment. Brass dots and numbered labels mark unread items; each alert links to a clear next action such as opening a conversation or viewing a proposal. The chat panel distinguishes delivery, read state, typing, and attachments through quiet metadata rather than overly animated bubbles. This keeps the interface professional while making the important conversation states immediately scannable.
+
+### Profile evidence refinements
+
+The freelancer dossier now requires **credible work artifacts** rather than abstract color swatches: desaturated product interface crops, process sketches, and studio documentation treated like exhibits in a professional file. The Project Relay mark is kept in the restrained charcoal/brass treatment, while circular brass workshop stamps and numbered dossier labels recur across profile status, portfolio entries, and conversation panels. Brass remains the only momentum color.

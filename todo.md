@@ -19,3 +19,15 @@
 - [x] Save the enhanced delivery checkpoint.
 - [x] Capture and review the enhanced mobile layout, including the new client intake, chat mockup, and professional palette.
 - [x] Capture and review the mobile client posting modal at foundation, AI-writing, and preview stages.
+- [x] Add a dedicated freelancer profile view with portfolio, skills, availability, and a verified-review framework without seeded review content.
+- [x] Add an in-app notification center for message and proposal activity, with unread state and clear actions.
+- [x] Enhance workboard chat with typing indicators, read receipts, attachment chips, and file-selection feedback.
+- [x] Add profile navigation and responsive layouts for the new marketplace views.
+- [x] Verify the profile, notification, and communication flows.
+- [x] Save the profile and communications enhancement checkpoint.
+- [x] Wire unread notifications to new proposal and chat-message events, including direct workboard actions.
+- [x] Add the freelancer profile route to mobile navigation and re-check responsive navigation.
+- [x] Capture and review the opened notification panel after event integration at desktop and mobile sizes.
+- [x] Expose the notification trigger in the mobile header and re-verify the opened alert ledger at phone size.
+- [x] Correct the mobile notification popover anchor to keep the full alert ledger within the viewport.
+- [x] Capture and review the opened mobile navigation with the profile entry before saving the enhancement checkpoint.
