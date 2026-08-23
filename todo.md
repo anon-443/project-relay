@@ -109,3 +109,9 @@
 - [x] Save and synchronize the GitHub Pages release.
 - [x] Restore the managed development preview after the GitHub Pages build configuration changed Vite’s default export shape.
 - [x] Correct the GitHub Pages workflow’s pnpm version conflict and rerun the static deployment.
+- [x] Map the reported hero whitespace, discipline-heading wrapping, craft-label wrapping, and compact-copy punctuation to active homepage code.
+- [x] Move the homepage hero content and image upward while removing unnecessary vertical gaps across the landing page.
+- [x] Keep the desktop discipline heading and craft labels on one line where space allows, with responsive fallbacks for small screens.
+- [x] Finish the compact-copy punctuation cleanup across all remaining public homepage headings and short support lines, then mirror it in the GitHub Pages demo where applicable.
+- [x] Re-run desktop and mobile verification after the final public-copy cleanup; retain the completed type, test, and build evidence.
+- [ ] Save and synchronize the layout-cleanup release.
