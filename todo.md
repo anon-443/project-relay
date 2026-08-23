@@ -132,4 +132,4 @@
 - [x] Move featured-talent work-sample evidence into the left column and remove the unused gap on desktop.
 - [x] Keep the footer statement on one line at desktop size with a safe mobile wrap.
 - [x] Verify the desktop and mobile alignment; type checks, 31 tests, managed build, and GitHub Pages build passed.
-- [ ] Save and synchronize the featured-talent alignment release.
+- [x] Save and synchronize the featured-talent alignment release.
