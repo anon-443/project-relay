@@ -105,7 +105,7 @@
 - [x] Define the GitHub Pages static-demo boundary and deployment configuration for `anon-443/project-relay`.
 - [x] Build a GitHub Pages-safe Project Relay portfolio demo with a link to the full hosted app for server-backed functionality.
 - [x] Revalidate the static build and deployment artifact after the Vite configuration recovery.
-- [ ] Publish and verify the GitHub Pages URL `https://anon-443.github.io/project-relay/`.
+- [x] Publish and verify the GitHub Pages URL `https://anon-443.github.io/project-relay/`.
 - [ ] Save and synchronize the GitHub Pages release.
 - [x] Restore the managed development preview after the GitHub Pages build configuration changed Vite’s default export shape.
-- [ ] Correct the GitHub Pages workflow’s pnpm version conflict and rerun the static deployment.
+- [x] Correct the GitHub Pages workflow’s pnpm version conflict and rerun the static deployment.

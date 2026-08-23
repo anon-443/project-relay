@@ -14,3 +14,7 @@ The `deploy-github-pages.yml` workflow builds the separate `github-pages.html` e
 ## Local Artifact Verification
 
 The static build was checked at the intended `/project-relay/` subpath before publication. The root `index.html` entry, repository-relative JavaScript and CSS paths, hosted editorial imagery, navigation anchors, source link, and full-application handoff all loaded successfully in a browser preview.
+
+## Public Deployment Verification
+
+The GitHub Actions deployment completed successfully and the public static demo was verified at `https://anon-443.github.io/project-relay/`. The deployed page rendered the Project Relay hero, discipline ledger, project briefs, specialist directory, editorial imagery, repository source link, and full hosted-application handoff.
