@@ -143,3 +143,7 @@
 - [x] Map the loose featured-talent left-column composition to active layout rules.
 - [x] Rebalance the featured-talent headline, supporting copy, and enlarged image into a deliberate desktop editorial block.
 - [x] Verify desktop and mobile composition and record the validation result before release synchronization.
+- [x] Map compact brief-filter, project-status, and footer text and symbol selectors to the active homepage styles.
+- [x] Increase operational type and symbol prominence while maintaining the Atelier Ledger hierarchy and responsive fit.
+- [x] Verify the typography-prominence update at desktop and phone breakpoints; type checks, 31 tests, managed build, and GitHub Pages build passed.
+- [x] Save and synchronize the typography-prominence release.
