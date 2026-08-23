@@ -38,3 +38,14 @@
 - [x] Verify the enhanced profile, notification, and attachment flows at desktop and mobile sizes.
 - [x] Save the browse, alerts, and attachment-preview enhancement checkpoint.
 - [x] Capture and review the chat file preview at mobile size, including its filename, type, size, and remove action.
+- [x] Add an in-app notification settings panel for proposal, message, and system alert preferences.
+- [x] Persist freelancer portfolio filter and sort selections in shareable URL query parameters.
+- [x] Add an AI-backed skill-tag generator that derives suggestions from selected portfolio evidence.
+- [x] Add and run targeted unit tests for URL filter state, preference helpers, and AI skill-tag validation.
+- [x] Verify the preference, shareable portfolio, and AI skill flows at desktop and mobile sizes.
+- [x] Apply saved proposal and message preferences when creating marketplace notification events.
+- [x] Save the settings, shareable portfolio, and AI skill-assistant enhancement checkpoint.
+- [x] Capture and review the AI skill-tag assistant’s loading, suggestion, add-tag, and failure states at desktop and mobile sizes.
+- [x] Capture and review the AI skill assistant loading state at mobile size.
+- [x] Verify suggested tags can be added to the main skill list and removed from the suggestion list at desktop and mobile sizes.
+- [x] Capture the accepted-tag state after the profile interaction transition at desktop and mobile sizes.

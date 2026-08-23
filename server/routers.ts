@@ -5,6 +5,7 @@ import { invokeLLM, listLLMModels } from "./_core/llm";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, router } from "./_core/trpc";
 import { buildProjectDescriptionPrompt, parseGeneratedProjectDescription } from "./projectDescription";
+import { buildSkillTagPrompt, parseGeneratedSkillTags } from "./skillTags";
 
 export const appRouter = router({
     // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
@@ -61,6 +62,24 @@ export const appRouter = router({
         const content = response.choices[0]?.message.content;
         if (typeof content !== "string") throw new Error("The AI assistant did not return a usable description. Please try again.");
         return parseGeneratedProjectDescription(content);
+      }),
+  }),
+
+  profileAssistant: router({
+    generateSkillTags: publicProcedure
+      .input(z.object({ evidence: z.array(z.object({ title: z.string().trim().min(3).max(120), type: z.string().trim().min(2).max(80), detail: z.string().trim().min(12).max(600) })).min(1).max(8) }))
+      .mutation(async ({ input }) => {
+        const { data: models } = await listLLMModels();
+        const model = models.find((candidate) => candidate.id === "gpt-5-mini")?.id ?? models[0]?.id;
+        if (!model) throw new Error("No AI model is currently available. Please try again shortly.");
+        const response = await invokeLLM({
+          model,
+          messages: [{ role: "system", content: "You are a careful portfolio analyst. Return JSON only, matching the requested schema." }, { role: "user", content: buildSkillTagPrompt(input.evidence) }],
+          response_format: { type: "json_schema", json_schema: { name: "profile_skill_tags", strict: true, schema: { type: "object", properties: { tags: { type: "array", items: { type: "string" } } }, required: ["tags"], additionalProperties: false } } },
+        });
+        const content = response.choices[0]?.message.content;
+        if (typeof content !== "string") throw new Error("The AI assistant did not return usable skill tags. Please try again.");
+        return parseGeneratedSkillTags(content);
       }),
   }),
 

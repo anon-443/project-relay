@@ -10,6 +10,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import FreelancerProfile from "./pages/FreelancerProfile";
 import Home from "./pages/Home";
+import NotificationSettings from "./pages/NotificationSettings";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -17,6 +18,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/freelancer/mira-nori" component={FreelancerProfile} />
+      <Route path="/settings/notifications" component={NotificationSettings} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

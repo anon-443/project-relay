@@ -102,3 +102,9 @@ The freelancer dossier now requires **credible work artifacts** rather than abst
 Portfolio browsing uses a slim **evidence index** above the work cards: one compact category selector and one sort control, rather than a heavy filter sidebar. The result count stays visible so clients can understand the scope of the dossier at a glance. Notifications gain an **all / unread** ledger switch while preserving the batch read action only when it has work to do.
 
 The chat attachment experience becomes a compact **file slip** before send. It shows a document or image thumbnail, filename, human-readable size, file type, and a removal action. This confirms what will be shared without implying that an attachment has already been uploaded or stored.
+
+## Preferences & Shareable Dossier State
+
+Notification settings follow a **quiet operations sheet**: three alert categories, one delivery control per category, a single save action, and a succinct confirmation state. Shareable portfolio views preserve their discipline and sort state in the query string, while a small copy-link control keeps the focused view easy to share.
+
+The AI skill assistant sits beside the evidence index rather than presenting itself as a detached chat tool. It is explicitly grounded in the visible portfolio titles, disciplines, and summaries, returns a compact editable tag set, and avoids suggesting credentials, ratings, client identities, or unsupported expertise.

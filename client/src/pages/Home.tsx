@@ -5,6 +5,7 @@
 import { trpc } from "@/lib/trpc";
 import { CommunicationPanel } from "@/components/CommunicationPanel";
 import { NotificationCenter, type Notice } from "@/components/NotificationCenter";
+import { normalizeNotificationPreferences, shouldCreateInAppAlert } from "@/lib/notificationPreferences";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowDownRight,
@@ -77,6 +78,14 @@ const starterChat: ChatMessage[] = [
 ];
 
 function scrollTo(id: string) { document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" }); }
+
+function isInAppAlertEnabled(type: Notice["type"]): boolean {
+  try {
+    const stored = JSON.parse(window.localStorage.getItem("relay-notification-preferences") || "null");
+    const preferences = normalizeNotificationPreferences(stored);
+    return shouldCreateInAppAlert(preferences, type);
+  } catch { return true; }
+}
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(() => new URLSearchParams(window.location.search).get("previewMenu") === "1");
@@ -155,7 +164,7 @@ export default function Home() {
     setSaved((current) => { const next = current.includes(id) ? current.filter((projectId) => projectId !== id) : [...current, id]; window.localStorage.setItem("relay-saved-projects", JSON.stringify(next)); toast.success(next.includes(id) ? "Project saved to your workboard." : "Project removed from your workboard."); return next; });
   }
 
-  function addNotification(type: Notice["type"], title: string, detail: string) { setNotifications((current) => [{ id: Date.now(), type, title, detail, time: "Just now", unread: true }, ...current]); }
+  function addNotification(type: Notice["type"], title: string, detail: string) { if (isInAppAlertEnabled(type)) setNotifications((current) => [{ id: Date.now(), type, title, detail, time: "Just now", unread: true }, ...current]); }
   function markNotificationRead(id: number) { setNotifications((current) => current.map((notice) => notice.id === id ? { ...notice, unread: false } : notice)); }
   function markAllNotificationsRead() { setNotifications((current) => current.map((notice) => ({ ...notice, unread: false }))); }
 
@@ -190,10 +199,10 @@ export default function Home() {
     <div className="relay-app" id="top">
       <header className="relay-header">
         <a href="#top" className="relay-brand" aria-label="Project Relay home"><img src={assets.logo} alt="Project Relay mark" /><span>PROJECT RELAY</span></a>
-        <nav className="relay-nav" aria-label="Primary navigation"><a href="#projects">Find work</a><a href="#talent">Find talent</a><a href="/freelancer/mira-nori">Profile</a><a href="#dashboard">Workboard</a></nav>
+        <nav className="relay-nav" aria-label="Primary navigation"><a href="#projects">Find work</a><a href="#talent">Find talent</a><a href="/freelancer/mira-nori">Profile</a><a href="#dashboard">Workboard</a><a href="/settings/notifications">Settings</a></nav>
         <div className="header-actions"><NotificationCenter onOpenWorkboard={() => scrollTo("dashboard")} notices={notifications} onMarkRead={markNotificationRead} onMarkAllRead={markAllNotificationsRead} defaultOpen={notificationPreview} /><button className="header-login" type="button" onClick={() => scrollTo("dashboard")}>My workboard</button><button className="header-cta" type="button" onClick={openPosting}>Post a project <ArrowUpRight size={15} /></button></div>
         <div className="mobile-notification"><NotificationCenter onOpenWorkboard={() => scrollTo("dashboard")} notices={notifications} onMarkRead={markNotificationRead} onMarkAllRead={markAllNotificationsRead} defaultOpen={notificationPreview} /></div><button className="mobile-menu" type="button" onClick={() => setMenuOpen((open) => !open)} aria-label="Open menu">{menuOpen ? <X size={20} /> : <Menu size={20} />}</button>
-        <AnimatePresence>{menuOpen && <motion.nav className="mobile-nav" initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: .2, ease: easeOut }}><a href="#projects" onClick={() => setMenuOpen(false)}>Find work</a><a href="#talent" onClick={() => setMenuOpen(false)}>Find talent</a><a href="/freelancer/mira-nori">Profile</a><a href="#dashboard" onClick={() => setMenuOpen(false)}>My workboard</a><button onClick={() => { setMenuOpen(false); openPosting(); }}>Post a project <ArrowUpRight size={15} /></button></motion.nav>}</AnimatePresence>
+        <AnimatePresence>{menuOpen && <motion.nav className="mobile-nav" initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: .2, ease: easeOut }}><a href="#projects" onClick={() => setMenuOpen(false)}>Find work</a><a href="#talent" onClick={() => setMenuOpen(false)}>Find talent</a><a href="/freelancer/mira-nori">Profile</a><a href="#dashboard" onClick={() => setMenuOpen(false)}>My workboard</a><a href="/settings/notifications">Settings</a><button onClick={() => { setMenuOpen(false); openPosting(); }}>Post a project <ArrowUpRight size={15} /></button></motion.nav>}</AnimatePresence>
       </header>
 
       <main>
