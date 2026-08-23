@@ -68,3 +68,21 @@ The Project Relay mark is a cobalt square that contains an offset orange relay b
 ### Signature Brand Color
 
 **Relay Cobalt — #1F4BFF.**
+
+## Professional Palette Reset
+
+| Theme Name | Very Brief Intro | Probability |
+| --- | --- | --- |
+| Atelier Ledger | Mineral paper, charcoal ink, soft slate, and quiet brass. This turns Project Relay into a composed professional service rather than a bright campaign page. | 0.09 |
+| Graphite Office | Cool graphite, cloud gray, and a muted blue ink. This would feel precise and enterprise-adjacent, with a more technical tone. | 0.05 |
+| Library Desk | Warm parchment, deep oxblood, and antique gold. This would be literary and premium, but slightly less universal for a modern marketplace. | 0.03 |
+
+### Chosen refinement — Atelier Ledger
+
+The revised visual system uses **soft mineral gray (#EEF0ED)** for the canvas, **near-black charcoal (#1E252B)** for typography and structure, **slate blue (#486070)** for calm operational states, and **restrained brass (#B88642)** only for actions and live markers. Saturated color blocks are removed. Photography is desaturated slightly and set within darker, more architectural frames. The hierarchy stays editorial, but the emotional register becomes measured, premium, and dependable.
+
+The new client workflow is treated as a focused studio intake: three steps—project foundations, scope and AI assistance, then review—shown in a composed side-sheet. The workboard chat is explicitly labelled a **conversation mockup**, retaining a clear visual distinction from real-time production messaging while demonstrating the intended exchange pattern.
+
+### Accepted visual-review amendments
+
+Saturated cobalt is retired from all user-interface elements. Slate, charcoal, mineral gray, and restrained brass now form the visible operating palette; the existing mark is deliberately desaturated to integrate with this system. Brass becomes the sole momentum color for primary actions, live availability, workshop stamps, and critical completion states. Numbered ledger labels, small circular brass status marks, and split-sheet card structures are carried through discovery, talent, and the workboard so Project Relay reads as one consistent professional service.
