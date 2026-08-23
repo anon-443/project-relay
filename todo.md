@@ -135,4 +135,4 @@
 - [x] Save and synchronize the featured-talent alignment release.
 - [x] Enlarge the featured-talent collage into a stronger landscape image on desktop while preserving mobile behavior.
 - [x] Verify the landscape image composition; type checks, 31 tests, managed build, and GitHub Pages build passed.
-- [ ] Save and synchronize the featured-talent landscape-image release.
+- [x] Save and synchronize the featured-talent landscape-image release.
