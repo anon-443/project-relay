@@ -72,7 +72,7 @@
 - [x] Complete the GitHub repository export and public-link handoff guidance for the selected deployment path.
 - [x] Refine the Project Relay README into a concise professional portfolio repository document.
 - [x] Verify repository files and source-export readiness before the GitHub handoff.
-- [ ] Provide exact source export and new public GitHub repository publishing steps.
+- [x] Provide exact source export and new public GitHub repository publishing steps.
 - [x] Correct the desktop header overlap and establish resilient navigation spacing.
 - [x] Increase small text sizes and improve text contrast across the homepage for professional readability.
 - [x] Refine hero copy, visual balance, and overlay placement while retaining the Atelier Ledger aesthetic.
@@ -88,4 +88,5 @@
 - [x] Add direct auth-state verification for signed-out and authenticated account entry before final checkpoint.
 - [x] Remove the excessive blank space between the desktop header and Project Relay hero content.
 - [x] Review the tightened 1919×576 desktop first screen: the hero begins directly below the header with no oversized inactive band, and the visual card remains aligned with the heading.
-- [ ] Save the desktop-spacing-fix checkpoint.
+- [x] Save the desktop-spacing-fix checkpoint.
+- [ ] Save the GitHub-publication handoff documentation checkpoint.

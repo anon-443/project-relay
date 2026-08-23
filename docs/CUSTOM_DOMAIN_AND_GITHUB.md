@@ -19,12 +19,26 @@ Once you provide the domain and registrar, use the Domains panel’s exact recor
 
 ## Exporting the source to GitHub
 
-1. Create an empty GitHub repository or decide its owner and name.
-2. In the project management area, choose **Settings → GitHub**.
-3. Select the GitHub owner, enter the repository name, and use the export action.
-4. Confirm `README.md`, `docs/`, source code, and dependency files are present in GitHub.
-5. Add a repository description such as: `Full-stack freelancing marketplace with AI-assisted briefs, role-aware onboarding, and responsive freelancer tooling.`
-6. Add relevant topics: `react`, `typescript`, `trpc`, `marketplace`, `freelance`, `ai`, `portfolio`.
+Use the managed project export rather than manually copying files. It creates a repository from the saved project source, while keeping the production marketplace on its existing full-stack host.
+
+| Step | Exact action | Expected result |
+| --- | --- | --- |
+| 1 | Save a project checkpoint. | The export has a stable, reviewable source revision. |
+| 2 | Open the project management area and select **Settings → GitHub**. | The GitHub export panel opens. |
+| 3 | If prompted, select **Connect GitHub** and complete GitHub’s authorization in the opened window. | Your GitHub account is available as an export owner. |
+| 4 | Choose the account or organization that should own the repository. | The correct GitHub owner is selected. |
+| 5 | Enter `project-relay` as the repository name and choose **Public** for portfolio visibility. | The new public repository details are ready. |
+| 6 | Select the export action and wait for it to finish. | The complete project source is created in the new GitHub repository. |
+| 7 | Open the repository from the confirmation link and inspect the root. | `README.md`, `docs/`, `client/`, `server/`, `drizzle/`, `package.json`, and `pnpm-lock.yaml` are present. |
+| 8 | In GitHub, add the description and topics below, then copy the repository URL for LinkedIn and your portfolio. | The repository is discoverable and presentation-ready. |
+
+Use this repository description:
+
+> **Full-stack freelancing marketplace with AI-assisted briefs, role-aware onboarding, protected workspaces, and responsive freelancer tooling.**
+
+Use these topics: `react`, `typescript`, `trpc`, `marketplace`, `freelance`, `ai`, `portfolio`.
+
+If the GitHub panel is not connected yet, do not create a separate empty repository first. Complete the managed connection and export flow above; it creates the repository under the owner and name you choose. If a repository with the same name already exists, select a new unused name or rename the existing repository before exporting.
 
 ## Portfolio presentation checklist
 
