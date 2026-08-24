@@ -17,3 +17,7 @@ The desktop AI-assisted project-writing step was also reviewed in night mode. It
 ## Compact Card Correction
 
 The project directory now uses a three-column desktop grid with clear gutters, compact card heights, clamped title and summary lanes, and separate budget and deadline metadata cells. The talent directory now uses a two-column desktop grid with a horizontal avatar-and-profile row plus a dedicated work-sample footer. At 390 px, both directories collapse to one column with the same wrap-safe content hierarchy.
+
+## Typography and Spacing Correction
+
+The generic profile label is hidden, initials are larger and centered, and specialist names use a calmer Inter hierarchy. The footer no longer reserves a blank band, the project-status details sit inward beneath their header, and the workspace heading stays on one line at desktop size while retaining a safe mobile wrap.

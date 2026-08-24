@@ -213,3 +213,7 @@
 - [x] Rebuild the twelve-project grid with compact cards, visible inter-card gaps, and separate metadata lanes that cannot overlap.
 - [x] Rebuild the talent directory into compact horizontal profile rows with readable text and wrapped skills.
 - [x] Verify desktop/mobile card geometry, tests, builds, and release synchronization for the correction pass.
+- [x] Map the five annotated label, profile-card, footer-gap, status-panel, and workspace-heading issues to the active public CSS.
+- [x] Remove the requested public label, refine profile-card typography and centered initials, eliminate excess footer space, and reposition the status panel content.
+- [x] Keep the workspace heading on one desktop line while retaining a safe mobile wrap.
+- [ ] Verify the typography and spacing corrections at desktop and mobile sizes, then synchronize the release.
