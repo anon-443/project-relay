@@ -46,6 +46,19 @@ function AppContent() {
   const [location, setLocation] = useLocation();
   const { user, loading } = useAuth();
   useEffect(() => { if (!loading && user?.role === "user" && location !== "/account/role") setLocation("/account/role"); }, [loading, location, setLocation, user?.role]);
+  useEffect(() => {
+    const titles: Record<string, string> = {
+      "/": "Project Rely — Find talent. Get hired. Build the future.",
+      "/freelancer/mira-nori": "Mira Nori — Product Designer | Project Rely",
+      "/account/role": "Choose your role | Project Rely",
+      "/freelancer/mira-nori/manage": "Portfolio manager | Project Rely",
+      "/dashboard/freelancer": "Freelancer dashboard | Project Rely",
+      "/workspace/freelancer": "Freelancer workspace | Project Rely",
+      "/workspace/client": "Client workspace | Project Rely",
+      "/settings/notifications": "Notification settings | Project Rely",
+    };
+    document.title = titles[location] || "Project Rely — Freelancing marketplace";
+  }, [location]);
   const needsThemeDock = location === "/freelancer/mira-nori" || location === "/settings/notifications";
   return <TooltipProvider><Toaster theme={theme} position="bottom-right" />{needsThemeDock && <div className="route-theme-dock"><ThemeToggle /></div>}<Router /></TooltipProvider>;
 }
