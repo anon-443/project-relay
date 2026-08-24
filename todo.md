@@ -203,3 +203,9 @@
 - [x] Replace the rejected public presentation with an original warm-white, deep-ink, coral, muted-teal creative platform system using Syne, Inter, and JetBrains Mono.
 - [x] Recompose marketplace discovery, featured talent, project presentation, forms, and dashboard feedback with advanced responsive interactions and visual features.
 - [x] Verify the Option C experience at desktop/tablet/mobile, run validation, then save and synchronize the modern creative marketplace release.
+- [x] Map the six annotated screenshot issues to the active hero, category, project, talent, workboard, and theme controls.
+- [x] Reposition and repair the hero visual card, category-card internals, project-card fit, talent rows, and workboard status alignment.
+- [x] Add six additional interactive project briefs and prevent text overflow across all project-card content lanes.
+- [x] Normalize public punctuation, align text with readable justification where appropriate, and polish visual/icon treatments without harming accessibility.
+- [x] Restore a professional switchable night theme with an accessible, persistent public control and complete dark-surface styling.
+- [ ] Verify desktop and mobile layouts, theme switching, interactive filters/forms, type checks, tests, builds, and release synchronization.

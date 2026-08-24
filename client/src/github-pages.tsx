@@ -34,8 +34,8 @@ function PagesDemo() {
         <section className="static-hero static-shell">
           <div className="static-hero-copy">
             <p className="static-kicker"><i /> FREELANCING MARKETPLACE / PORTFOLIO DEMO</p>
-            <h1>Find talent.<br />Get hired.<br /><em>Build the future.</em></h1>
-            <p>Project Relay brings well-scoped projects and capable independent specialists into one energetic working space.</p>
+            <h1>Find talent<br />Get hired<br /><em>Build the future</em></h1>
+            <p>Project Relay brings well-scoped projects and capable independent specialists into one energetic working space</p>
             <div className="static-actions"><a className="static-primary" href="#briefs">Explore the demo <span>↓</span></a><a className="static-secondary" href={githubPagesConfig.fullAppUrl}>Open full application ↗</a></div>
             <small>This GitHub Pages edition is a static portfolio demo. Authentication, AI, and live workspaces run in the full application</small>
           </div>
@@ -53,7 +53,7 @@ function PagesDemo() {
 
         <section id="talent" className="static-talent"><div className="static-shell static-talent-grid"><div><p className="static-kicker">03 / FEATURED TALENT</p><h2>Meet people who make <em>ideas move</em></h2><p>Explore specialist profiles by craft, evidence, and the work they want to make next.</p><img src={assets.talent} alt="Editorial collage of creative professionals" /></div><div className="static-specialists">{specialists.map(([initials, name, role, skills]) => <article key={name}><i>{initials}</i><div><h3>{name}</h3><p>{role}</p><small>{skills}</small></div><a href={githubPagesConfig.fullAppUrl}>PROFILE ↗</a></article>)}</div></div></section>
 
-        <section className="static-closing"><div className="static-shell"><p className="static-kicker">FULL-STACK PRODUCT BUILD</p><h2>Bring the right people together and <em>build what matters.</em></h2><p>This portfolio demo highlights the public interface. Open the hosted application to use role-based access, AI-assisted writing, notifications, workspaces, and profile tools.</p><a className="static-primary" href={githubPagesConfig.fullAppUrl}>Open full Project Relay ↗</a></div></section>
+        <section className="static-closing"><div className="static-shell"><p className="static-kicker">FULL-STACK PRODUCT BUILD</p><h2>Bring the right people together and <em>build what matters</em></h2><p>This portfolio demo highlights the public interface, with role-based access, AI-assisted writing, notifications, workspaces, and profile tools available in the hosted application</p><a className="static-primary" href={githubPagesConfig.fullAppUrl}>Open full Project Relay ↗</a></div></section>
       </main>
 
       <footer className="static-footer static-shell"><a className="static-brand" href="#top"><i /> <span>PROJECT RELAY</span></a><span>© 2026 · Portfolio demo</span><a href={githubPagesConfig.sourceUrl} target="_blank" rel="noreferrer">View source ↗</a></footer>
