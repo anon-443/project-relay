@@ -220,4 +220,4 @@
 - [x] Map the newly annotated hero position, initials, statistic typography, project-action, and dialog-size issues to current implementation rules.
 - [x] Shift the desktop hero composition, recenter the profile initials, refine statistic numerals, and make project actions more prominent.
 - [x] Rebuild the project-brief dialog as a centered, full-size readable overlay with responsive content containment.
-- [ ] Verify the public-interface corrections at desktop and mobile sizes, including the project dialog, then synchronize the release.
+- [x] Verify the public-interface corrections at desktop and mobile sizes, including the project dialog, then synchronize the release.
