@@ -4,5 +4,6 @@ import { useTheme } from "@/contexts/ThemeContext";
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
-  return <button className="theme-toggle" type="button" onClick={toggleTheme} aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`} title={`Switch to ${theme === "light" ? "Night Ledger" : "Light Ledger"}`}><span>{theme === "light" ? <Moon size={15} /> : <Sun size={15} />}</span><b>{theme === "light" ? "Night" : "Light"}</b></button>;
+  const isNight = theme === "dark";
+  return <button className="theme-toggle" type="button" onClick={toggleTheme} aria-pressed={isNight} aria-label={`Switch to ${isNight ? "light" : "night"} mode`} title={`Switch to ${isNight ? "Light Ledger" : "Night Ledger"}`}><span className="theme-toggle-icon" aria-hidden="true">{isNight ? <Sun size={16} /> : <Moon size={16} />}</span><span className="theme-toggle-copy"><small>MODE</small><b>{isNight ? "LIGHT" : "NIGHT"}</b></span></button>;
 }

@@ -176,3 +176,12 @@
 - [x] Compare the public README, feature checklist, repository metadata, and deployment links against the implemented Project Rely product.
 - [x] Identify essential portfolio-presentation gaps and apply only necessary documentation or checklist corrections.
 - [x] Verify the final public README, portfolio preview asset, and 34-test project state before reporting portfolio-readiness findings.
+- [x] Define and generate a short LinkedIn demo video that presents the Project Rely marketplace, role-aware workflow, and public portfolio links.
+- [x] Verify the generated 16:9 eight-second H.264 video file and deliver it with concise posting guidance.
+- [x] Map real Project Rely account, marketplace, client, freelancer, and dashboard screens into a short factual LinkedIn demo sequence.
+- [x] Capture authentic screens and build a guided-demo video that clearly communicates secure account access, discovery, project posting, and workflow status.
+- [x] Verify the revised 16:9 12-second H.264 guided-demo file and restore the temporary demonstration account role before delivery.
+- [x] Audit the existing theme provider, mode controls, and dark-surface styles across Project Rely.
+- [x] Add a prominent persistent Night Ledger control and complete the accessible light/dark styling for public and protected routes.
+- [x] Verify light and night modes on desktop and phone; type checks, 34 tests, managed build, and GitHub Pages build passed.
+- [x] Save and synchronize the Night Ledger release.
