@@ -13,3 +13,7 @@ The corrected desktop hero now shows the creative work image at left and the com
 The 390 px mobile dark-theme review preserves the stacked search and filters, compact project cards, talent cards, status rows, and conversation surface without horizontal overflow. The release also passed TypeScript checking, all 34 existing unit tests, the managed production build, and the static GitHub Pages artifact build.
 
 The desktop AI-assisted project-writing step was also reviewed in night mode. Its progress indicator, fields, generated-deliverable chips, controls, and contrast all remain usable inside the dialog overlay.
+
+## Compact Card Correction
+
+The project directory now uses a three-column desktop grid with clear gutters, compact card heights, clamped title and summary lanes, and separate budget and deadline metadata cells. The talent directory now uses a two-column desktop grid with a horizontal avatar-and-profile row plus a dedicated work-sample footer. At 390 px, both directories collapse to one column with the same wrap-safe content hierarchy.

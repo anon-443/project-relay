@@ -209,3 +209,7 @@
 - [x] Normalize public punctuation, align text with readable justification where appropriate, and polish visual/icon treatments without harming accessibility.
 - [x] Restore a professional switchable night theme with an accessible, persistent public control and complete dark-surface styling.
 - [x] Verify desktop and mobile layouts, theme switching, interactive filters/forms, type checks, tests, builds, and release synchronization.
+- [x] Map the reported project-card collision and vertical talent-text regressions to the current CSS override stack.
+- [x] Rebuild the twelve-project grid with compact cards, visible inter-card gaps, and separate metadata lanes that cannot overlap.
+- [x] Rebuild the talent directory into compact horizontal profile rows with readable text and wrapped skills.
+- [ ] Verify desktop/mobile card geometry, tests, builds, and release synchronization for the correction pass.
