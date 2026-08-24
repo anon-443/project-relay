@@ -1,6 +1,7 @@
 import { createRoot } from "react-dom/client";
 import { githubPagesAsset, githubPagesConfig } from "./lib/githubPages";
 import "./index.css";
+import "./signalStudio.css";
 
 const assets = {
   hero: githubPagesAsset("project-relay-hero-workroom_d5d6ef3d.jpg"),

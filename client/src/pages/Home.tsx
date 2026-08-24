@@ -3,9 +3,9 @@
  * Use mineral surfaces, charcoal structure, slate operational states, and brass only for decisive actions.
  */
 import { trpc } from "@/lib/trpc";
+import "../signalStudio.css";
 import { CommunicationPanel } from "@/components/CommunicationPanel";
 import { NotificationCenter, type Notice } from "@/components/NotificationCenter";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import { AccountAccess } from "@/components/AccountAccess";
 import { normalizeNotificationPreferences, shouldCreateInAppAlert } from "@/lib/notificationPreferences";
 import { AnimatePresence, motion } from "framer-motion";
@@ -203,8 +203,8 @@ export default function Home() {
       <header className="relay-header">
         <a href="#top" className="relay-brand" aria-label="Project Relay home"><img src={assets.logo} alt="Project Relay mark" /><span>PROJECT RELAY</span></a>
         <nav className="relay-nav" aria-label="Primary navigation"><a href="#projects">Find work</a><a href="#talent">Find talent</a><a href="/freelancer/mira-nori">Profile</a><a href="#dashboard">Workboard</a><a href="/settings/notifications">Settings</a></nav>
-        <div className="header-actions"><ThemeToggle /><NotificationCenter onOpenWorkboard={() => scrollTo("dashboard")} notices={notifications} onMarkRead={markNotificationRead} onMarkAllRead={markAllNotificationsRead} defaultOpen={notificationPreview} /><a className="header-login header-dashboard" href="/dashboard/freelancer">Dashboard</a><AccountAccess /><button className="header-cta" type="button" onClick={openPosting}>Post a project <ArrowUpRight size={16} /></button></div>
-        <div className="mobile-notification"><ThemeToggle /><NotificationCenter onOpenWorkboard={() => scrollTo("dashboard")} notices={notifications} onMarkRead={markNotificationRead} onMarkAllRead={markAllNotificationsRead} defaultOpen={notificationPreview} /></div><button className="mobile-menu" type="button" onClick={() => setMenuOpen((open) => !open)} aria-label="Open menu">{menuOpen ? <X size={20} /> : <Menu size={20} />}</button>
+        <div className="header-actions"><NotificationCenter onOpenWorkboard={() => scrollTo("dashboard")} notices={notifications} onMarkRead={markNotificationRead} onMarkAllRead={markAllNotificationsRead} defaultOpen={notificationPreview} /><a className="header-login header-dashboard" href="/dashboard/freelancer">Dashboard</a><AccountAccess /><button className="header-cta" type="button" onClick={openPosting}>Post a project <ArrowUpRight size={16} /></button></div>
+        <div className="mobile-notification"><NotificationCenter onOpenWorkboard={() => scrollTo("dashboard")} notices={notifications} onMarkRead={markNotificationRead} onMarkAllRead={markAllNotificationsRead} defaultOpen={notificationPreview} /></div><button className="mobile-menu" type="button" onClick={() => setMenuOpen((open) => !open)} aria-label="Open menu">{menuOpen ? <X size={20} /> : <Menu size={20} />}</button>
         <AnimatePresence>{menuOpen && <motion.nav className="mobile-nav" initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: .2, ease: easeOut }}><a href="#projects" onClick={() => setMenuOpen(false)}>Find work</a><a href="#talent" onClick={() => setMenuOpen(false)}>Find talent</a><a href="/freelancer/mira-nori">Profile</a><a href="/dashboard/freelancer">Dashboard</a><a href="#dashboard" onClick={() => setMenuOpen(false)}>My workboard</a><a href="/settings/notifications">Settings</a><AccountAccess /><button onClick={() => { setMenuOpen(false); openPosting(); }}>Post a project <ArrowUpRight size={15} /></button></motion.nav>}</AnimatePresence>
       </header>
 

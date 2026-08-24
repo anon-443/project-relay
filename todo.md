@@ -185,3 +185,8 @@
 - [x] Add a prominent persistent Night Ledger control and complete the accessible light/dark styling for public and protected routes.
 - [x] Verify light and night modes on desktop and phone; type checks, 34 tests, managed build, and GitHub Pages build passed.
 - [x] Save and synchronize the Night Ledger release.
+- [x] Review the EventPulse reference and audit Project Rely's current public visual system without copying source, content, or assets.
+- [x] Define an original refined color system, motion language, and feature-storytelling direction that replaces the current basic light/dark presentation.
+- [x] Rebuild the public marketplace with stronger visual hierarchy, original animations, and improved product showcase features.
+- [x] Verify the redesign on desktop and mobile; type checks, 34 tests, managed build, and GitHub Pages build passed.
+- [x] Save and synchronize the original Signal Studio visual-redesign release.
