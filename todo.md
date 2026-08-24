@@ -217,3 +217,7 @@
 - [x] Remove the requested public label, refine profile-card typography and centered initials, eliminate excess footer space, and reposition the status panel content.
 - [x] Keep the workspace heading on one desktop line while retaining a safe mobile wrap.
 - [x] Verify the typography and spacing corrections at desktop and mobile sizes, then synchronize the release.
+- [x] Map the newly annotated hero position, initials, statistic typography, project-action, and dialog-size issues to current implementation rules.
+- [x] Shift the desktop hero composition, recenter the profile initials, refine statistic numerals, and make project actions more prominent.
+- [x] Rebuild the project-brief dialog as a centered, full-size readable overlay with responsive content containment.
+- [ ] Verify the public-interface corrections at desktop and mobile sizes, including the project dialog, then synchronize the release.

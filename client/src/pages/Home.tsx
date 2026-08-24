@@ -135,6 +135,11 @@ export default function Home() {
     setNotifications([{ id: 1, type: "message", title: "New message from Tide & Form", detail: "Mobile checkout redesign", time: "Just now", unread: true }]);
   }, [notificationPreview]);
   useEffect(() => {
+    const requestedProject = Number(new URLSearchParams(window.location.search).get("previewProject"));
+    if (!Number.isInteger(requestedProject)) return;
+    setSelectedProject(projects.find((project) => project.id === requestedProject) ?? null);
+  }, []);
+  useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     if (params.get("previewClientPost") !== "1") return;
     const requestedStep = Number(params.get("postStep"));

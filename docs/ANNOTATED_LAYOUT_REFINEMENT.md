@@ -21,3 +21,7 @@ The project directory now uses a three-column desktop grid with clear gutters, c
 ## Typography and Spacing Correction
 
 The generic profile label is hidden, initials are larger and centered, and specialist names use a calmer Inter hierarchy. The footer no longer reserves a blank band, the project-status details sit inward beneath their header, and the workspace heading stays on one line at desktop size while retaining a safe mobile wrap.
+
+## Public Interface Correction
+
+The desktop hero is shifted left as requested. Talent initials sit centrally within their wider profile lane, stat numerals use JetBrains Mono, and the View Project action is now a high-contrast, full-width card control. The project brief no longer inherits the retired right-side drawer behavior: it opens centered in a large, contained, scrollable overlay with the complete brief readable at once.
