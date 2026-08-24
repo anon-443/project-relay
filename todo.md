@@ -190,3 +190,8 @@
 - [x] Rebuild the public marketplace with stronger visual hierarchy, original animations, and improved product showcase features.
 - [x] Verify the redesign on desktop and mobile; type checks, 34 tests, managed build, and GitHub Pages build passed.
 - [x] Save and synchronize the original Signal Studio visual-redesign release.
+- [x] Review the Web Tactics reference and isolate only transferable design principles without copying its assets, layout, or code.
+- [x] Define a restrained original Project Rely palette, typography treatment, and motion language that replaces the rejected Signal Studio colors.
+- [x] Replace the rejected public palette and refine the marketplace and GitHub Pages composition around the new premium direction.
+- [x] Verify desktop and mobile presentation; type checks, 34 tests, managed build, and GitHub Pages build passed.
+- [x] Save and synchronize the refined Midnight Vector visual release.
