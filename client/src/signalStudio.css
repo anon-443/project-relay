@@ -127,7 +127,7 @@ html { scroll-behavior:smooth; } body { background:var(--rely-bg); color:var(--r
 @media (max-width:760px) { .freelancer-card .avatar { width:54px!important; height:54px!important; font-size:13px!important; }.relay-footer { padding-top:28px!important; }.dashboard-heading h2 { white-space:normal!important; } }
 
 /* Public interface correction: deliberate hero offset, centered talent initials, calmer numbers, and stronger project actions. */
-@media (min-width:1024px) { .relay-hero { transform:translateX(-22px); } }
+@media (min-width:1024px) { .relay-hero { width:100%!important; max-width:none!important; transform:none!important; margin-left:0!important; margin-right:0!important; padding-left:clamp(28px,4vw,72px)!important; padding-right:clamp(28px,4vw,72px)!important; } }
 .freelancer-card { grid-template-columns:150px minmax(0,1fr)!important; }.freelancer-card .avatar { justify-self:center!important; }
 .hero-stats b { font-family:"JetBrains Mono",monospace!important; font-size:21px!important; font-weight:800!important; letter-spacing:-.06em!important; }
 .project-card-side button { min-height:42px!important; padding:10px 13px!important; border:1px solid var(--rely-ink)!important; border-radius:10px!important; color:#fff!important; background:var(--rely-ink)!important; font-size:13px!important; font-weight:850!important; letter-spacing:.015em!important; transition:transform .18s var(--rely-ease),background .18s var(--rely-ease)!important; }.project-card-side button:hover { color:var(--rely-ink)!important; background:var(--rely-teal)!important; transform:translateY(-2px)!important; }

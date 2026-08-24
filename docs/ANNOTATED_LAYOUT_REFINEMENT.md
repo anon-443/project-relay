@@ -25,3 +25,7 @@ The generic profile label is hidden, initials are larger and centered, and speci
 ## Public Interface Correction
 
 The desktop hero is shifted left as requested. Talent initials sit centrally within their wider profile lane, stat numerals use JetBrains Mono, and the View Project action is now a high-contrast, full-width card control. The project brief no longer inherits the retired right-side drawer behavior: it opens centered in a large, contained, scrollable overlay with the complete brief readable at once.
+
+## Wide Viewport Coverage Correction
+
+The transform-based desktop offset was removed because it exposed a right-side gutter at wide widths. The hero now uses a full-width surface with contained internal padding, keeping the image and copy composition left-aligned while ensuring the visual background continues cleanly to the viewport edge.
