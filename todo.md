@@ -208,4 +208,4 @@
 - [x] Add six additional interactive project briefs and prevent text overflow across all project-card content lanes.
 - [x] Normalize public punctuation, align text with readable justification where appropriate, and polish visual/icon treatments without harming accessibility.
 - [x] Restore a professional switchable night theme with an accessible, persistent public control and complete dark-surface styling.
-- [ ] Verify desktop and mobile layouts, theme switching, interactive filters/forms, type checks, tests, builds, and release synchronization.
+- [x] Verify desktop and mobile layouts, theme switching, interactive filters/forms, type checks, tests, builds, and release synchronization.
