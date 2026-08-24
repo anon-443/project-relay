@@ -222,4 +222,4 @@
 - [x] Rebuild the project-brief dialog as a centered, full-size readable overlay with responsive content containment.
 - [x] Verify the public-interface corrections at desktop and mobile sizes, including the project dialog, then synchronize the release.
 - [x] Identify and correct the desktop hero offset that leaves an empty right-side gutter at wide viewport sizes.
-- [ ] Verify the hero background and image coverage at standard and wide desktop widths, then synchronize the fix.
+- [x] Verify the hero background and image coverage at standard and wide desktop widths, then synchronize the fix.
