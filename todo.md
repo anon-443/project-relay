@@ -212,4 +212,4 @@
 - [x] Map the reported project-card collision and vertical talent-text regressions to the current CSS override stack.
 - [x] Rebuild the twelve-project grid with compact cards, visible inter-card gaps, and separate metadata lanes that cannot overlap.
 - [x] Rebuild the talent directory into compact horizontal profile rows with readable text and wrapped skills.
-- [ ] Verify desktop/mobile card geometry, tests, builds, and release synchronization for the correction pass.
+- [x] Verify desktop/mobile card geometry, tests, builds, and release synchronization for the correction pass.
