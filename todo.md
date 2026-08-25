@@ -226,3 +226,8 @@
 - [x] Map the three process-card vertical-alignment and project-grid density issues to the active public styles.
 - [x] Center the process-card messages and rebalance project-card spacing, text hierarchy, and internal metadata density.
 - [x] Verify desktop/mobile readability and interaction integrity, then synchronize the density correction release.
+- [x] Map the notification settings whitespace, desktop one-line copy, phone layout, and project-card hover requirements to active components and styles.
+- [x] Compact the notification settings screen so the header, description, and preference controls appear together without excess blank space.
+- [x] Preserve concise one-line desktop text where appropriate while adding safe phone wrapping and readable mobile spacing.
+- [x] Add subtle accessible hover and focus motion to project cards and their primary actions.
+- [ ] Verify settings and project-card behavior at desktop/mobile sizes, run validation, then synchronize the release.

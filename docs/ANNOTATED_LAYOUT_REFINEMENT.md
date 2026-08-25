@@ -33,3 +33,7 @@ The transform-based desktop offset was removed because it exposed a right-side g
 ## Process and Project Density Correction
 
 The three relay-method messages now sit in the visual center of their cards rather than attaching to the top edge. The project directory uses a more spacious two-column desktop grid, with larger gutters, distinct card sections, calmer title and description spacing, and a one-column fallback on smaller screens. The review confirmed readable stacking and unbroken actions on mobile.
+
+## Compact Settings and Card Interactions
+
+The notification settings screen now places its title, explanatory line, and the full preference sheet in one desktop viewport with a reduced vertical gap. Desktop headings and supporting copy remain on one line where space permits; phone layouts deliberately wrap them while maintaining readable margins. Project cards now provide small, motion-safe hover and focus elevation, a subtle identity-mark response, and reinforced action feedback for pointer devices.
