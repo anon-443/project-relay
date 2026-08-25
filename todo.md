@@ -264,3 +264,6 @@
 - [x] Map the featured-project card placement rules for a safe readable tilt.
 - [x] Apply a restrained featured-project card tilt with responsive and reduced-motion safeguards.
 - [x] Verify the tilted card at desktop/mobile sizes, validate, and synchronize the release.
+- [x] Map the supplied marketplace requirements to Project Rely features and identify non-essential repository presentation content.
+- [x] Streamline the README, repository description, and public documentation around the completed requirement set.
+- [x] Validate the final repository presentation and application build, then publish a final project-completion release.
