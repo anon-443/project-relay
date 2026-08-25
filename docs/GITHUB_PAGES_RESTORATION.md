@@ -9,3 +9,5 @@ The apparent local runtime issue was isolated to the generic preview server, whi
 The GitHub Actions Pages workflow completed successfully. The normal public URL can retain the previous HTML briefly in cache, while the cache-bypassed URL using the restoration commit query (`?v=b1937de`) verified the updated current Project Relay experience from the live deployment.
 
 The prior static approximation has now been replaced with the actual managed `Home` component inside a static-safe provider wrapper. Its public assets resolve from the managed host and its account, settings, dashboard, and posting actions redirect to the managed application when an API-backed flow is required.
+
+The final live GitHub Pages deployment was verified using the exact-mirror commit query (`?v=15b252c`). It renders the same shared homepage structure as the managed application, including the hero, twelve project cards, talent directory, workboard, conversation panel, and footer.
