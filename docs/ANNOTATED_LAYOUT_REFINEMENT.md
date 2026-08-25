@@ -69,3 +69,7 @@ The final desktop review confirms that the Discover, Connect, Deliver label now 
 The desktop Discover, Connect, Deliver label now sits below the image card in its own reserved lane. This separates it completely from the featured-project card, rather than merely shifting it within the image, and preserves the concise visual index without any text collision.
 
 The final 1280 px desktop review confirms that the label is fully visible beneath the image and clear of the card. The independent desktop placement does not alter the compact phone hero, where the existing image-card layout continues to keep its labels contained.
+
+## Hero Cleanup and Motion Refinement
+
+The unused visual-index label and the decorative star inside the featured-project card have been removed. The featured-project card now starts from the left edge of the image, and its compact status badge cycles through live proposal and review states. The hero uses a reduced-motion-safe entrance, while the open phone navigation enters and exits with a right-origin slide transition. Desktop and phone reviews confirmed that the revised card, badge, and menu remain visually contained.

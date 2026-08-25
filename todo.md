@@ -258,3 +258,6 @@
 - [x] Map the remaining hero-label collision with the featured-project card at the reported viewport.
 - [x] Relocate the Discover, Connect, Deliver label into an independent unobstructed hero-image lane.
 - [x] Verify the collision-free desktop/mobile hero, validate, and synchronize the correction release.
+- [x] Map the unwanted hero label/star, featured-card placement, dynamic project status, and requested motion behaviors.
+- [x] Remove the unwanted label and star, move the featured card left, and add the hero fade-in, status badge, and mobile-menu slide transition.
+- [x] Verify desktop/mobile hero and menu interaction, validate, and synchronize the refinement release.
