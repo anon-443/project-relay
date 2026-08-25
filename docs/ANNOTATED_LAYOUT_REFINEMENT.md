@@ -63,3 +63,9 @@ The open phone navigation was reviewed separately: it lists Find work, Find tale
 The public header now uses a stable three-column desktop composition: the brand remains left aligned, the primary navigation is centered, and account actions remain grouped at the right. The featured-project controls now follow the heading with a tighter vertical rhythm, the featured-talent section starts closer to its content, and the footer uses a compact content-led grid without a surplus gap before the legal line. Hero overlay elements have distinct placement lanes to prevent image labels and the featured-project card from colliding.
 
 The final desktop review confirms that the Discover, Connect, Deliver label now occupies the unobstructed lower-left area of the hero image, while the featured-project card remains in the lower-right and the availability stamp remains in the upper-right. The same mobile composition remains contained, retaining the prior phone-first overlay fallbacks without horizontal clipping.
+
+## Hero Label Separation
+
+The desktop Discover, Connect, Deliver label now sits below the image card in its own reserved lane. This separates it completely from the featured-project card, rather than merely shifting it within the image, and preserves the concise visual index without any text collision.
+
+The final 1280 px desktop review confirms that the label is fully visible beneath the image and clear of the card. The independent desktop placement does not alter the compact phone hero, where the existing image-card layout continues to keep its labels contained.

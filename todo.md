@@ -255,3 +255,6 @@
 - [x] Map the newly reported hero-overlay collision, header-action alignment, and excess section whitespace to active layout rules.
 - [x] Contain the hero overlays, center the header action cluster, and tighten oversized project, talent, and footer spacing.
 - [x] Verify desktop/mobile composition, run validation, and synchronize the public-spacing correction release.
+- [x] Map the remaining hero-label collision with the featured-project card at the reported viewport.
+- [x] Relocate the Discover, Connect, Deliver label into an independent unobstructed hero-image lane.
+- [x] Verify the collision-free desktop/mobile hero, validate, and synchronize the correction release.
