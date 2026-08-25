@@ -57,3 +57,9 @@ The hero image now has rounded corners and a darkened, bordered surface behind t
 At the 390 px phone breakpoint, the hero image remains cleanly contained with its rounded treatment, and the settings sheet keeps each label, explanation, selector, and save action legible without horizontal overflow. The compact vertical presentation preserves safe text wrapping rather than relying on truncated content.
 
 The open phone navigation was reviewed separately: it lists Find work, Find talent, Dashboard, My workboard, and Settings without a Profile entry. Direct navigation to the freelancer profile remains available and renders normally, preserving the feature without retaining an unnecessary public-menu button.
+
+## Public Spacing and Alignment Refinement
+
+The public header now uses a stable three-column desktop composition: the brand remains left aligned, the primary navigation is centered, and account actions remain grouped at the right. The featured-project controls now follow the heading with a tighter vertical rhythm, the featured-talent section starts closer to its content, and the footer uses a compact content-led grid without a surplus gap before the legal line. Hero overlay elements have distinct placement lanes to prevent image labels and the featured-project card from colliding.
+
+The final desktop review confirms that the Discover, Connect, Deliver label now occupies the unobstructed lower-left area of the hero image, while the featured-project card remains in the lower-right and the availability stamp remains in the upper-right. The same mobile composition remains contained, retaining the prior phone-first overlay fallbacks without horizontal clipping.

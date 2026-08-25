@@ -252,3 +252,6 @@
 - [x] Round the hero image, make its overlaid Discover/Connect/Deliver text visible, and compact notification settings so its core content appears together.
 - [x] Remove the non-required Profile item from public navigation while preserving the accessible profile route.
 - [x] Verify the public hero, navigation, and settings layouts at desktop/mobile sizes, run validation, then synchronize the correction release.
+- [x] Map the newly reported hero-overlay collision, header-action alignment, and excess section whitespace to active layout rules.
+- [x] Contain the hero overlays, center the header action cluster, and tighten oversized project, talent, and footer spacing.
+- [x] Verify desktop/mobile composition, run validation, and synchronize the public-spacing correction release.
