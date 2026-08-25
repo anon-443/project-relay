@@ -223,3 +223,6 @@
 - [x] Verify the public-interface corrections at desktop and mobile sizes, including the project dialog, then synchronize the release.
 - [x] Identify and correct the desktop hero offset that leaves an empty right-side gutter at wide viewport sizes.
 - [x] Verify the hero background and image coverage at standard and wide desktop widths, then synchronize the fix.
+- [x] Map the three process-card vertical-alignment and project-grid density issues to the active public styles.
+- [x] Center the process-card messages and rebalance project-card spacing, text hierarchy, and internal metadata density.
+- [ ] Verify desktop/mobile readability and interaction integrity, then synchronize the density correction release.

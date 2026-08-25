@@ -29,3 +29,7 @@ The desktop hero is shifted left as requested. Talent initials sit centrally wit
 ## Wide Viewport Coverage Correction
 
 The transform-based desktop offset was removed because it exposed a right-side gutter at wide widths. The hero now uses a full-width surface with contained internal padding, keeping the image and copy composition left-aligned while ensuring the visual background continues cleanly to the viewport edge.
+
+## Process and Project Density Correction
+
+The three relay-method messages now sit in the visual center of their cards rather than attaching to the top edge. The project directory uses a more spacious two-column desktop grid, with larger gutters, distinct card sections, calmer title and description spacing, and a one-column fallback on smaller screens. The review confirmed readable stacking and unbroken actions on mobile.
