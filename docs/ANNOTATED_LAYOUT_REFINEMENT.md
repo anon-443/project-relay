@@ -73,3 +73,7 @@ The final 1280 px desktop review confirms that the label is fully visible beneat
 ## Hero Cleanup and Motion Refinement
 
 The unused visual-index label and the decorative star inside the featured-project card have been removed. The featured-project card now starts from the left edge of the image, and its compact status badge cycles through live proposal and review states. The hero uses a reduced-motion-safe entrance, while the open phone navigation enters and exits with a right-origin slide transition. Desktop and phone reviews confirmed that the revised card, badge, and menu remain visually contained.
+
+## Featured Card Tilt
+
+The featured-project card now uses a restrained counterclockwise tilt that adds depth while keeping every text and status lane readable. Its phone variant uses a gentler tilt to preserve safe image containment, and reduced-motion preferences retain the unrotated reading surface.

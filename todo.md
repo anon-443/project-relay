@@ -261,3 +261,6 @@
 - [x] Map the unwanted hero label/star, featured-card placement, dynamic project status, and requested motion behaviors.
 - [x] Remove the unwanted label and star, move the featured card left, and add the hero fade-in, status badge, and mobile-menu slide transition.
 - [x] Verify desktop/mobile hero and menu interaction, validate, and synchronize the refinement release.
+- [x] Map the featured-project card placement rules for a safe readable tilt.
+- [x] Apply a restrained featured-project card tilt with responsive and reduced-motion safeguards.
+- [x] Verify the tilted card at desktop/mobile sizes, validate, and synchronize the release.

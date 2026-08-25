@@ -184,3 +184,8 @@ html { scroll-behavior:smooth; } body { background:var(--rely-bg); color:var(--r
 .hero-index { display:none!important; }.hero-brief-card p span { display:none!important; }.hero-project-status { display:inline-flex; align-items:center; gap:6px; width:max-content; margin:0 0 12px; padding:5px 8px; border-radius:999px; color:#2f6c68; background:var(--rely-teal-soft); font:800 9px/1 "JetBrains Mono",monospace; letter-spacing:.04em; text-transform:uppercase; }.hero-project-status i { width:6px; height:6px; border-radius:50%; background:var(--rely-teal); box-shadow:0 0 0 3px rgba(78,205,196,.18); }.mobile-nav { transform-origin:top right; }
 @media (min-width:1024px) { .hero-brief-card { right:auto!important; left:28px!important; bottom:28px!important; } }
 @media (max-width:600px) { .hero-project-status { margin-bottom:9px; font-size:8px; }.hero-brief-card { left:10px!important; right:auto!important; } }
+
+/* Featured-card tilt: visual energy without compromising card readability. */
+.hero-brief-card { transform:rotate(-2.2deg); transform-origin:left bottom; }
+@media (max-width:600px) { .hero-brief-card { transform:rotate(-1.35deg); } }
+@media (prefers-reduced-motion:reduce) { .hero-brief-card { transform:none!important; } }
