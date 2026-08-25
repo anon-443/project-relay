@@ -270,3 +270,6 @@
 - [x] Inspect the deployed GitHub Pages artifact and static entrypoint to identify why it differs from Project Rely.
 - [x] Align the GitHub Pages public build with the Project Rely public experience and redeploy it.
 - [x] Verify the corrected deployed demo and record the final deployment check.
+- [x] Map the managed homepage dependencies that need static-safe fallbacks for an exact GitHub Pages mirror.
+- [x] Reuse the managed homepage structure and visual system in the GitHub Pages build, redirecting only server-dependent actions to the full app.
+- [x] Verify desktop/mobile visual parity between the managed homepage and GitHub Pages, then deploy the exact mirror.

@@ -8,6 +8,7 @@ import { CommunicationPanel } from "@/components/CommunicationPanel";
 import { NotificationCenter, type Notice } from "@/components/NotificationCenter";
 import { AccountAccess } from "@/components/AccountAccess";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { fullAppHref, isStaticMirror, publicAsset } from "@/lib/staticMirror";
 import { normalizeNotificationPreferences, shouldCreateInAppAlert } from "@/lib/notificationPreferences";
 import { AnimatePresence, motion } from "framer-motion";
 import {
@@ -40,10 +41,10 @@ import { FormEvent, useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
 
 const assets = {
-  hero: "/manus-storage/project-relay-hero-workroom_d5d6ef3d.jpg",
-  talent: "/manus-storage/project-relay-talent-collage_d0fc082c.jpg",
-  board: "/manus-storage/project-relay-brief-board_b04c809a.jpg",
-  logo: "/manus-storage/project-relay-mark_fe132e43.png",
+  hero: publicAsset("/manus-storage/project-relay-hero-workroom_d5d6ef3d.jpg"),
+  talent: publicAsset("/manus-storage/project-relay-talent-collage_d0fc082c.jpg"),
+  board: publicAsset("/manus-storage/project-relay-brief-board_b04c809a.jpg"),
+  logo: publicAsset("/manus-storage/project-relay-mark_fe132e43.png"),
 };
 
 const easeOut: [number, number, number, number] = [0.23, 1, 0.32, 1];
@@ -218,10 +219,10 @@ export default function Home() {
     <div className="relay-app" id="top">
       <header className="relay-header">
         <a href="#top" className="relay-brand" aria-label="Project Relay home"><img src={assets.logo} alt="Project Relay mark" /><span>PROJECT RELAY</span></a>
-        <nav className="relay-nav" aria-label="Primary navigation"><a href="#projects">Find work</a><a href="#talent">Find talent</a><a href="#dashboard">Workboard</a><a href="/settings/notifications">Settings</a></nav>
-        <div className="header-actions"><ThemeToggle /><NotificationCenter onOpenWorkboard={() => scrollTo("dashboard")} notices={notifications} onMarkRead={markNotificationRead} onMarkAllRead={markAllNotificationsRead} defaultOpen={notificationPreview} /><a className="header-login header-dashboard" href="/dashboard/freelancer">Dashboard</a><AccountAccess /><button className="header-cta" type="button" onClick={openPosting}>Post a project <ArrowUpRight size={16} /></button></div>
+        <nav className="relay-nav" aria-label="Primary navigation"><a href="#projects">Find work</a><a href="#talent">Find talent</a><a href="#dashboard">Workboard</a><a href={fullAppHref("/settings/notifications")}>Settings</a></nav>
+        <div className="header-actions"><ThemeToggle /><NotificationCenter onOpenWorkboard={() => scrollTo("dashboard")} notices={notifications} onMarkRead={markNotificationRead} onMarkAllRead={markAllNotificationsRead} defaultOpen={notificationPreview} /><a className="header-login header-dashboard" href={fullAppHref("/dashboard/freelancer")}>Dashboard</a><AccountAccess /><button className="header-cta" type="button" onClick={openPosting}>Post a project <ArrowUpRight size={16} /></button></div>
         <div className="mobile-notification"><NotificationCenter onOpenWorkboard={() => scrollTo("dashboard")} notices={notifications} onMarkRead={markNotificationRead} onMarkAllRead={markAllNotificationsRead} defaultOpen={notificationPreview} /></div><button className="mobile-menu" type="button" onClick={() => setMenuOpen((open) => !open)} aria-label="Open menu">{menuOpen ? <X size={20} /> : <Menu size={20} />}</button>
-        <AnimatePresence>{menuOpen && <motion.nav className="mobile-nav" initial={{ opacity: 0, x: 22 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 22 }} transition={{ duration: .26, ease: easeOut }}><a href="#projects" onClick={() => setMenuOpen(false)}>Find work</a><a href="#talent" onClick={() => setMenuOpen(false)}>Find talent</a><a href="/dashboard/freelancer">Dashboard</a><a href="#dashboard" onClick={() => setMenuOpen(false)}>My workboard</a><a href="/settings/notifications">Settings</a><ThemeToggle /><AccountAccess /><button onClick={() => { setMenuOpen(false); openPosting(); }}>Post a project <ArrowUpRight size={15} /></button></motion.nav>}</AnimatePresence>
+        <AnimatePresence>{menuOpen && <motion.nav className="mobile-nav" initial={{ opacity: 0, x: 22 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 22 }} transition={{ duration: .26, ease: easeOut }}><a href="#projects" onClick={() => setMenuOpen(false)}>Find work</a><a href="#talent" onClick={() => setMenuOpen(false)}>Find talent</a><a href={fullAppHref("/dashboard/freelancer")}>Dashboard</a><a href="#dashboard" onClick={() => setMenuOpen(false)}>My workboard</a><a href={fullAppHref("/settings/notifications")}>Settings</a><ThemeToggle /><AccountAccess /><button onClick={() => { setMenuOpen(false); openPosting(); }}>Post a project <ArrowUpRight size={15} /></button></motion.nav>}</AnimatePresence>
       </header>
 
       <main>

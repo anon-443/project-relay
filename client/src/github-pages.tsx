@@ -1,87 +1,29 @@
-import { ArrowRight, ArrowUpRight, ExternalLink, Filter, Heart, Menu, Moon, Search, Sun, X } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { httpBatchLink } from "@trpc/client";
 import { createRoot } from "react-dom/client";
-import { githubPagesAsset, githubPagesConfig } from "./lib/githubPages";
+import superjson from "superjson";
+import { trpc } from "./lib/trpc";
+import ErrorBoundary from "./components/ErrorBoundary";
+import { TooltipProvider } from "./components/ui/tooltip";
+import { Toaster } from "./components/ui/sonner";
+import { ThemeProvider } from "./contexts/ThemeContext";
+import { fullAppUrl } from "./lib/staticMirror";
+import Home from "./pages/Home";
 import "./index.css";
-import "./signalStudio.css";
 
-const assets = {
-  hero: githubPagesAsset("project-relay-hero-workroom_d5d6ef3d.jpg"),
-  talent: githubPagesAsset("project-relay-talent-collage_d0fc082c.jpg"),
-  board: githubPagesAsset("project-relay-brief-board_b04c809a.jpg"),
-  logo: githubPagesAsset("project-relay-mark_fe132e43.png"),
-};
+const queryClient = new QueryClient();
+const trpcClient = trpc.createClient({
+  links: [httpBatchLink({ url: `${fullAppUrl}/api/trpc`, transformer: superjson })],
+});
 
-const categories = [
-  { label: "Product design", icon: "✦", tone: "blue" }, { label: "Web development", icon: "⌘", tone: "ink" }, { label: "Brand & identity", icon: "◒", tone: "orange" }, { label: "Copywriting", icon: "Aa", tone: "cream" }, { label: "Digital marketing", icon: "↗", tone: "blue" }, { label: "UX research", icon: "◌", tone: "cream" },
-];
-
-const projects = [
-  { id: 1, title: "Design a mobile checkout that does less, better", company: "Tide & Form", category: "Product design", budget: "$2,400–$3,200", budgetValue: 3200, deadline: "Apply by 18 Jun", description: "Reframe a premium commerce checkout around calm decisions, one-handed use, and a clearer payment handoff", skills: ["Figma", "Mobile UX", "Systems"], format: "Remote / 3 weeks", accent: "blue" },
-  { id: 2, title: "Build a launch narrative for a climate data platform", company: "Morrow Grid", category: "Copywriting", budget: "$1,600–$2,100", budgetValue: 2100, deadline: "Apply by 21 Jun", description: "Turn technical capability into a landing-page story that makes the first customer conversation simpler", skills: ["Brand writing", "SaaS", "Research"], format: "Remote / 2 weeks", accent: "orange" },
-  { id: 3, title: "Create an identity kit for a local food publisher", company: "Common Table", category: "Brand & identity", budget: "$3,500–$4,500", budgetValue: 4500, deadline: "Apply by 25 Jun", description: "Build an expressive visual system for a new editorial platform covering independent food culture", skills: ["Identity", "Art direction", "Editorial"], format: "Hybrid / 4 weeks", accent: "ink" },
-  { id: 4, title: "Prototype a creator onboarding flow", company: "Ripple Studio", category: "Web development", budget: "$2,800–$3,800", budgetValue: 3800, deadline: "Apply by 27 Jun", description: "Design and build a browser onboarding sequence that gives new creators a confident first session", skills: ["React", "UX", "Animation"], format: "Remote / 3 weeks", accent: "blue" },
-  { id: 5, title: "Plan a short-form campaign for an independent hotel", company: "Field Notes Hotel", category: "Digital marketing", budget: "$1,200–$1,800", budgetValue: 1800, deadline: "Apply by 29 Jun", description: "Create a focused campaign plan for a quiet, design-led hotel opening in a coastal town", skills: ["Strategy", "Social", "Content"], format: "On-site / 2 weeks", accent: "orange" },
-  { id: 6, title: "Run discovery interviews for member onboarding", company: "Harbour & Co", category: "UX research", budget: "$2,000–$2,700", budgetValue: 2700, deadline: "Apply by 02 Jul", description: "Turn member interviews into clear evidence for the next onboarding decisions", skills: ["Interviews", "Synthesis", "Journey maps"], format: "Remote / 2 weeks", accent: "ink" },
-];
-
-const freelancers = [
-  { initials: "MN", name: "Mira Nori", role: "Product designer", level: "Senior", skills: ["Figma", "Design systems", "Research"], bio: "Turns complex product decisions into clear, usable flows for ambitious teams.", accent: "blue", portfolio: "Fintech & commerce systems" },
-  { initials: "AJ", name: "Ari James", role: "Frontend developer", level: "Mid-level", skills: ["React", "Motion", "Accessibility"], bio: "Builds responsive interfaces with careful interaction and durable component logic.", accent: "orange", portfolio: "SaaS onboarding & product sites" },
-  { initials: "RK", name: "Rina Kade", role: "Brand writer", level: "Senior", skills: ["Messaging", "B2B", "Editorial"], bio: "Makes technical products easier to understand, choose, and talk about.", accent: "cream", portfolio: "Climate & developer tools" },
-];
-
-function scrollToSection(id: string) { document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" }); }
-
-function PagesDemo() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [nightMode, setNightMode] = useState(false);
-  const [search, setSearch] = useState("");
-  const [category, setCategory] = useState("All categories");
-  const [budget, setBudget] = useState("Any budget");
-  const [saved, setSaved] = useState<number[]>([]);
-  const [statusIndex, setStatusIndex] = useState(0);
-  const statuses = ["Accepting proposals", "3 proposals received", "Shortlist in review"];
-
-  useEffect(() => { document.documentElement.classList.toggle("dark", nightMode); return () => document.documentElement.classList.remove("dark"); }, [nightMode]);
-  useEffect(() => { const ticker = window.setInterval(() => setStatusIndex((index) => (index + 1) % statuses.length), 4200); return () => window.clearInterval(ticker); }, []);
-
-  const filteredProjects = useMemo(() => projects.filter((project) => {
-    const matchesSearch = !search.trim() || [project.title, project.company, project.category, ...project.skills].join(" ").toLowerCase().includes(search.toLowerCase().trim());
-    const matchesCategory = category === "All categories" || project.category === category;
-    const matchesBudget = budget === "Any budget" || (budget === "Under $2k" ? project.budgetValue < 2000 : budget === "$2k–$3.5k" ? project.budgetValue >= 2000 && project.budgetValue <= 3500 : project.budgetValue > 3500);
-    return matchesSearch && matchesCategory && matchesBudget;
-  }), [search, category, budget]);
-
-  const openFullApp = () => { window.location.href = githubPagesConfig.fullAppUrl; };
-
-  return <div className="relay-app static-project-rely" id="top">
-    <header className="relay-header">
-      <a href="#top" className="relay-brand" aria-label="Project Relay home"><img src={assets.logo} alt="Project Relay mark" /><span>PROJECT RELAY</span></a>
-      <nav className="relay-nav" aria-label="Primary navigation"><a href="#projects">Find work</a><a href="#talent">Find talent</a><a href="#dashboard">Workboard</a><a href={githubPagesConfig.fullAppUrl}>Settings</a></nav>
-      <div className="header-actions"><button className="theme-toggle" type="button" onClick={() => setNightMode((value) => !value)} aria-label="Toggle night mode">{nightMode ? <Sun size={16} /> : <Moon size={16} />} <span>{nightMode ? "DAY" : "NIGHT"}</span></button><a className="header-login header-dashboard" href={githubPagesConfig.fullAppUrl}>Dashboard</a><a className="header-login" href={githubPagesConfig.fullAppUrl}>Full app</a><button className="header-cta" type="button" onClick={openFullApp}>Post a project <ArrowUpRight size={16} /></button></div>
-      <button className="mobile-menu" type="button" onClick={() => setMenuOpen((open) => !open)} aria-label="Open menu">{menuOpen ? <X size={20} /> : <Menu size={20} />}</button>
-      {menuOpen && <nav className="mobile-nav static-mobile-nav"><a href="#projects" onClick={() => setMenuOpen(false)}>Find work</a><a href="#talent" onClick={() => setMenuOpen(false)}>Find talent</a><a href="#dashboard" onClick={() => setMenuOpen(false)}>My workboard</a><a href={githubPagesConfig.fullAppUrl}>Settings</a><button onClick={() => setNightMode((value) => !value)}>{nightMode ? "Day mode" : "Night mode"}</button><a href={githubPagesConfig.fullAppUrl}>Open full app <ArrowUpRight size={15} /></a></nav>}
-    </header>
-
-    <main>
-      <section className="relay-hero" aria-labelledby="hero-title"><div className="hero-copy"><p className="section-kicker"><i /> A creative marketplace for ambitious work</p><h1 id="hero-title">Find talent<br />Get hired<br /><em>Build the future</em></h1><p className="hero-description">Project Relay brings well-scoped projects and capable independent specialists into one energetic working space</p><form className="hero-search" onSubmit={(event) => { event.preventDefault(); scrollToSection("projects"); }}><Search size={19} /><input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search projects or skills" aria-label="Search projects or skills" /><button type="submit">Explore <ArrowRight size={16} /></button></form><div className="hero-stats"><span><b>12</b> featured projects</span><span><b>6</b> creative disciplines</span><span><b>3</b> role-aware workspaces</span></div></div><div className="hero-visual"><img src={assets.hero} alt="Editorial creative studio worktable with project planning materials" /><div className="hero-evidence"><span>LIVE MATCH</span><b>Briefs with better context</b></div><div className="hero-brief-card"><p>FEATURED PROJECT</p><span className="hero-project-status"><i /> {statuses[statusIndex]}</span><strong>Mobile checkout redesign</strong><div><span>Product design</span><b>$2.4k–$3.2k</b></div></div><div className="hero-stamp">NOW<br />OPEN</div></div></section>
-
-      <section className="category-section relay-shell" aria-labelledby="category-title"><div className="section-title-row"><div><p className="section-kicker">01 / POPULAR CATEGORIES</p><h2 id="category-title">Find work in the craft you <em>love</em></h2></div><button type="button" className="mini-link" onClick={() => scrollToSection("projects")}>Explore projects <ArrowUpRight size={16} /></button></div><div className="category-grid">{categories.map((item) => <button key={item.label} className={`category-card tone-${item.tone}`} type="button" onClick={() => { setCategory(item.label); scrollToSection("projects"); }}><span className="category-icon">{item.icon}</span><span className="category-label">{item.label}</span><span className="category-action">Explore <ArrowUpRight size={14} /></span></button>)}</div></section>
-
-      <section className="featured-section" aria-labelledby="featured-title"><div className="relay-shell featured-layout"><div className="featured-image"><img src={assets.board} alt="Creative project brief planning board" /><span className="image-caption">HOW IT WORKS</span></div><div className="featured-copy"><p className="section-kicker">THE RELAY METHOD</p><h2 id="featured-title">A better way to <em>work together</em></h2><p>Clear projects, relevant people, and a calm path from first message to completed work.</p><div className="method-list"><span><b>01</b> Discover a brief with context</span><span><b>02</b> Connect around the right fit</span><span><b>03</b> Move work forward with clarity</span></div></div></div></section>
-
-      <section id="projects" className="projects-section relay-shell" aria-labelledby="projects-title"><div className="section-title-row project-heading"><div><p className="section-kicker">02 / FEATURED PROJECTS</p><h2 id="projects-title">Projects with real <em>momentum</em></h2></div><p>Search by title, skill, or client. Then find a brief that fits the way you work.</p></div><div className="project-search-bar"><label className="search-field"><Search size={18} /><input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search projects, clients, or skills" aria-label="Search projects" /></label><div className="select-group"><Filter size={16} /><select value={category} onChange={(event) => setCategory(event.target.value)} aria-label="Filter by category"><option>All categories</option>{categories.map((item) => <option key={item.label}>{item.label}</option>)}</select></div><div className="select-group"><select value={budget} onChange={(event) => setBudget(event.target.value)} aria-label="Filter by budget"><option>Any budget</option><option>Under $2k</option><option>$2k–$3.5k</option><option>Over $3.5k</option></select></div></div><div className="project-list-toolbar"><span><b>{filteredProjects.length}</b> matching projects</span><span>Static public demo</span></div><div className="project-list">{filteredProjects.map((project) => <article key={project.id} className={`project-card accent-${project.accent}`}><div className="project-card-main"><div className="project-card-top"><span className="company-mark">{project.company.slice(0, 1)}</span><span>{project.company}</span><button className={`save-button ${saved.includes(project.id) ? "saved" : ""}`} type="button" onClick={() => setSaved((current) => current.includes(project.id) ? current.filter((id) => id !== project.id) : [...current, project.id])} aria-label="Save project"><Heart size={16} fill={saved.includes(project.id) ? "currentColor" : "none"} /></button></div><h3>{project.title}</h3><p>{project.description}</p><div className="project-tags">{project.skills.map((skill) => <span key={skill}>{skill}</span>)}</div></div><div className="project-card-side"><div><p>BUDGET</p><strong>{project.budget}</strong></div><div><p>FORMAT</p><span>{project.format}</span></div><div><p>DEADLINE</p><span>{project.deadline}</span></div><a href={githubPagesConfig.fullAppUrl}>View project <ArrowUpRight size={16} /></a></div></article>)}{filteredProjects.length === 0 && <div className="empty-state"><Search size={24} /><p>No projects match those filters.</p><button type="button" onClick={() => { setSearch(""); setCategory("All categories"); setBudget("Any budget"); }}>Reset filters</button></div>}</div></section>
-
-      <section id="talent" className="talent-section" aria-labelledby="talent-title"><div className="relay-shell talent-layout"><div className="talent-intro"><p className="section-kicker">03 / FEATURED TALENT</p><h2 id="talent-title">Meet people who make <em>ideas move</em></h2><p>Explore creative specialists by craft and experience, then connect around the work that matters.</p><img src={assets.talent} alt="Editorial collage of creative professionals" /></div><div className="talent-directory"><div className="talent-filter"><label><Search size={16} /><input placeholder="Search skills in the full app" aria-label="Search freelancer skills" readOnly /></label><a href={githubPagesConfig.fullAppUrl}>Browse talent</a></div><div className="talent-list">{freelancers.map((freelancer) => <article className="freelancer-card" key={freelancer.name}><div className={`avatar avatar-${freelancer.accent}`}>{freelancer.initials}</div><div className="freelancer-core"><div className="freelancer-heading"><h3>{freelancer.name}</h3><span>{freelancer.level}</span></div><p className="freelancer-role">{freelancer.role}</p><p className="freelancer-bio">{freelancer.bio}</p><div className="project-tags">{freelancer.skills.map((skill) => <span key={skill}>{skill}</span>)}</div></div><div className="portfolio-note"><span>WORK SAMPLES</span><p>{freelancer.portfolio}</p><a href={githubPagesConfig.fullAppUrl}>View profile <ExternalLink size={14} /></a></div></article>)}</div></div></div></section>
-
-      <section id="dashboard" className="dashboard-section relay-shell" aria-labelledby="dashboard-title"><div className="section-title-row dashboard-heading"><div><p className="section-kicker">04 / YOUR WORKSPACE</p><h2 id="dashboard-title">Keep your creative work <em>moving</em></h2></div><a className="mini-link" href={githubPagesConfig.fullAppUrl}>Open dashboard <ArrowUpRight size={16} /></a></div><div className="dashboard-grid"><article className="dashboard-profile"><div className="profile-avatar">YOU</div><p className="dash-label">YOUR PROFILE</p><h3>Creative specialist</h3><a href={githubPagesConfig.fullAppUrl}>Edit profile <ArrowUpRight size={15} /></a></article><article className="dashboard-card"><div className="dash-title"><span>PROPOSALS</span><b>0</b></div><div className="dash-empty"><p>Proposals you send appear here</p></div></article><article className="dashboard-card"><div className="dash-title"><span>SAVED PROJECTS</span><b>{saved.length}</b></div><div className="dash-empty"><p>Save projects to compare them here</p></div></article><article className="dashboard-card status-card"><div className="dash-title"><span>PROJECT STATUS</span><span className="status-live"><i /> AVAILABLE</span></div><div className="status-list"><div><span>Profile readiness</span><b>Ready</b></div><div><span>Posted projects</span><b>Not started</b></div><div><span>Proposal activity</span><b>Waiting</b></div></div></article></div></section>
-
-      <section className="closing-section"><div className="relay-shell closing-wrap"><div><p className="section-kicker">READY TO START?</p><h2>Bring the right people together and build what matters.</h2></div><div className="closing-actions"><button type="button" className="primary-button" onClick={() => scrollToSection("projects")}>Explore projects <ArrowRight size={18} /></button><a className="outline-button" href={githubPagesConfig.fullAppUrl}>Post a project <ArrowUpRight size={16} /></a></div></div></section>
-    </main>
-
-    <footer className="relay-footer relay-shell"><div><a href="#top" className="relay-brand"><img src={assets.logo} alt="" /><span>PROJECT RELAY</span></a><p>A deliberate marketplace for independent work and the teams that value it.</p></div><div className="footer-links"><div><span>EXPLORE</span><a href="#projects">Open briefs</a><a href="#talent">Featured talent</a><a href="#dashboard">My workboard</a></div><div><span>CONNECT</span><a href="mailto:hello@projectrelay.example">hello@projectrelay.example</a><a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a><a href={githubPagesConfig.sourceUrl} target="_blank" rel="noreferrer">GitHub</a></div></div><p className="footer-bottom">© 2026 Project Relay. Built for the freelance marketplace brief.</p></footer>
-  </div>;
-}
-
-createRoot(document.getElementById("root")!).render(<PagesDemo />);
+createRoot(document.getElementById("root")!).render(
+  <trpc.Provider client={trpcClient} queryClient={queryClient}>
+    <QueryClientProvider client={queryClient}>
+      <ErrorBoundary>
+        <ThemeProvider defaultTheme="light" switchable>
+          <TooltipProvider><Toaster /><Home /></TooltipProvider>
+        </ThemeProvider>
+      </ErrorBoundary>
+    </QueryClientProvider>
+  </trpc.Provider>,
+);

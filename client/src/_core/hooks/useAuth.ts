@@ -1,5 +1,6 @@
 import { startLogin } from "@/const";
 import { trpc } from "@/lib/trpc";
+import { isStaticMirror } from "@/lib/staticMirror";
 import { TRPCClientError } from "@trpc/client";
 import { useCallback, useEffect, useMemo } from "react";
 
@@ -9,6 +10,17 @@ type UseAuthOptions = {
 };
 
 export function useAuth(options?: UseAuthOptions) {
+  if (isStaticMirror()) {
+    return {
+      user: null,
+      loading: false,
+      error: null,
+      isAuthenticated: false,
+      refresh: async () => undefined,
+      logout: async () => undefined,
+    };
+  }
+
   // Login is started via startLogin() in the effect below, only when we actually
   // navigate — never during render. startLogin() mints a one-time nonce + writes
   // the state cookie, so calling it per render would overwrite the cookie and

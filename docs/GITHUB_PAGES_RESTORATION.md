@@ -7,3 +7,5 @@ The dedicated static entrypoint has been rebuilt around the current Project Rela
 The apparent local runtime issue was isolated to the generic preview server, which returned its HTML fallback for assets nested under the GitHub Pages base path. A base-path-aware local preview rendered the rebuilt artifact correctly. The verified page now uses the current Project Relay navigation, hero card, category set, project discovery, featured talent, workspace, closing section, and footer rather than the prior legacy static layout.
 
 The GitHub Actions Pages workflow completed successfully. The normal public URL can retain the previous HTML briefly in cache, while the cache-bypassed URL using the restoration commit query (`?v=b1937de`) verified the updated current Project Relay experience from the live deployment.
+
+The prior static approximation has now been replaced with the actual managed `Home` component inside a static-safe provider wrapper. Its public assets resolve from the managed host and its account, settings, dashboard, and posting actions redirect to the managed application when an API-backed flow is required.
