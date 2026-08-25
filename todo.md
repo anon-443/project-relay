@@ -230,4 +230,4 @@
 - [x] Compact the notification settings screen so the header, description, and preference controls appear together without excess blank space.
 - [x] Preserve concise one-line desktop text where appropriate while adding safe phone wrapping and readable mobile spacing.
 - [x] Add subtle accessible hover and focus motion to project cards and their primary actions.
-- [ ] Verify settings and project-card behavior at desktop/mobile sizes, run validation, then synchronize the release.
+- [x] Verify settings and project-card behavior at desktop/mobile sizes, run validation, then synchronize the release.
