@@ -189,3 +189,10 @@ html { scroll-behavior:smooth; } body { background:var(--rely-bg); color:var(--r
 .hero-brief-card { transform:rotate(-2.2deg); transform-origin:left bottom; }
 @media (max-width:600px) { .hero-brief-card { transform:rotate(-1.35deg); } }
 @media (prefers-reduced-motion:reduce) { .hero-brief-card { transform:none!important; } }
+
+/* GitHub Pages public mirror: retain the live homepage hierarchy without server-only controls. */
+.static-project-rely .project-card-side > a, .static-project-rely .portfolio-note > a, .static-project-rely .dashboard-profile > a { display:inline-flex; align-items:center; gap:6px; color:inherit; text-decoration:none; font:800 10px/1 "JetBrains Mono",monospace; text-transform:uppercase; letter-spacing:.04em; }
+.static-project-rely .talent-filter > a { display:inline-flex; align-items:center; justify-content:center; padding:0 16px; border-radius:10px; background:var(--rely-ink); color:#fff; text-decoration:none; font:800 10px/1 "JetBrains Mono",monospace; text-transform:uppercase; letter-spacing:.04em; }
+.static-project-rely .project-list-toolbar > span:last-child { color:var(--rely-ink-soft); font:800 10px/1 "JetBrains Mono",monospace; text-transform:uppercase; letter-spacing:.05em; }
+.static-project-rely .static-mobile-nav { animation:static-menu-slide .26s var(--rely-ease) both; }
+@keyframes static-menu-slide { from { opacity:0; transform:translateX(22px); } to { opacity:1; transform:translateX(0); } }

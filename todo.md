@@ -267,3 +267,6 @@
 - [x] Map the supplied marketplace requirements to Project Rely features and identify non-essential repository presentation content.
 - [x] Streamline the README, repository description, and public documentation around the completed requirement set.
 - [x] Validate the final repository presentation and application build, then publish a final project-completion release.
+- [x] Inspect the deployed GitHub Pages artifact and static entrypoint to identify why it differs from Project Rely.
+- [x] Align the GitHub Pages public build with the Project Rely public experience and redeploy it.
+- [ ] Verify the corrected deployed demo and record the final deployment check.
