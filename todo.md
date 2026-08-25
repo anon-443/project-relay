@@ -240,3 +240,11 @@
 - [x] Resize and rebalance the How It Works image panel so its label overlay does not dominate or hide the image.
 - [x] Center the profile card’s avatar, label, and action content within the card.
 - [x] Verify desktop/mobile visuals and builds, then synchronize the visual-correction release.
+- [x] Map the annotated How It Works label position, featured-project spacing, hero text-card placement, and remaining image boundary to active CSS.
+- [x] Move the How It Works label left, tighten the featured-project heading/filter/card composition, and remove unused project-section space.
+- [x] Reposition the hero featured-project text card and remove the remaining outer image boundary without clipping content.
+- [ ] Verify desktop/mobile composition and builds, then synchronize the composition-correction release.
+- [x] Map the How It Works label placement, featured-project whitespace, project-card geometry, hero text-card placement, and remaining image-boundary issue.
+- [x] Move the How It Works label left, tighten the featured-project heading/filter/card spacing, and rebalance project-card internal areas.
+- [x] Move the hero featured-project text card left and remove the remaining outer image boundary.
+- [ ] Verify desktop/mobile composition and builds, then synchronize the composition correction release.

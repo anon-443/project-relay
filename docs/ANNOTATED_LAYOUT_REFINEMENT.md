@@ -45,3 +45,7 @@ The marketplace now uses larger mobile navigation, notification, menu, form, and
 ## Image, Contrast, and Centering Corrections
 
 The hero and process images no longer render duplicate outer frames. The How It Works caption is a compact horizontal overlay that preserves the full image. Explore labels now maintain visible contrast on all category cards in default and interactive states. The workspace profile is vertically and horizontally centered, with its avatar, label, and action treated as a single contained group. Desktop and phone checks confirmed the corrected treatment remains stable at both breakpoints.
+
+## Composition Tightening
+
+The How It Works image caption now sits at the left edge as a compact horizontal label. The featured-project directory has reduced section, toolbar, and card whitespace so its controls and brief cards form a tighter reading sequence. The hero project-card image surface has no duplicate frame treatment. Desktop and 390 px phone reviews confirmed contained imagery and stable project-card spacing.
