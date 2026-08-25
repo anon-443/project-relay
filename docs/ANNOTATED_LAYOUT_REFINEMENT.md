@@ -49,3 +49,11 @@ The hero and process images no longer render duplicate outer frames. The How It 
 ## Composition Tightening
 
 The How It Works image caption now sits at the left edge as a compact horizontal label. The featured-project directory has reduced section, toolbar, and card whitespace so its controls and brief cards form a tighter reading sequence. The hero project-card image surface has no duplicate frame treatment. Desktop and 390 px phone reviews confirmed contained imagery and stable project-card spacing.
+
+## Hero, Navigation, and Settings Refinement
+
+The hero image now has rounded corners and a darkened, bordered surface behind the Discover, Connect, Deliver overlay so it stays legible over light photography. The non-required Profile entry is removed from desktop and mobile primary navigation while the underlying profile route remains available. The notification settings page now keeps the intro, all three preference rows, and the save action together in a compact desktop composition without surplus vertical space.
+
+At the 390 px phone breakpoint, the hero image remains cleanly contained with its rounded treatment, and the settings sheet keeps each label, explanation, selector, and save action legible without horizontal overflow. The compact vertical presentation preserves safe text wrapping rather than relying on truncated content.
+
+The open phone navigation was reviewed separately: it lists Find work, Find talent, Dashboard, My workboard, and Settings without a Profile entry. Direct navigation to the freelancer profile remains available and renders normally, preserving the feature without retaining an unnecessary public-menu button.

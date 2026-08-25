@@ -248,3 +248,7 @@
 - [x] Move the How It Works label left, tighten the featured-project heading/filter/card spacing, and rebalance project-card internal areas.
 - [x] Move the hero featured-project text card left and remove the remaining outer image boundary.
 - [x] Verify desktop/mobile composition and builds, then synchronize the composition correction release.
+- [x] Map the hero-image radius, overlay-text contrast, notification-settings density, and Profile navigation-item issues to current components and styles.
+- [x] Round the hero image, make its overlaid Discover/Connect/Deliver text visible, and compact notification settings so its core content appears together.
+- [x] Remove the non-required Profile item from public navigation while preserving the accessible profile route.
+- [x] Verify the public hero, navigation, and settings layouts at desktop/mobile sizes, run validation, then synchronize the correction release.
