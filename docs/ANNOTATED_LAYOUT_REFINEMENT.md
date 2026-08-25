@@ -37,3 +37,7 @@ The three relay-method messages now sit in the visual center of their cards rath
 ## Compact Settings and Card Interactions
 
 The notification settings screen now places its title, explanatory line, and the full preference sheet in one desktop viewport with a reduced vertical gap. Desktop headings and supporting copy remain on one line where space permits; phone layouts deliberately wrap them while maintaining readable margins. Project cards now provide small, motion-safe hover and focus elevation, a subtle identity-mark response, and reinforced action feedback for pointer devices.
+
+## Phone Optimization Pass
+
+The marketplace now uses larger mobile navigation, notification, menu, form, and action targets. The phone hero flows through copy before visual content, filters and project cards use compact single-column lanes, and card text has a more generous three-line reading allowance. Talent rows, workboard panels, settings controls, chat composition, and dialogs use responsive spacing and full-width touch actions. The mobile review confirmed the menu, settings page, and large project brief remain contained and legible at a 390 px viewport.

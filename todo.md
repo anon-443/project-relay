@@ -231,3 +231,7 @@
 - [x] Preserve concise one-line desktop text where appropriate while adding safe phone wrapping and readable mobile spacing.
 - [x] Add subtle accessible hover and focus motion to project cards and their primary actions.
 - [x] Verify settings and project-card behavior at desktop/mobile sizes, run validation, then synchronize the release.
+- [x] Audit Project Rely at a phone viewport across public discovery, dialogs, settings, talent, and workspace surfaces.
+- [x] Optimize mobile navigation, hero sizing, touch targets, search and filter controls, project cards, and primary actions.
+- [x] Optimize mobile talent, workboard, notification settings, and dialog layout with safe wrapping and readable spacing.
+- [ ] Verify phone and desktop safeguards, run validation, then synchronize the mobile-optimization release.
