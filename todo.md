@@ -235,3 +235,8 @@
 - [x] Optimize mobile navigation, hero sizing, touch targets, search and filter controls, project cards, and primary actions.
 - [x] Optimize mobile talent, workboard, notification settings, and dialog layout with safe wrapping and readable spacing.
 - [x] Verify phone and desktop safeguards, run validation, then synchronize the mobile-optimization release.
+- [x] Map and remove the duplicate outer image frames around the hero and process imagery.
+- [x] Restore accessible Explore-label contrast on every category card and interaction state.
+- [x] Resize and rebalance the How It Works image panel so its label overlay does not dominate or hide the image.
+- [x] Center the profile card’s avatar, label, and action content within the card.
+- [ ] Verify desktop/mobile visuals and builds, then synchronize the visual-correction release.

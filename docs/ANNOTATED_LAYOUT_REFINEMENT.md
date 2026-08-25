@@ -41,3 +41,7 @@ The notification settings screen now places its title, explanatory line, and the
 ## Phone Optimization Pass
 
 The marketplace now uses larger mobile navigation, notification, menu, form, and action targets. The phone hero flows through copy before visual content, filters and project cards use compact single-column lanes, and card text has a more generous three-line reading allowance. Talent rows, workboard panels, settings controls, chat composition, and dialogs use responsive spacing and full-width touch actions. The mobile review confirmed the menu, settings page, and large project brief remain contained and legible at a 390 px viewport.
+
+## Image, Contrast, and Centering Corrections
+
+The hero and process images no longer render duplicate outer frames. The How It Works caption is a compact horizontal overlay that preserves the full image. Explore labels now maintain visible contrast on all category cards in default and interactive states. The workspace profile is vertically and horizontally centered, with its avatar, label, and action treated as a single contained group. Desktop and phone checks confirmed the corrected treatment remains stable at both breakpoints.
