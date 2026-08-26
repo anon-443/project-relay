@@ -279,3 +279,6 @@
 - [x] Map the existing public visual system and choose safe original areas for premium interactive-depth refinements.
 - [x] Implement original hero texture, card-depth, hover, and motion refinements without copying third-party code, assets, branding, or layouts.
 - [x] Verify the refined desktop/mobile public experience, validate builds, and deploy the release.
+- [x] Review the supplied references and map an original immersive hero direction that replaces the split image/text composition.
+- [x] Design and implement the new responsive immersive hero visual layers, content placement, and motion behavior without third-party copying.
+- [x] Verify the desktop/mobile hero redesign, validate builds, and deploy the release.

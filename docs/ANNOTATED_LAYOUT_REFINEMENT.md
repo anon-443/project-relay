@@ -83,3 +83,9 @@ The featured-project card now uses a restrained counterclockwise tilt that adds 
 The public marketplace now has an original premium interaction layer: a fine studio texture, a protected highlight plane over the hero image, more dimensional card surfaces, and measured perspective lift for hero, category, project, and talent cards on fine-pointer hover. Search and filter controls receive a quieter focus halo, while buttons retain compact tactile feedback. The composition remains purpose-built for Project Relay; no third-party code, assets, branding, or layouts were copied.
 
 The 1280 px and 390 px reviews confirmed that the new depth treatment stays restrained, preserves the existing visual hierarchy, and leaves the mobile experience clean and readable. Reduced-motion rules disable non-essential transitions and transforms.
+
+## Immersive Hero Redesign
+
+The opening split image-and-copy layout has been replaced by an original full-stage marketplace scene. A darkened creative-worktable photograph now spans the hero, while the marketplace headline, search field, and role-aware counts sit inside a clear editorial reading lane. A custom orbit field, live brief card, availability stamp, glass search surface, and reduced-motion-safe depth response create a more immersive entry without adopting an external layout or asset.
+
+The 1280 px review confirms that photo, typography, circular field, search action, and brief card form a layered but readable composition. At 390 px, the live-match note is intentionally removed to protect the headline, while the photo stage, search, metrics, availability stamp, and featured brief card remain visible and contained.
