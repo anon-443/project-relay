@@ -77,3 +77,9 @@ The unused visual-index label and the decorative star inside the featured-projec
 ## Featured Card Tilt
 
 The featured-project card now uses a restrained counterclockwise tilt that adds depth while keeping every text and status lane readable. Its phone variant uses a gentler tilt to preserve safe image containment, and reduced-motion preferences retain the unrotated reading surface.
+
+## Original Studio-Depth Refinement
+
+The public marketplace now has an original premium interaction layer: a fine studio texture, a protected highlight plane over the hero image, more dimensional card surfaces, and measured perspective lift for hero, category, project, and talent cards on fine-pointer hover. Search and filter controls receive a quieter focus halo, while buttons retain compact tactile feedback. The composition remains purpose-built for Project Relay; no third-party code, assets, branding, or layouts were copied.
+
+The 1280 px and 390 px reviews confirmed that the new depth treatment stays restrained, preserves the existing visual hierarchy, and leaves the mobile experience clean and readable. Reduced-motion rules disable non-essential transitions and transforms.

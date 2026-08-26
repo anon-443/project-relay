@@ -276,3 +276,6 @@
 - [x] Capture and compare the managed and GitHub Pages homepages at matching desktop and mobile breakpoints.
 - [x] Correct any observed visual, structural, or interaction parity difference; no additional correction was required after the final live comparison.
 - [x] Re-verify both live sites, validate the final artifact, and record the parity result.
+- [x] Map the existing public visual system and choose safe original areas for premium interactive-depth refinements.
+- [x] Implement original hero texture, card-depth, hover, and motion refinements without copying third-party code, assets, branding, or layouts.
+- [x] Verify the refined desktop/mobile public experience, validate builds, and deploy the release.
