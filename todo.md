@@ -273,3 +273,6 @@
 - [x] Map the managed homepage dependencies that need static-safe fallbacks for an exact GitHub Pages mirror.
 - [x] Reuse the managed homepage structure and visual system in the GitHub Pages build, redirecting only server-dependent actions to the full app.
 - [x] Verify desktop/mobile visual parity between the managed homepage and GitHub Pages, then deploy the exact mirror.
+- [x] Capture and compare the managed and GitHub Pages homepages at matching desktop and mobile breakpoints.
+- [x] Correct any observed visual, structural, or interaction parity difference; no additional correction was required after the final live comparison.
+- [x] Re-verify both live sites, validate the final artifact, and record the parity result.
