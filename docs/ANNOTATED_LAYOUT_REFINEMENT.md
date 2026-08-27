@@ -107,3 +107,9 @@ The hero now exposes three real featured marketplace records—Tide & Form, Morr
 The hero’s desktop stage now includes a small original warm sparkle field and a diagonal apricot scan line placed exclusively on the image side of the composition. Both layers respond gently to pointer movement, retain the warm accent system, and are held behind the left reading lane so the headline, body copy, search field, and metrics remain fully legible.
 
 At 390 px, the sparkle and scan treatment are intentionally removed to keep the compact mobile hero focused. Reduced-motion preferences disable the non-essential animated and transformed layers. Final visual checks confirmed that the desktop effect adds a polished, cinematic finish without appearing as a copied reference effect or creating an overlay collision.
+
+## Compact Hero and Floating-Card Placement
+
+The desktop hero stage was tightened to a bounded responsive height, reducing the oversized first-page impression while retaining the full image composition. The featured-project card is now anchored low inside the image boundary with a safe responsive bottom offset, and the live-match card has moved into a center-right image lane rather than sitting against the far edge.
+
+Desktop and 390 px phone checks confirm that the card remains contained, the live-match element stays visually balanced on desktop, and the mobile hero preserves its previously verified compact placement without new collisions.

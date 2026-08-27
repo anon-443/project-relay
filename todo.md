@@ -291,3 +291,6 @@
 - [x] Map the current hero layers and define a safe original sparkle, cursor-depth, and scan-accent composition.
 - [x] Implement original hero sparkle layers, cursor-responsive depth, and a restrained laser-scan motion treatment.
 - [x] Verify desktop/mobile hero polish, motion safeguards, validate builds, and deploy the completed first-page visual release.
+- [x] Map the reported oversized hero composition and current featured-card and live-match placement rules.
+- [x] Tighten the hero size, lower the featured-project card inside the image stage, and rebalance the live-match element.
+- [x] Verify the corrected desktop/mobile hero composition, validate builds, and deploy the placement release.
