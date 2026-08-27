@@ -289,3 +289,20 @@ html { scroll-behavior:smooth; } body { background:var(--rely-bg); color:var(--r
 @media (prefers-reduced-motion:reduce) { .relay-hero::after,.hero-visual>img,.hero-evidence,.hero-brief-card,.hero-reel { transform:none!important; transition:none!important; animation:none!important; }.hero-reel-foot>i>b { animation:none!important; } }
 
 @media (min-width:761px) { .hero-copy { position:absolute!important; top:0!important; left:clamp(42px,5.2vw,86px)!important; width:min(560px,47vw)!important; padding-left:0!important; padding-right:0!important; } }
+
+/* Streamlined hero: project access stays real and keyboard accessible, while decorative reel/orbit elements are removed. */
+.relay-hero::after { content:none!important; display:none!important; animation:none!important; }
+.hero-reel { display:none!important; }
+.relay-app main { position:relative; }
+@media (min-width:761px) {
+  .hero-project-rail { position:absolute; top:350px; right:clamp(250px,21vw,340px); z-index:7; display:flex; align-items:center; gap:6px; padding:8px 9px; border:1px solid rgba(255,255,255,.22); border-radius:999px; color:rgba(255,255,255,.76); background:rgba(10,14,25,.62); box-shadow:0 15px 30px rgba(0,0,0,.18); backdrop-filter:blur(15px); font:700 8px/1 "JetBrains Mono",letter-spacing:.06em; }
+  .hero-project-rail>span { padding:0 5px; color:var(--rely-hero-warm-soft); font-size:7px; }
+  .hero-project-rail button { min-height:27px; padding:0 8px; border:1px solid transparent; border-radius:999px; color:rgba(255,255,255,.86); background:transparent; font:700 8px/1 "JetBrains Mono",monospace; letter-spacing:.04em; transition:color .2s var(--rely-ease),background .2s var(--rely-ease),transform .2s var(--rely-ease); }
+  .hero-project-rail button b { color:var(--rely-hero-warm); }.hero-project-rail button:hover,.hero-project-rail button:focus-visible { color:#25160e; background:var(--rely-hero-warm); outline:none; transform:translateY(-2px); }.hero-project-rail button:hover b,.hero-project-rail button:focus-visible b { color:#25160e; }
+  .hero-visual>img { animation:hero-photo-drift 14s ease-in-out infinite alternate; }.hero-evidence { animation:hero-note-float 6s ease-in-out infinite; }.hero-brief-card { animation:hero-brief-float 7s ease-in-out infinite; }
+}
+@keyframes hero-photo-drift { from { object-position:51% 49%; } to { object-position:55% 47%; } }
+@keyframes hero-note-float { 0%,100% { margin-top:0; } 50% { margin-top:-7px; } }
+@keyframes hero-brief-float { 0%,100% { margin-bottom:0; } 50% { margin-bottom:8px; } }
+@media (max-width:760px) { .hero-project-rail { display:none!important; }.hero-visual>img { animation:hero-photo-drift 16s ease-in-out infinite alternate; }.hero-brief-card { animation:hero-brief-float 7s ease-in-out infinite; } }
+@media (prefers-reduced-motion:reduce) { .hero-visual>img,.hero-evidence,.hero-brief-card { animation:none!important; }.hero-project-rail button { transition:none!important; } }

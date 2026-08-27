@@ -285,3 +285,6 @@
 - [x] Map the immersive hero structure and identify safe color, parallax, orbit-motion, and reel refinements.
 - [x] Implement a left-aligned reading lane, warmer accent treatment, subtle pointer depth, orbit motion, and original project-reel treatment.
 - [x] Verify desktop/mobile readability and interaction safeguards, validate builds, and deploy the refinement release.
+- [x] Map the hero reel, orbit decoration, existing project data, and safe first-page motion refinements.
+- [x] Remove the unwanted reel and orbit, add refined first-page motion, and implement keyboard-accessible real-project media navigation.
+- [x] Verify desktop/mobile clarity, animation behavior, keyboard controls, validate builds, and deploy the release.

@@ -141,18 +141,6 @@ export default function Home() {
   }, [notificationPreview]);
   useEffect(() => { const ticker = window.setInterval(() => setFeaturedStatusIndex((index) => (index + 1) % featuredProjectStatuses.length), 4200); return () => window.clearInterval(ticker); }, []);
   useEffect(() => {
-    let frame = 0;
-    const updateOrbit = () => {
-      frame = 0;
-      const amount = Math.min(window.scrollY / Math.max(window.innerHeight, 1), 1) * 16;
-      document.documentElement.style.setProperty("--relay-orbit-turn", `${amount}deg`);
-    };
-    const requestUpdate = () => { if (!frame) frame = window.requestAnimationFrame(updateOrbit); };
-    updateOrbit();
-    window.addEventListener("scroll", requestUpdate, { passive: true });
-    return () => { window.removeEventListener("scroll", requestUpdate); if (frame) window.cancelAnimationFrame(frame); };
-  }, []);
-  useEffect(() => {
     const requestedProject = Number(new URLSearchParams(window.location.search).get("previewProject"));
     if (!Number.isInteger(requestedProject)) return;
     setSelectedProject(projects.find((project) => project.id === requestedProject) ?? null);
@@ -239,6 +227,10 @@ export default function Home() {
       </header>
 
       <main>
+        <nav className="hero-project-rail" aria-label="Featured project media">
+          <span>FEATURED PROJECTS</span>
+          {projects.slice(0, 3).map((project, index) => <button key={project.id} type="button" onClick={() => { setCategory(project.category); scrollTo("projects"); }}><b>{String(index + 1).padStart(2, "0")}</b> {project.company}</button>)}
+        </nav>
         <section className="relay-hero" aria-labelledby="hero-title" onPointerMove={(event) => { if (event.pointerType === "touch") return; const rect = event.currentTarget.getBoundingClientRect(); event.currentTarget.style.setProperty("--hero-pointer-x", `${((event.clientX - rect.left) / rect.width - .5) * 12}px`); event.currentTarget.style.setProperty("--hero-pointer-y", `${((event.clientY - rect.top) / rect.height - .5) * 10}px`); }} onPointerLeave={(event) => { event.currentTarget.style.setProperty("--hero-pointer-x", "0px"); event.currentTarget.style.setProperty("--hero-pointer-y", "0px"); }}><div className="hero-copy"><motion.p className="section-kicker" {...reveal}><i /> A creative marketplace for ambitious work</motion.p><motion.h1 id="hero-title" {...reveal} transition={{ ...reveal.transition, delay: .04 }}>Find talent<br />Get hired<br /><em>Build the future</em></motion.h1><motion.p className="hero-description" {...reveal} transition={{ ...reveal.transition, delay: .08 }}>Project Relay brings well-scoped projects and capable independent specialists into one energetic working space</motion.p><motion.form className="hero-search" {...reveal} transition={{ ...reveal.transition, delay: .1 }} onSubmit={(event) => { event.preventDefault(); scrollTo("projects"); }}><Search size={19} /><input value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} placeholder="Search projects or skills" aria-label="Search projects or skills" /><button type="submit">Explore <ArrowRight size={16} /></button></motion.form><motion.div className="hero-stats" {...reveal} transition={{ ...reveal.transition, delay: .16 }}><span><b>12</b> featured projects</span><span><b>6</b> creative disciplines</span><span><b>3</b> role-aware workspaces</span></motion.div></div><motion.div className="hero-visual" {...reveal} transition={{ ...reveal.transition, delay: .1 }}><img src={assets.hero} alt="Editorial creative studio worktable with project planning materials" /><div className="hero-evidence"><span>LIVE MATCH</span><b>Briefs with better context</b></div><div className="hero-brief-card"><p>FEATURED PROJECT</p><span className="hero-project-status" aria-live="polite"><i /> {featuredProjectStatuses[featuredStatusIndex]}</span><strong>Mobile checkout redesign</strong><div><span>Product design</span><b>$2.4k–$3.2k</b></div></div><div className="hero-stamp">NOW<br />OPEN</div></motion.div><div className="hero-reel" aria-label="Project Relay project reel preview"><div className="hero-reel-head"><span><i /> PROJECT REEL</span><b>00:18</b></div><div className="hero-reel-frame"><span>TIDE &amp; FORM</span><strong>Mobile checkout<br />in motion</strong><p>Research → prototype → handoff</p></div><div className="hero-reel-foot"><Play size={12} fill="currentColor" /><span>Previewing project flow</span><i><b /></i></div></div></section>
 
         <section className="category-section relay-shell" aria-labelledby="category-title"><motion.div className="section-title-row" {...reveal}><div><p className="section-kicker">01 / POPULAR CATEGORIES</p><h2 id="category-title">Find work in the craft you <em>love</em></h2></div><button type="button" className="mini-link" onClick={() => scrollTo("projects")}>Explore projects <ArrowUpRight size={16} /></button></motion.div><div className="category-grid">{categories.map((item, index) => <motion.button key={item.label} className={`category-card tone-${item.tone}`} type="button" {...reveal} transition={{ ...reveal.transition, delay: index * .045 }} onClick={() => { setCategory(item.label); scrollTo("projects"); }}><span className="category-icon">{item.icon}</span><span className="category-label">{item.label}</span><span className="category-action">Explore <ArrowUpRight size={14} /></span></motion.button>)}</div></section>

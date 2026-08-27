@@ -95,3 +95,9 @@ The 1280 px review confirms that photo, typography, circular field, search actio
 The immersive hero now uses an explicitly anchored left reading lane, so the full headline, description, search interaction, and marketplace counts sit against the calmest part of the photograph. The strong cyan treatment has been replaced by a warm apricot accent across the headline, search action, live state, stamp, orbit, and depth shadows.
 
 An original project-reel panel now previews the Tide & Form flow in the desktop stage. Pointer movement produces a small composited shift across the photo, project card, reel, and orbit field; scroll updates the orbit direction without layout work. At phone width, the reel and small live-match note are intentionally withheld, preserving the headline and interactive controls. Reduced-motion preferences disable the non-essential depth transforms and progress animation.
+
+## Streamlined Hero Media Controls
+
+The temporary project-reel panel and the circular orbit decoration have been removed from the hero. The first page now uses a calmer photographic stage, the protected left reading lane, and subtle photo/brief-card drift for motion without decorative clutter.
+
+The hero now exposes three real featured marketplace records—Tide & Form, Morrow Grid, and Common Table—as native, keyboard-focusable buttons. The controls carry visible labels, work with standard keyboard activation, and filter the existing project directory rather than opening a placeholder reel. Desktop and 390 px phone reviews confirmed that the removed elements do not leave visual gaps; the mobile hero keeps its compact project card and motion-safe image treatment.
