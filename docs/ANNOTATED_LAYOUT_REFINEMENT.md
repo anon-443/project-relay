@@ -101,3 +101,9 @@ An original project-reel panel now previews the Tide & Form flow in the desktop 
 The temporary project-reel panel and the circular orbit decoration have been removed from the hero. The first page now uses a calmer photographic stage, the protected left reading lane, and subtle photo/brief-card drift for motion without decorative clutter.
 
 The hero now exposes three real featured marketplace records—Tide & Form, Morrow Grid, and Common Table—as native, keyboard-focusable buttons. The controls carry visible labels, work with standard keyboard activation, and filter the existing project directory rather than opening a placeholder reel. Desktop and 390 px phone reviews confirmed that the removed elements do not leave visual gaps; the mobile hero keeps its compact project card and motion-safe image treatment.
+
+## Hero Sparkle and Scan Finishing Layer
+
+The hero’s desktop stage now includes a small original warm sparkle field and a diagonal apricot scan line placed exclusively on the image side of the composition. Both layers respond gently to pointer movement, retain the warm accent system, and are held behind the left reading lane so the headline, body copy, search field, and metrics remain fully legible.
+
+At 390 px, the sparkle and scan treatment are intentionally removed to keep the compact mobile hero focused. Reduced-motion preferences disable the non-essential animated and transformed layers. Final visual checks confirmed that the desktop effect adds a polished, cinematic finish without appearing as a copied reference effect or creating an overlay collision.

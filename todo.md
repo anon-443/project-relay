@@ -288,3 +288,6 @@
 - [x] Map the hero reel, orbit decoration, existing project data, and safe first-page motion refinements.
 - [x] Remove the unwanted reel and orbit, add refined first-page motion, and implement keyboard-accessible real-project media navigation.
 - [x] Verify desktop/mobile clarity, animation behavior, keyboard controls, validate builds, and deploy the release.
+- [x] Map the current hero layers and define a safe original sparkle, cursor-depth, and scan-accent composition.
+- [x] Implement original hero sparkle layers, cursor-responsive depth, and a restrained laser-scan motion treatment.
+- [x] Verify desktop/mobile hero polish, motion safeguards, validate builds, and deploy the completed first-page visual release.
