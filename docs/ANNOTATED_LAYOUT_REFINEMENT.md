@@ -119,3 +119,9 @@ Desktop and 390 px phone checks confirm that the card remains contained, the liv
 The hero headline now uses deliberate semantic line groups instead of presentation-only line-break tags. Its desktop width and scale keep “Build the future” intact as a confident third line, while smaller screens retain natural wrapping without overflow.
 
 The project rail now includes a concise, keyboard-operable capability walkthrough. It cycles through discovery, matching, and connecting stages in a short contained panel, then returns to its resting state. On large desktop screens the header uses a smaller brand-to-navigation spacer; this removes the observed excess horizontal whitespace while retaining the prior text and icon scale.
+
+## Light Editorial Hero Recomposition
+
+The first page now uses an original light editorial studio composition rather than the prior dark full-stage treatment. A mineral-paper hero base, low-contrast teal fields, charcoal text, and restrained brass action signals provide a clearer premium hierarchy. The workspace photograph is a compact left-hand editorial panel, while the headline, search, and marketplace metrics occupy a calm right-hand reading column.
+
+The live-match note, availability stamp, featured-project surface, and interactive project rail have been retuned to this lighter system. Phone styling retains the image-led compact composition and preserves high contrast for its overlaid text and controls.

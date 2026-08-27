@@ -297,3 +297,6 @@
 - [x] Map the supplied header-spacing issue and current responsive hero headline and rail structure.
 - [x] Balance responsive hero headline line breaks, add an accessible interaction demo to the rail, and compact header geometry without shrinking text or icons.
 - [x] Verify desktop/mobile header and hero composition, interaction behavior, builds, and deployment.
+- [x] Map the supplied aesthetic reference qualities to the current first-page hero and define an original light editorial visual direction.
+- [x] Redesign the first-page hero with a refined light palette, editorial composition, and supporting visual treatments while preserving functionality.
+- [x] Verify the refreshed desktop/mobile first page, validate all builds, and deploy the aesthetic refinement.
