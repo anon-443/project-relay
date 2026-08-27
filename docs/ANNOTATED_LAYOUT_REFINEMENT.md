@@ -113,3 +113,9 @@ At 390 px, the sparkle and scan treatment are intentionally removed to keep the 
 The desktop hero stage was tightened to a bounded responsive height, reducing the oversized first-page impression while retaining the full image composition. The featured-project card is now anchored low inside the image boundary with a safe responsive bottom offset, and the live-match card has moved into a center-right image lane rather than sitting against the far edge.
 
 Desktop and 390 px phone checks confirm that the card remains contained, the live-match element stays visually balanced on desktop, and the mobile hero preserves its previously verified compact placement without new collisions.
+
+## Responsive Headline, Interactive Rail, and Header Density
+
+The hero headline now uses deliberate semantic line groups instead of presentation-only line-break tags. Its desktop width and scale keep “Build the future” intact as a confident third line, while smaller screens retain natural wrapping without overflow.
+
+The project rail now includes a concise, keyboard-operable capability walkthrough. It cycles through discovery, matching, and connecting stages in a short contained panel, then returns to its resting state. On large desktop screens the header uses a smaller brand-to-navigation spacer; this removes the observed excess horizontal whitespace while retaining the prior text and icon scale.

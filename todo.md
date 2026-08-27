@@ -294,3 +294,6 @@
 - [x] Map the reported oversized hero composition and current featured-card and live-match placement rules.
 - [x] Tighten the hero size, lower the featured-project card inside the image stage, and rebalance the live-match element.
 - [x] Verify the corrected desktop/mobile hero composition, validate builds, and deploy the placement release.
+- [x] Map the supplied header-spacing issue and current responsive hero headline and rail structure.
+- [x] Balance responsive hero headline line breaks, add an accessible interaction demo to the rail, and compact header geometry without shrinking text or icons.
+- [x] Verify desktop/mobile header and hero composition, interaction behavior, builds, and deployment.
