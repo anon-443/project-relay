@@ -300,3 +300,6 @@
 - [x] Map the supplied aesthetic reference qualities to the current first-page hero and define an original light editorial visual direction.
 - [x] Redesign the first-page hero with a refined light palette, editorial composition, and supporting visual treatments while preserving functionality.
 - [x] Verify the refreshed desktop/mobile first page, validate all builds, and deploy the aesthetic refinement.
+- [x] Map the supplied desktop clipping and hero-height issue to the active responsive layout rules.
+- [x] Compact the desktop hero and reposition floating project surfaces within safe visible bounds without shrinking the content scale.
+- [x] Verify desktop/mobile hero sizing, validate builds, and deploy the correction.

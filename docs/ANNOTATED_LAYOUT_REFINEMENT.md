@@ -125,3 +125,7 @@ The project rail now includes a concise, keyboard-operable capability walkthroug
 The first page now uses an original light editorial studio composition rather than the prior dark full-stage treatment. A mineral-paper hero base, low-contrast teal fields, charcoal text, and restrained brass action signals provide a clearer premium hierarchy. The workspace photograph is a compact left-hand editorial panel, while the headline, search, and marketplace metrics occupy a calm right-hand reading column.
 
 The live-match note, availability stamp, featured-project surface, and interactive project rail have been retuned to this lighter system. Phone styling retains the image-led compact composition and preserves high contrast for its overlaid text and controls.
+
+## Above-the-Fold Hero Sizing Correction
+
+The desktop hero now uses a shorter bounded responsive height and smaller internal vertical offsets. The workspace image moves slightly upward, the project rail sits above the featured card, and the featured-project card is brought inward from the outer edge with a safe lower anchor. This keeps the complete first-page composition visible at common laptop and wide-desktop viewports without reducing the headline, control, or icon scale.
