@@ -282,3 +282,6 @@
 - [x] Review the supplied references and map an original immersive hero direction that replaces the split image/text composition.
 - [x] Design and implement the new responsive immersive hero visual layers, content placement, and motion behavior without third-party copying.
 - [x] Verify the desktop/mobile hero redesign, validate builds, and deploy the release.
+- [x] Map the immersive hero structure and identify safe color, parallax, orbit-motion, and reel refinements.
+- [x] Implement a left-aligned reading lane, warmer accent treatment, subtle pointer depth, orbit motion, and original project-reel treatment.
+- [x] Verify desktop/mobile readability and interaction safeguards, validate builds, and deploy the refinement release.
