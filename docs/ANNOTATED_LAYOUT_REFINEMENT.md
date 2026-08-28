@@ -143,3 +143,7 @@ The desktop hero image now has a low-contrast teal and apricot halo that sits be
 ## Responsive Two-Column Hero Rebuild
 
 The desktop hero now uses a 55/45 two-column grid with a 48px gutter, a viewport-height stage, and vertical centering beneath a 70px header. The media block is constrained to 580px by 520px with a 20px clipped frame; its Live Match and Featured Project surfaces retain their independent elevated placement. The text, search, and statistics now use consistent defined scales and dividers. At 767px and below, the image stacks before the text on a light surface with the same visible core controls and safe overlay bounds.
+
+## Final Hero Spacing and Control Corrections
+
+The desktop hero now begins at an 80px top offset, uses a 64px grid gutter, and maintains `calc(100vh - 70px)` as its minimum height with 80px breathing room below. The text column is centered with a 48px internal left offset; search expands to the available column width and statistic columns use fixed minimum lanes to preserve their labels. The featured-project surface is retained inside the visible media boundary at its bottom edge.
