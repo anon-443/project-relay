@@ -129,3 +129,9 @@ The live-match note, availability stamp, featured-project surface, and interacti
 ## Above-the-Fold Hero Sizing Correction
 
 The desktop hero now uses a shorter bounded responsive height and smaller internal vertical offsets. The workspace image moves slightly upward, the project rail sits above the featured card, and the featured-project card is brought inward from the outer edge with a safe lower anchor. This keeps the complete first-page composition visible at common laptop and wide-desktop viewports without reducing the headline, control, or icon scale.
+
+## Homepage Hierarchy and Hero Alignment Pass
+
+Desktop section headings now retain a single confident line where there is sufficient width, while the project-intake heading receives a clearer Inter-based display treatment. Header utility icons and the category symbols have a stronger visual presence without changing the surrounding label scale.
+
+The hero has been lowered within a compact bounded stage. Its rail is centered over the image reading area, while the featured-project surface is smaller and contained on the image’s left side. The following category section begins sooner, removing the inactive gap after the hero while retaining the complete visible composition.

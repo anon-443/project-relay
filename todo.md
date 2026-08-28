@@ -303,3 +303,6 @@
 - [x] Map the supplied desktop clipping and hero-height issue to the active responsive layout rules.
 - [x] Compact the desktop hero and reposition floating project surfaces within safe visible bounds without shrinking the content scale.
 - [x] Verify desktop/mobile hero sizing, validate builds, and deploy the correction.
+- [x] Map the six requested heading, icon, card, rail, and hero placement corrections to active homepage layout rules.
+- [x] Keep the two headings on one desktop line, strengthen icon hierarchy, and reposition the featured card, rail, and complete hero composition.
+- [x] Verify desktop/mobile composition, validate all builds, and deploy the complete homepage correction.
