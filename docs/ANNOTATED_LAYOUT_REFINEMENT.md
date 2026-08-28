@@ -135,3 +135,7 @@ The desktop hero now uses a shorter bounded responsive height and smaller intern
 Desktop section headings now retain a single confident line where there is sufficient width, while the project-intake heading receives a clearer Inter-based display treatment. Header utility icons and the category symbols have a stronger visual presence without changing the surrounding label scale.
 
 The hero has been lowered within a compact bounded stage. Its rail is centered over the image reading area, while the featured-project surface is smaller and contained on the image’s left side. The following category section begins sooner, removing the inactive gap after the hero while retaining the complete visible composition.
+
+## Hero Surround and Section Transition Pass
+
+The desktop hero image now has a low-contrast teal and apricot halo that sits behind the existing photograph, adding color and depth without changing the media or reducing text clarity. The category entry begins with a slightly more deliberate offset below the hero, creating a calmer transition while avoiding a return to the earlier oversized gap.

@@ -309,3 +309,6 @@
 - [x] Map the active desktop header-control styles and define a cohesive color and contrast treatment.
 - [x] Add prominent accessible color accents to the header controls while preserving responsive layout.
 - [x] Verify desktop/mobile header emphasis, validate builds, and deploy the visual refinement.
+- [x] Map the current hero surround and category-section spacing rules to the supplied visual feedback.
+- [x] Add a restrained hero background treatment and compact the category-section start without disturbing responsive content.
+- [x] Verify desktop/mobile spacing, validate all builds, and deploy the visual refinement.
