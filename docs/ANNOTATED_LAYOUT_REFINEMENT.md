@@ -147,3 +147,7 @@ The desktop hero now uses a 55/45 two-column grid with a 48px gutter, a viewport
 ## Final Hero Spacing and Control Corrections
 
 The desktop hero now begins at an 80px top offset, uses a 64px grid gutter, and maintains `calc(100vh - 70px)` as its minimum height with 80px breathing room below. The text column is centered with a 48px internal left offset; search expands to the available column width and statistic columns use fixed minimum lanes to preserve their labels. The featured-project surface is retained inside the visible media boundary at its bottom edge.
+
+## Borderless Header Control Refinement
+
+The desktop notification and Dashboard controls now communicate emphasis through their brass and teal color treatments rather than persistent square outlines. Their hover and keyboard-focus feedback remains visible, while header spacing and labels are unchanged.

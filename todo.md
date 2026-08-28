@@ -319,3 +319,6 @@
 - [x] Map the eight requested top-spacing, column alignment, floating-card, search, stat, grid, and text-column corrections to active hero rules.
 - [x] Reduce desktop hero top offset, refine grid and column positioning, protect cards, widen search, and correct stat-label behavior.
 - [x] Verify the revised hero at wide desktop, laptop, and phone sizes; validate builds and deploy the correction.
+- [x] Map the active notification and Dashboard header-control border treatments.
+- [x] Remove the unwanted outer boxes while preserving header emphasis, labels, icons, and interaction states.
+- [x] Verify desktop/mobile header presentation, validate builds, and deploy the borderless-control refinement.
