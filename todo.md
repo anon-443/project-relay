@@ -322,3 +322,6 @@
 - [x] Map the active notification and Dashboard header-control border treatments.
 - [x] Remove the unwanted outer boxes while preserving header emphasis, labels, icons, and interaction states.
 - [x] Verify desktop/mobile header presentation, validate builds, and deploy the borderless-control refinement.
+- [x] Map the closing call-to-action and collaboration-heading wrappers to their current layout rules.
+- [x] Format the closing call-to-action into two deliberate lines and keep the collaboration heading on one clean desktop line.
+- [x] Verify desktop/mobile text wrapping, validate all builds, and deploy the refinement.

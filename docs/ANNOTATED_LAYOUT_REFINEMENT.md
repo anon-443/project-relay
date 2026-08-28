@@ -151,3 +151,7 @@ The desktop hero now begins at an 80px top offset, uses a 64px grid gutter, and 
 ## Borderless Header Control Refinement
 
 The desktop notification and Dashboard controls now communicate emphasis through their brass and teal color treatments rather than persistent square outlines. Their hover and keyboard-focus feedback remains visible, while header spacing and labels are unchanged.
+
+## Closing and Collaboration Copy Refinement
+
+The closing invitation now uses two deliberate lines, separating the people-focused message from the outcome. The conversation heading remains on one clear desktop line and returns to normal wrapping on narrow phone screens.
