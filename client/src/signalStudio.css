@@ -330,6 +330,8 @@ html { scroll-behavior:smooth; } body { background:var(--rely-bg); color:var(--r
 @media (max-width:760px) { .hero-search input::placeholder { color:#87949d!important; opacity:1!important; } }
 /* Final hero geometry correction: intentionally more specific than the retained visual-layer rules below. */
 /* Text composition refinement: make the closing invitation intentional and keep the conversation headline compact. */
+/* The featured-talent title uses two intentional editorial lines instead of an incidental wrap. */
+.talent-intro h2>span,.talent-intro h2>em { display:block!important; }
 @media (min-width:761px) { .closing-section h2>span { display:block!important; white-space:nowrap!important; }.communication-heading h2 { white-space:nowrap!important; letter-spacing:-.055em!important; } }
 @media (max-width:760px) { .closing-section h2>span { display:block!important; }.communication-heading h2 { white-space:normal!important; } }
 /* Borderless header actions: emphasis comes from color and focus feedback, not persistent outer boxes. */

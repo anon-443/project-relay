@@ -155,3 +155,7 @@ The desktop notification and Dashboard controls now communicate emphasis through
 ## Closing and Collaboration Copy Refinement
 
 The closing invitation now uses two deliberate lines, separating the people-focused message from the outcome. The conversation heading remains on one clear desktop line and returns to normal wrapping on narrow phone screens.
+
+## Featured Talent Heading Refinement
+
+The featured-talent heading is now set as a purposeful two-line composition: “Meet people who make” followed by the teal-accent “ideas move.”

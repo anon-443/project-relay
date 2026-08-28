@@ -325,3 +325,6 @@
 - [x] Map the closing call-to-action and collaboration-heading wrappers to their current layout rules.
 - [x] Format the closing call-to-action into two deliberate lines and keep the collaboration heading on one clean desktop line.
 - [x] Verify desktop/mobile text wrapping, validate all builds, and deploy the refinement.
+- [x] Map the featured-talent heading and its active responsive typography rules.
+- [x] Format “Meet people who make ideas move” into an intentional two-line featured-talent title.
+- [x] Verify desktop/mobile heading layout, validate builds, and deploy the refinement.
