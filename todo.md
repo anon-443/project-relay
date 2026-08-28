@@ -328,3 +328,6 @@
 - [x] Map the featured-talent heading and its active responsive typography rules.
 - [x] Format “Meet people who make ideas move” into an intentional two-line featured-talent title.
 - [x] Verify desktop/mobile heading layout, validate builds, and deploy the refinement.
+- [x] Map the featured-project rail’s current hero placement and confirm the shared static-mirror release path.
+- [x] Move the featured-project rail above the hero content and center it without changing its project or demo interactions.
+- [x] Verify managed and GitHub Pages homepage parity at desktop/mobile sizes, validate builds, and finalize the public release.

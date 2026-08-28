@@ -159,3 +159,7 @@ The closing invitation now uses two deliberate lines, separating the people-focu
 ## Featured Talent Heading Refinement
 
 The featured-talent heading is now set as a purposeful two-line composition: “Meet people who make” followed by the teal-accent “ideas move.”
+
+## Final Hero Rail Placement
+
+The featured-project rail is centered in a dedicated top lane above the media and text columns. Its original project labels and Demo control remain unchanged, while the new position makes it read as a shared hero control rather than a media overlay.
