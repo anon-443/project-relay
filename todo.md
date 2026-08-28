@@ -306,3 +306,6 @@
 - [x] Map the six requested heading, icon, card, rail, and hero placement corrections to active homepage layout rules.
 - [x] Keep the two headings on one desktop line, strengthen icon hierarchy, and reposition the featured card, rail, and complete hero composition.
 - [x] Verify desktop/mobile composition, validate all builds, and deploy the complete homepage correction.
+- [x] Map the active desktop header-control styles and define a cohesive color and contrast treatment.
+- [x] Add prominent accessible color accents to the header controls while preserving responsive layout.
+- [x] Verify desktop/mobile header emphasis, validate builds, and deploy the visual refinement.
