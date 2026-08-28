@@ -312,3 +312,7 @@
 - [x] Map the current hero surround and category-section spacing rules to the supplied visual feedback.
 - [x] Add a restrained hero background treatment and compact the category-section start without disturbing responsive content.
 - [x] Verify desktop/mobile spacing, validate all builds, and deploy the visual refinement.
+- [x] Map the supplied desktop and mobile hero specification to the current homepage structure and responsive override stack.
+- [x] Rebuild the desktop hero with the specified two-column grid, full-height layout, media bounds, typography, search, stat, nav, and floating-card constraints.
+- [x] Rebuild the mobile hero into the specified stacked image-first layout and verify responsive behavior across target viewports.
+- [x] Validate types, tests, managed and GitHub Pages builds, then deploy the responsive hero rebuild.

@@ -139,3 +139,7 @@ The hero has been lowered within a compact bounded stage. Its rail is centered o
 ## Hero Surround and Section Transition Pass
 
 The desktop hero image now has a low-contrast teal and apricot halo that sits behind the existing photograph, adding color and depth without changing the media or reducing text clarity. The category entry begins with a slightly more deliberate offset below the hero, creating a calmer transition while avoiding a return to the earlier oversized gap.
+
+## Responsive Two-Column Hero Rebuild
+
+The desktop hero now uses a 55/45 two-column grid with a 48px gutter, a viewport-height stage, and vertical centering beneath a 70px header. The media block is constrained to 580px by 520px with a 20px clipped frame; its Live Match and Featured Project surfaces retain their independent elevated placement. The text, search, and statistics now use consistent defined scales and dividers. At 767px and below, the image stacks before the text on a light surface with the same visible core controls and safe overlay bounds.
