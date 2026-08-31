@@ -331,3 +331,6 @@
 - [x] Map the featured-project rail’s current hero placement and confirm the shared static-mirror release path.
 - [x] Move the featured-project rail above the hero content and center it without changing its project or demo interactions.
 - [x] Verify managed and GitHub Pages homepage parity at desktop/mobile sizes, validate builds, and finalize the public release.
+- [x] Map the current right hero column offsets and header structure against the requested layout.
+- [x] Lower the right hero content and implement the requested navigation grouping and control treatments.
+- [x] Verify desktop/mobile hero/header layout, validate all builds, and deploy the final refinement.
