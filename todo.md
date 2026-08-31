@@ -352,3 +352,6 @@
 - [x] Keep every featured-projects rail item on one inline line with dynamic flex sizing and consistent gaps.
 - [x] Align Dashboard and Sign In actions on one baseline, remove Dashboard underline, and standardize their typography.
 - [x] Verify desktop and mobile header typography, run checks, and save the aligned-header release.
+- [x] Audit and unify dark-mode canvas, typography, section surfaces, cards, chat bubbles, inputs, and search controls across the webpage.
+- [x] Verify night-theme contrast and full-bleed behavior at desktop and mobile breakpoints.
+- [x] Run checks and builds, save the night-theme release, and synchronize GitHub with a Project Relay completed commit.
