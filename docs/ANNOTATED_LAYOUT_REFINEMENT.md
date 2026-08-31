@@ -163,3 +163,7 @@ The featured-talent heading is now set as a purposeful two-line composition: “
 ## Final Hero Rail Placement
 
 The featured-project rail is centered in a dedicated top lane above the media and text columns. Its original project labels and Demo control remain unchanged, while the new position makes it read as a shared hero control rather than a media overlay.
+
+## Hero surface and rail cleanup
+
+The hero image now sits directly on the page surface without the former halo, frame, pseudo-element, or container shadow. The featured-projects rail has a larger, more readable treatment, and the hero copy keeps only the three marketplace stats beneath the search interaction; the Popular and Designed-for rows were removed to restore a cleaner first-screen hierarchy.

@@ -346,3 +346,6 @@
 - [x] Map the current right-side card wrapper, headline markup, and hero padding rules.
 - [x] Restore the clean hero surface, add explicit three-line headline breaks, and reduce vertical hero padding.
 - [x] Verify desktop/mobile headline spacing, hero height, and stat visibility, validate builds, and publish the restoration.
+- [x] Remove the hero image halo/frame and empty top gap, enlarge the featured-projects rail, and remove the Popular/Designed-for rows.
+- [x] Verify the cleaned hero at desktop, tablet, and mobile sizes and confirm only the stats row remains below the headline.
+- [x] Run type checks, tests, builds, save the release, and synchronize the completed update to GitHub.
