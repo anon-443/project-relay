@@ -687,3 +687,48 @@ body {
     font-size: 8px !important;
   }
 }
+
+
+/* Clean hero restoration: remove the dense panel treatment and preserve legible phrase spacing */
+@media (min-width: 1024px) {
+  .relay-hero {
+    min-height: calc(100vh - 70px) !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .hero-copy {
+    align-self: center !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .hero-copy h1 {
+    margin: 0 0 1rem !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.045em !important;
+  }
+
+  .hero-copy h1 > span,
+  .hero-copy h1 > em {
+    display: block !important;
+    margin: 0 !important;
+    line-height: 1.1 !important;
+  }
+
+  .hero-description {
+    margin-top: 0 !important;
+  }
+
+  .hero-search {
+    margin-top: 20px !important;
+  }
+
+  .hero-stats {
+    margin-top: 20px !important;
+  }
+}

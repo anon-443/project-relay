@@ -343,3 +343,6 @@
 - [x] Audit the hero rail, right-column markup, and active spacing rules for the requested density changes.
 - [x] Integrate the project rail, strengthen the headline, add popular tags and trust cues, reduce vertical gaps, and give the right column a soft visual panel.
 - [x] Verify desktop/tablet/mobile hero density, validate builds, synchronize to GitHub, and publish the enhanced hero.
+- [x] Map the current right-side card wrapper, headline markup, and hero padding rules.
+- [x] Restore the clean hero surface, add explicit three-line headline breaks, and reduce vertical hero padding.
+- [x] Verify desktop/mobile headline spacing, hero height, and stat visibility, validate builds, and publish the restoration.
