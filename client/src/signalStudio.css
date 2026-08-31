@@ -540,3 +540,150 @@ body {
     padding-right: 20px !important;
   }
 }
+
+
+/* Hero density pass: keep the project rail close to the navbar and give the right column a complete visual hierarchy */
+@media (min-width: 1024px) {
+  .relay-hero {
+    min-height: calc(100vh - 70px) !important;
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+    gap: 48px !important;
+  }
+
+  .hero-project-rail {
+    top: 12px !important;
+  }
+
+  .hero-copy {
+    position: relative !important;
+    z-index: 1 !important;
+    padding: 34px 42px 38px 42px !important;
+    border: 1px solid rgba(103, 143, 143, 0.18) !important;
+    border-radius: 28px !important;
+    background: linear-gradient(145deg, rgba(255,255,255,0.72), rgba(237,247,244,0.44)) !important;
+    box-shadow: 0 24px 54px rgba(53, 78, 82, 0.07) !important;
+    backdrop-filter: blur(8px) !important;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(62px, 6.4vw, 92px) !important;
+    line-height: 0.98 !important;
+    letter-spacing: -0.078em !important;
+  }
+
+  .hero-description {
+    margin-top: 24px !important;
+  }
+
+  .hero-search {
+    max-width: none !important;
+    margin-top: 25px !important;
+  }
+
+  .hero-stats {
+    max-width: none !important;
+    margin-top: 25px !important;
+  }
+
+  .hero-popular,
+  .hero-trust {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin-top: 18px !important;
+  }
+
+  .hero-popular > span,
+  .hero-trust > span {
+    margin-right: 3px !important;
+    color: #65767a !important;
+    font: 500 10px/1 "DM Mono", monospace !important;
+    letter-spacing: .08em !important;
+    text-transform: uppercase !important;
+  }
+
+  .hero-popular button {
+    min-height: 28px !important;
+    padding: 0 10px !important;
+    border: 1px solid rgba(73, 105, 120, .24) !important;
+    border-radius: 999px !important;
+    background: rgba(255,255,255,.68) !important;
+    color: #496978 !important;
+    font: 500 10px/1 "DM Mono", monospace !important;
+    letter-spacing: .03em !important;
+    transition: background .16s ease, color .16s ease, transform .16s ease !important;
+  }
+
+  .hero-popular button:hover,
+  .hero-popular button:focus-visible {
+    background: #496978 !important;
+    color: #fff !important;
+    transform: translateY(-2px) !important;
+  }
+
+  .hero-trust {
+    padding-top: 14px !important;
+    border-top: 1px solid rgba(103, 143, 143, .18) !important;
+  }
+
+  .hero-trust b {
+    color: #718184 !important;
+    font: 600 9px/1 "DM Mono", monospace !important;
+    letter-spacing: .13em !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  .hero-popular,
+  .hero-trust {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 7px !important;
+    margin-top: 16px !important;
+  }
+
+  .hero-popular > span,
+  .hero-trust > span {
+    width: 100% !important;
+    color: #65767a !important;
+    font: 500 10px/1 "DM Mono", monospace !important;
+    letter-spacing: .08em !important;
+    text-transform: uppercase !important;
+  }
+
+  .hero-popular button {
+    min-height: 28px !important;
+    padding: 0 10px !important;
+    border: 1px solid rgba(73, 105, 120, .24) !important;
+    border-radius: 999px !important;
+    background: rgba(255,255,255,.74) !important;
+    color: #496978 !important;
+    font: 500 10px/1 "DM Mono", monospace !important;
+  }
+
+  .hero-trust {
+    padding-top: 13px !important;
+    border-top: 1px solid rgba(103, 143, 143, .18) !important;
+  }
+
+  .hero-trust b {
+    color: #718184 !important;
+    font: 600 9px/1 "DM Mono", monospace !important;
+    letter-spacing: .12em !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-popular,
+  .hero-trust {
+    margin-top: 15px !important;
+  }
+
+  .hero-trust b {
+    font-size: 8px !important;
+  }
+}

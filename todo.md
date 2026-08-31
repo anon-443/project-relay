@@ -340,3 +340,6 @@
 - [x] Audit document background, main wrapper geometry, and right-edge seam selectors.
 - [x] Implement full-bleed document background, centered max-width content, and seam-free outer geometry.
 - [x] Verify wide-screen edge coverage and responsive layout, validate builds, and publish the correction.
+- [x] Audit the hero rail, right-column markup, and active spacing rules for the requested density changes.
+- [x] Integrate the project rail, strengthen the headline, add popular tags and trust cues, reduce vertical gaps, and give the right column a soft visual panel.
+- [x] Verify desktop/tablet/mobile hero density, validate builds, synchronize to GitHub, and publish the enhanced hero.
