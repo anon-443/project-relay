@@ -431,3 +431,60 @@ html { scroll-behavior:smooth; } body { background:var(--rely-bg); color:var(--r
     border-radius: 20px !important;
   }
 }
+
+
+/* Tablet safeguard: honor the requested single-column layout from the 768px breakpoint */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .relay-header {
+    display: flex !important;
+    height: 70px !important;
+    min-height: 70px !important;
+    padding-inline: 20px !important;
+    gap: 12px !important;
+  }
+
+  .relay-header .relay-nav {
+    display: none !important;
+  }
+
+  .relay-header .header-actions {
+    gap: 6px !important;
+  }
+
+  .relay-header .mobile-menu {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 42px !important;
+    height: 42px !important;
+    margin-left: 2px !important;
+  }
+
+  .relay-hero {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    min-height: calc(100vh - 70px) !important;
+    height: auto !important;
+    gap: 42px !important;
+    padding: 80px 32px !important;
+  }
+
+  .relay-hero .hero-visual {
+    order: 1 !important;
+    align-self: center !important;
+    width: min(100%, 580px) !important;
+    height: min(520px, 62vw) !important;
+    min-height: 400px !important;
+    max-height: 520px !important;
+  }
+
+  .relay-hero .hero-copy {
+    order: 2 !important;
+    align-self: center !important;
+    width: min(100%, 580px) !important;
+    max-width: 580px !important;
+    padding-left: 0 !important;
+    transform: none !important;
+  }
+}

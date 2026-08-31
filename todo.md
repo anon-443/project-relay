@@ -334,3 +334,6 @@
 - [x] Map the current right hero column offsets and header structure against the requested layout.
 - [x] Lower the right hero content and implement the requested navigation grouping and control treatments.
 - [x] Verify desktop/mobile hero/header layout, validate all builds, and deploy the final refinement.
+- [x] Audit the current landing-page structure and active responsive rules against the requested navbar, rail, hero, and mobile specification.
+- [x] Implement the clean responsive navbar, centered project rail, two-column hero, floating cards, typography, search, stats, and graph-paper background.
+- [x] Verify wide desktop, laptop, tablet, and mobile layouts, validate all builds, and publish the landing-page refinement.
