@@ -349,3 +349,6 @@
 - [x] Remove the hero image halo/frame and empty top gap, enlarge the featured-projects rail, and remove the Popular/Designed-for rows.
 - [x] Verify the cleaned hero at desktop, tablet, and mobile sizes and confirm only the stats row remains below the headline.
 - [x] Run type checks, tests, builds, save the release, and synchronize the completed update to GitHub.
+- [x] Keep every featured-projects rail item on one inline line with dynamic flex sizing and consistent gaps.
+- [x] Align Dashboard and Sign In actions on one baseline, remove Dashboard underline, and standardize their typography.
+- [x] Verify desktop and mobile header typography, run checks, and save the aligned-header release.
