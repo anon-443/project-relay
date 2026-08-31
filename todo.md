@@ -337,3 +337,6 @@
 - [x] Audit the current landing-page structure and active responsive rules against the requested navbar, rail, hero, and mobile specification.
 - [x] Implement the clean responsive navbar, centered project rail, two-column hero, floating cards, typography, search, stats, and graph-paper background.
 - [x] Verify wide desktop, laptop, tablet, and mobile layouts, validate all builds, and publish the landing-page refinement.
+- [x] Audit document background, main wrapper geometry, and right-edge seam selectors.
+- [x] Implement full-bleed document background, centered max-width content, and seam-free outer geometry.
+- [x] Verify wide-screen edge coverage and responsive layout, validate builds, and publish the correction.
